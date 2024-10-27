@@ -29,6 +29,9 @@ import maize from "../assets/maize.png";
 import { GrNext } from "react-icons/gr";
 import rice from "../assets/rice.png";
 import wheat from "../assets/wheat.png";
+import logo from "../assets/logo.png";
+import Countup from "react-countup";
+import ScrollTrigger from "react-scroll-trigger";
 import { CiMenuBurger } from "react-icons/ci";
 import { VscChromeClose } from "react-icons/vsc";
 const Homepage = () => {
@@ -59,11 +62,14 @@ const Homepage = () => {
     return () => clearInterval(interval);
   }, [slides.length]);
   return (
-    <div className="bg-[#102d11]">
-      <nav className="bg-[#102d11] border-b-[1px] border-gray-400 mx-[50px] text-white py-4">
+    <div className="bg-[#25883F]">
+      <nav className="bg-[#25883F] border-b-[1px] border-gray-400 mx-[50px] text-white py-4">
         <div className="container max-md:px-[10px] mx-auto  px-[70px] pt-[20px] flex justify-between items-center">
-          <div className="text-2xl max-sm:text-[13px] max-md:text-[15px] max-md:font-bold font-semi-bold text-white">
-            Farmers2Global
+          <div className="flex flex-row space-x-[10px] items-center">
+            <img src={logo} className="w-[100px] h-[80px]" alt="logo" />
+            <p className="text-2xl max-sm:text-[13px] max-md:text-[15px] max-md:font-bold font-bold text-white">
+              Farm2Global
+            </p>
           </div>
           <CiMenuBurger
             className="max-md:flex hidden"
@@ -72,7 +78,7 @@ const Homepage = () => {
             }}
           />
           {navShow && (
-            <div className="flex pb-[20px] flex-col space-y-[10px] w-[160px] rounded-[10px] right-[10px] absolute items-end z-10 border-[1px] border-gray-300 p-[16px] top-[40px] bg-[#102d11]">
+            <div className="flex pb-[20px] flex-col space-y-[10px] w-[160px] rounded-[10px] right-[10px] absolute items-end z-10 border-[1px] border-gray-300 p-[16px] top-[40px] bg-[#25883F]">
               <VscChromeClose
                 className="hover:text-green-300"
                 onClick={() => {
@@ -138,38 +144,40 @@ const Homepage = () => {
         </div>
       </nav>
 
-      <section className="bg-[#102d11] flex flex-row  text-white">
+      <section className="bg-[#25883F] flex flex-row  text-white">
         <div className="container mx-auto px-4 pt-20 max-md:pt-[40px] text-center">
           <div className="flex pl-[90px] max-md:pl-[20px]">
-            <h1 className="text-[60px] text-left inline w-[700px] max-md:w-[300px] max-md:text-[30px]">
-              Welcome to the Future of Agriculture
+            <h1 className="text-[40px] text-left inline w-[700px] max-md:w-[300px] max-md:text-[20px]">
+              Welcome to the Future of Agriculture Post Harvest Supply Chain.
             </h1>
-            <button className="text-gray-300 max-md:text-[10px] w-[140px] space-x-[10px] items-center mt-[60px] flex flex-row">
+            {/* <button className="text-gray-300 max-md:text-[10px] w-[140px] space-x-[10px] items-center mt-[60px] flex flex-row">
               <p>Learn more</p>
               <BsFillArrowUpRightCircleFill className="w-[30px] hover:opacity-60 h-[30px] max-md:w-[20px] max-md:h-[20px] text-[#CBE86A]" />
-            </button>
+            </button> */}
           </div>
-          <div className="flex flex-row ml-[100px] max-sm:space-x-[50px] max-md:space-x-[120px] max-md:ml-[20px] space-x-[250px]">
-            <p className=" text-[14px] max-md:text-[10px] max-md:w-[300px] w-[500px] text-left max-md:mt-[30px] mt-[50px]">
+          <div className="flex flex-row ml-[100px] max-sm:space-x-[50px] max-md:space-x-[120px] max-md:ml-[20px] space-x-[250px] pb-[60px]">
+            <p className=" text-[14px] max-md:text-[10px] max-md:w-[300px] w-[570px] text-left max-md:mt-[30px] mt-[50px]">
               Discover the cutting-edge world of agriculture where technology
               meets sustainability.Our mission is to revolutionilize farming for
-              a brighter tomorrow.
+              a brighter tomorrow.Our mission is to revolutionize farming for
+              the brighter tomorrow of our beloved farmers by helping them to
+              avoid Post-Harvest Losses(PHL).
             </p>
-            <img
+            {/* <img
               src={leafImage}
               alt="leaf"
               className="w-[300px] h-[180px] mt-[30px] max-sm:mt-[80px] max-md:h-[75px] max-md:w-[130px] max-sm:w-[100px] max-sm:h-[55px]"
-            />
+            /> */}
           </div>
         </div>
       </section>
 
       <section className="bg-[#CBE86A] flex flex-row max-md:flex-col max-md:pb-[10px]">
-        <div className="h-[480px] w-[1400px] max-md:w-full max-md:h-[300px] relative">
+        <div className="h-[480px] w-[2000px] max-md:w-full max-md:h-[300px] relative">
           <img
             alt="image"
             src={slides[currentState].image}
-            className={`h-[480px] w-[700px] max-md:h-[300px] absolute bg-url(${slides[currentState].image})`}
+            className={`h-[480px] w-[1000px] max-md:h-[300px] absolute bg-url(${slides[currentState].image})`}
           />
           <GrPrevious
             onClick={Previous}
@@ -179,11 +187,11 @@ const Homepage = () => {
             onClick={Next}
             className="absolute text-[#CBE86A] text-[30px] max-md:top-[90px] top-[190px] right-[10px] hover:cursor-pointer"
           />
-          <div className="absolute space-x-[17px] max-md:space-x-[14px]  bg-[#102d11] max-md:w-[250px] max-md:h-[100px] w-[330px] h-[150px] bottom-[10px] max-md:bottom-[10px] left-[170px] max-sm:left-[70px] items-center flex flex-row pl-[10px] rounded-[15px]">
+          <div className="absolute space-x-[17px] max-md:space-x-[14px]  bg-[#25883F] max-md:w-[250px] max-md:h-[100px] w-[330px] h-[150px] bottom-[10px] max-md:bottom-[10px] left-[170px] max-sm:left-[70px] items-center flex flex-row pl-[10px] rounded-[15px]">
             <div className="bg-[#CBE86A] w-[4px] h-[120px] max-md:h-[75px] max-md:w-[2px] rounded-full"></div>
             <div className="flex flex-col">
               <h2 className="font-bold text-white max-md:text-[14px] text-[20px]">
-                Farmers2Global
+                Farm2Global
               </h2>
               <h2 className="font-bold text-white text-[15px] max-md:text-[12px]">
                 {slides[currentState].name}
@@ -195,19 +203,19 @@ const Homepage = () => {
             </button>
           </div>
         </div>
-        <div className="bg-[#CBE86A] px-4 w-full flex flex-col space-y-[40px] pl-[60px] max-md:pl-0 items-start max-md:items-center">
-          <h2 className="text-[25px] font-semibold text-center mt-[30px] max-md:text-[17px] max-md:mt-[20px]">
+        <div className="bg-[#CBE86A] px-4 w-full flex flex-col space-y-[40px] pl-[30px] max-md:pl-0 items-start max-md:items-center">
+          <h2 className="text-[20px] font-semibold text-center mt-[30px] max-md:text-[17px] max-md:mt-[20px]">
             Modern and Futuristic Benefits
           </h2>
           <div className="flex flex-col text-center space-y-[30px]">
             <div>
               <div className="flex flex-row space-x-[10px] items-center">
                 <HiOutlineLightBulb className="w-[20px] h-[20px] max-md:h-[13px] max-md:w-[13px] " />
-                <h3 className="text-[17px] font-semibold max-md:text-[13px]">
+                <h3 className="text-[15px] font-semibold max-md:text-[13px]">
                   Precision Farming
                 </h3>
               </div>
-              <p className="mt-2 text-[14px] max-md:text-[10px] max-md:w-[260px] w-[460px] text-left ml-[30px]">
+              <p className="mt-2 text-[12px] max-md:text-[10px] max-md:w-[260px] w-[460px] text-left ml-[30px]">
                 Enhance crop production through real-time monitoring and
                 efficient resource management.
               </p>
@@ -215,11 +223,11 @@ const Homepage = () => {
             <div>
               <div className="flex flex-row space-x-[10px] items-center">
                 <SlSettings className="w-[20px] h-[20px] max-md:h-[13px] max-md:w-[13px]" />
-                <h3 className="text-[17px] font-semibold max-md:text-[13px]">
+                <h3 className="text-[15px] font-semibold max-md:text-[13px]">
                   Sustainable Innovations
                 </h3>
               </div>
-              <p className="mt-2 text-[14px] w-[460px] max-md:text-[10px] max-md:w-[260px] text-left ml-[30px]">
+              <p className="mt-2 text-[12px] w-[460px] max-md:text-[10px] max-md:w-[260px] text-left ml-[30px]">
                 Implement eco-friendly farming methods to reduce waste and
                 increase sustainability.
               </p>
@@ -227,18 +235,18 @@ const Homepage = () => {
             <div>
               <div className="flex flex-row space-x-[10px] items-center">
                 <TbTargetArrow className="w-[20px] h-[20px] max-md:h-[13px] max-md:w-[13px]" />
-                <h3 className="text-[17px] font-semibold max-md:text-[13px]">
+                <h3 className="text-[15px] font-semibold max-md:text-[13px]">
                   Smart Automation
                 </h3>
               </div>
-              <p className="mt-2 text-[14px] w-[460px] max-md:text-[10px] max-md:w-[260px] text-left ml-[30px]">
+              <p className="mt-2 text-[12px] w-[460px] max-md:text-[10px] max-md:w-[260px] text-left ml-[30px]">
                 Utilize AI-driven automation to optimize farm operations and
                 labor.
               </p>
             </div>
           </div>
 
-          <p className="mt-2 text-[14px] w-[460px] max-md:text-[10px] max-md:ml-[140px] text-left ml-[30px]">
+          <p className="mt-2 text-[12px] w-[460px] max-md:text-[10px] max-md:ml-[140px] text-left ml-[30px]">
             learn more about what we are doing
           </p>
         </div>
@@ -269,8 +277,9 @@ const Homepage = () => {
                     Our customers
                   </h1>
                 </div>
+
                 <p className="font-bold text-white text-[30px] ml-[150px] max-md:ml-[70px] max-md:text-[20px]">
-                  1230
+                  <Countup start={0} end={1230} duration={2} delay={0} />+
                 </p>
               </div>
               <div className="flex flex-row w-[430px] max-md:w-[260px] items-center justify-start border-[#CBE86A] border-b-[1px]">
@@ -281,9 +290,10 @@ const Homepage = () => {
                   </h1>
                 </div>
                 <p className="font-bold text-white text-[30px]  ml-[85px] max-md:ml-[30px] max-md:text-[20px]">
-                  994
+                  <Countup start={0} end={994} duration={2} delay={0} />+
                 </p>
               </div>
+
               <div className="flex flex-row w-[430px] max-md:w-[260px] items-center justify-start border-[#CBE86A] border-b-[1px]">
                 <div className="flex flex-row space-x-[10px]">
                   <BiSolidHappyAlt className="text-[#CBE86A] w-[24px] h-[24px] max-md:h-[20px] max-md:w-[20px]" />
@@ -292,7 +302,7 @@ const Homepage = () => {
                   </h1>
                 </div>
                 <p className="font-bold text-white text-[30px]  ml-[155px] max-md:ml-[82px] max-md:text-[20px]">
-                  932
+                  <Countup start={0} end={932} duration={2} delay={0} />+
                 </p>
               </div>
             </div>
@@ -372,7 +382,7 @@ const Homepage = () => {
         <div className="md:flex md:flex-col md:space-y-[30px] max-md:grid max-md:grid-cols-2">
           <div className="flex flex-col max-md:space-y-[10px]">
             <h1 className="text-[20px] font-semibold max-md:text-[9px] text-white text-left inline w-[500px] md:leading-[50px]">
-              Farmers2Global Advance
+              Farm2Global Advance
             </h1>
             <p className=" text-[12px] w-[450px] max-md:w-[140px] text-white text-left max-md:text-[7px]">
               Discover the cutting-edge World of agriculture where technology
@@ -384,7 +394,7 @@ const Homepage = () => {
             <div className="flex flex-row space-x-[10px] items-center">
               <BiPhoneCall className="bg-gray-700 p-[7px] shadow-md text-[30px] max-md:p-[3px] max-md:text-[20px] rounded-full text-white" />
               <div className="flex flex-col items-start">
-                <p className="text-[10px] text-gray-400 max-md:text-[7px]">
+                <p className="text-[10px] text-white max-md:text-[7px]">
                   Have a question ?
                 </p>
                 <p className="font-semibold text-[12px] max-md:text-[7px] text-white">
@@ -395,7 +405,7 @@ const Homepage = () => {
             <div className="flex flex-row space-x-[10px] items-center">
               <MdOutlineMailOutline className="bg-gray-700 p-[7px] shadow-md text-[30px] max-md:p-[3px] max-md:text-[20px] rounded-full text-white" />
               <div className="flex flex-col items-start">
-                <p className="text-[10px] text-gray-400 max-md:text-[7px]">
+                <p className="text-[10px] text-white max-md:text-[7px]">
                   Contact us at ?
                 </p>
                 <p className="font-semibold text-[12px] max-md:text-[7px] text-white">
@@ -404,7 +414,7 @@ const Homepage = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-row pt-[20px] space-x-[30px] text-[12px] max-md:text-[7px] max-md:hidden text-gray-400">
+          <div className="flex flex-row pt-[20px] space-x-[30px] text-[12px] max-md:text-[7px] max-md:hidden text-white">
             <a href="#">About</a>
             <a href="#">Contact</a>
 
@@ -420,7 +430,7 @@ const Homepage = () => {
             <h1 className="font-semibold text-[15px] max-md:text-[10px] text-white">
               Newsletter
             </h1>
-            <p className="text-[10px] text-gray-400 text-left max-md:text-[7px] max-md:w-[140px] w-[400px]">
+            <p className="text-[10px] text-white text-left max-md:text-[7px] max-md:w-[140px] w-[400px]">
               Be the first one to know about discounts , offers and events ,
               Unsubscribe whenever you like
             </p>
@@ -433,9 +443,9 @@ const Homepage = () => {
               type="text"
               placeholder="Enter your email"
               id="email"
-              className="focus:outline-none placeholder:text-gray-500 text-gray-400 placeholder:text-[12px] text-[12px] ml-[30px] w-[345px] h-[42px] bg-gray-700"
+              className="focus:outline-none placeholder:text-gray-500 text-white placeholder:text-[12px] text-[12px] ml-[30px] w-[345px] h-[42px] bg-gray-700"
             />
-            <button className="bg-[#CBE86A] font-bold w-[70px] rounded-full hover:bg-opacity-80 text-[#102d11] hover:border-[#102d11] hover:border-[1px] text-[12px] h-[35px]">
+            <button className="bg-[#CBE86A] font-bold w-[70px] rounded-full hover:bg-opacity-80 text-[#25883F] hover:border-[#25883F] hover:border-[1px] text-[12px] h-[35px]">
               Submit
             </button>
           </div>
@@ -449,7 +459,7 @@ const Homepage = () => {
                 <PiWhatsappLogoLight className="bg-gray-700 p-[7px] shadow-md text-[30px] max-md:p-[3px] max-md:text-[20px] rounded-full text-white" />
                 <RiTwitterXFill className="bg-gray-700 p-[7px] shadow-md text-[30px] max-md:p-[3px] max-md:text-[20px] rounded-full text-white" />
               </div>
-              <div className="text-[10px] max-md:text-[7px] text-gray-400 text-left flex flex-row items-center space-x-2 pt-[10px]">
+              <div className="text-[10px] max-md:text-[7px] text-white text-left flex flex-row items-center space-x-2 pt-[10px]">
                 <FaRegCopyright />
                 <p> 2024 , All rights reserved</p>
               </div>
