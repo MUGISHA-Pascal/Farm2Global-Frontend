@@ -31,12 +31,13 @@ import rice from "../assets/rice.png";
 import wheat from "../assets/wheat.png";
 import logo from "../assets/logo.png";
 import Countup from "react-countup";
-import ScrollTrigger from "react-scroll-trigger";
 import { CiMenuBurger } from "react-icons/ci";
+import ScrollTrigger from "react-scroll-trigger";
 import { VscChromeClose } from "react-icons/vsc";
 const Homepage = () => {
   const [navShow, setNavShow] = useState(false);
   const [currentState, setCurrentState] = useState(0);
+  const [counter, setCounter] = useState(false);
   const slides = [
     { image: coffee, name: "Coffee farmers" },
     { image: cotton, name: "Cotton farmers" },
@@ -44,6 +45,9 @@ const Homepage = () => {
     { image: maize, name: "Maize farmers" },
     { image: rice, name: "Rice farmers" },
     { image: wheat, name: "Wheat farmers" },
+  ];
+  const testimonials = [
+    { image: "", description: "", name: "", farmingField: "", location: "" },
   ];
   const Next = () => {
     setCurrentState((prevstate) =>
@@ -172,12 +176,12 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="bg-[#CBE86A] flex flex-col max-md:flex-col max-md:pb-[10px]">
-        <div className="h-[580px] max-md:w-full max-md:h-[300px] relative">
+      <section className="bg-[#CBE86A] flex flex-col max-md:flex-col ">
+        <div className="h-[580px] max-md:w-full max-md:h-[325px] relative">
           <img
             alt="image"
             src={slides[currentState].image}
-            className={`h-[580px] w-full max-md:h-[300px] absolute bg-url(${slides[currentState].image})`}
+            className={`h-[580px] w-full max-md:h-[240px] absolute bg-url(${slides[currentState].image})`}
           />
           <GrPrevious
             onClick={Previous}
@@ -187,7 +191,7 @@ const Homepage = () => {
             onClick={Next}
             className="absolute text-[#CBE86A] text-[30px] max-md:top-[90px] top-[190px] right-[10px] hover:cursor-pointer"
           />
-          <div className="absolute space-x-[17px] max-md:space-x-[14px]  bg-[#25883F] max-md:w-[250px] max-md:h-[100px] w-[330px] h-[150px] bottom-[10px] max-md:bottom-[10px] left-[470px] max-sm:left-[70px] items-center flex flex-row pl-[10px] rounded-[15px]">
+          <div className="absolute space-x-[17px] max-md:justify-between pl-[7px]  bg-[#25883F] max-md:w-[250px] max-md:h-[100px] max-sm:pr-[30px] max-sm:right-0 max-sm:w-full w-[330px] h-[150px] bottom-[10px] max-md:bottom-0 left-[470px] max-sm:left-[0px] items-center flex flex-row max-sm:pl-[10px]  rounded-[15px]">
             <div className="bg-[#CBE86A] w-[4px] h-[120px] max-md:h-[75px] max-md:w-[2px] rounded-full"></div>
             <div className="flex flex-col">
               <h2 className="font-bold text-white max-md:text-[14px] text-[20px]">
@@ -204,20 +208,20 @@ const Homepage = () => {
           </div>
         </div>
       </section>
-      <section className="flex flex-row bg-[#CBE86A] space-x-[70px] py-[70px] pl-[130px] items-center">
+      <section className="flex flex-row bg-[#CBE86A] space-x-[70px] max-sm:py-[40px] max-sm:pl-[60px] py-[70px] pl-[130px] items-center">
         <div className="flex flex-col space-y-[60px]">
           <div className="flex flex-col space-y-[13px]">
             <h1 className="text-[35px] text-black text-left max-md:text-[17px] font-md">
               Our Services
             </h1>
-            <p className="text-[13px] text-black w-[400px] text-left">
+            <p className="text-[13px] text-black text-left">
               Bridging the visibility gap between the East African local farmers
               and the international foods market.
             </p>
           </div>
-          <div className="flex flex-col text-center space-y-[30px]">
-            <div>
-              <div className="flex flex-row space-x-[10px] items-center">
+          <div className="grid grid-cols-2 max-sm:grid-cols-1 text-center space-y-[30px]">
+            <div className="flex flex-col justify-end">
+              <div className="flex flex-row space-x-[10px] items-center ">
                 <HiOutlineLightBulb className="w-[20px] h-[20px] max-md:h-[13px] max-md:w-[13px] " />
                 <h3 className="text-[15px] font-semibold max-md:text-[13px]">
                   Find Credible Local Farmers
@@ -278,7 +282,9 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-        <div className="bg-black w-[400px] h-[400px] mt-[130px]"></div>
+        {/* <div className="bg-[#25883F] rounded-md w-[400px] h-[400px] flex flex-col items-center mt-[130px]">
+          <div className="bg-black w-[100px] h-[100px] rounded-full"></div>
+        </div> */}
       </section>
 
       <section className="py-20 max-md:py-[30px]">
@@ -288,7 +294,7 @@ const Homepage = () => {
               <h1 className="text-[40px] text-white text-left inline w-[500px] leading-[50px] max-md:text-[17px]">
                 Enable Local Farmers Go Global
               </h1>
-              <p className=" text-[14px] w-[500px] max-md:w-[300px] text-white text-left mt-[50px] max-md:text-[10px]">
+              <p className=" text-[14px] w-[500px] max-md:w-[270px] text-white text-left mt-[50px] max-md:text-[10px]">
                 By leveraging various existing Digital Technologies, Farm2Global
                 is a game changer verified platform within agri-sector supply
                 chain. It enhances trust and credibility within the agricultural
@@ -298,6 +304,7 @@ const Homepage = () => {
                 process.
               </p>
             </div>
+            {/* <ScrollTrigger onEnter={() => {setCounter(true)}} onExit={()=>{setCounter(false)}}> */}
             <div className="flex-col space-y-[20px] flex">
               <div className="flex flex-row w-[430px] max-md:w-[260px] items-center justify-start border-[#CBE86A] border-b-[1px]">
                 <div className="flex flex-row space-x-[10px] ">
@@ -335,6 +342,7 @@ const Homepage = () => {
                 </p>
               </div>
             </div>
+            {/* </ScrollTrigger> */}
           </div>
           <div className="flex flex-col max-md:flex-row md:space-y-[70px] max-md:space-x-[30px] items-center max-md:w-full justify-center">
             <div className="flex flex-row space-x-[24px] max-md:space-x-[10px] items-center justify-center">
@@ -370,7 +378,7 @@ const Homepage = () => {
           </div>
         </div>
       </section>
-      <section className="bg-[#CBE86A] flex flex-col space-y-[30px] md:py-[70px] max-md:py-[30px] md:px-[100px] max-md:items-center">
+      <section className="bg-[#CBE86A] flex flex-col space-y-[30px] max-sm:px-[10px] md:py-[70px] max-md:py-[30px] md:px-[100px] max-md:items-center">
         <div className="flex flex-col space-y-[14px] md:space-y-[7px]">
           <h1 className="text-[35px] text-black text-left inline max-md:text-[17px] font-md">
             Our Partners
