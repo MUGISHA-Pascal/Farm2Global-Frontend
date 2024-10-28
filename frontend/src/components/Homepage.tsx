@@ -335,7 +335,7 @@ const Homepage = () => {
                   </h1>
                 </div>
                 <p className="font-bold text-white text-[30px]  ml-[85px] max-md:ml-[30px] max-md:text-[20px]">
-                  <Countup start={0} end={994} duration={2} delay={0} />+
+                  <Countup start={0} end={990} duration={2} delay={0} />+
                 </p>
               </div>
 
@@ -347,7 +347,7 @@ const Homepage = () => {
                   </h1>
                 </div>
                 <p className="font-bold text-white text-[30px]  ml-[155px] max-md:ml-[82px] max-md:text-[20px]">
-                  <Countup start={0} end={932} duration={2} delay={0} />+
+                  <Countup start={0} end={930} duration={2} delay={0} />+
                 </p>
               </div>
             </div>
