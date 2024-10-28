@@ -318,7 +318,7 @@ const Homepage = () => {
               <div className="flex flex-row w-[430px] max-md:w-[260px] items-center justify-start border-[#CBE86A] border-b-[1px]">
                 <div className="flex flex-row space-x-[10px] ">
                   <MdStars className="text-[#CBE86A] w-[24px] h-[24px] max-md:w-[20px] max-md:h-[20px]" />
-                  <h1 className="font-semibold text-[17px] text-white max-md:text-[12px]">
+                  <h1 className="font-semibold text-[17px] text-[#FF9933] max-md:text-[12px]">
                     Our customers
                   </h1>
                 </div>
@@ -330,7 +330,7 @@ const Homepage = () => {
               <div className="flex flex-row w-[430px] max-md:w-[260px] items-center justify-start border-[#CBE86A] border-b-[1px]">
                 <div className="flex flex-row space-x-[10px]">
                   <IoIosPeople className="text-[#CBE86A] w-[24px] h-[24px] max-md:w-[20px] max-md:h-[20px]" />
-                  <h1 className="font-semibold text-[17px] text-white max-md:text-[12px]">
+                  <h1 className="font-semibold text-[17px] text-[#FF9933] max-md:text-[12px]">
                     Farmers Cooperatives
                   </h1>
                 </div>
@@ -342,7 +342,7 @@ const Homepage = () => {
               <div className="flex flex-row w-[430px] max-md:w-[260px] items-center justify-start border-[#CBE86A] border-b-[1px]">
                 <div className="flex flex-row space-x-[10px]">
                   <BiSolidHappyAlt className="text-[#CBE86A] w-[24px] h-[24px] max-md:h-[20px] max-md:w-[20px]" />
-                  <h1 className="font-semibold text-[17px] text-white max-md:text-[12px]">
+                  <h1 className="font-semibold text-[17px] text-[#FF9933] max-md:text-[12px]">
                     Happy Clients{" "}
                   </h1>
                 </div>
@@ -357,8 +357,8 @@ const Homepage = () => {
             <div className="flex flex-row space-x-[24px] max-md:space-x-[10px] items-center justify-center">
               <div className="bg-[#CBE86A] w-[4px] h-[220px] max-md:h-[170px] max-md:w-[2px] rounded-full"></div>
               <div className="flex flex-col items-center justify-center">
-                <GiThreeLeaves className="w-[80px] h-[80px] text-white max-md:w-[40px] max-md:h-[40px]" />
-                <h1 className="font-bold text-white text-[15px] max-md:text-[10px]">
+                <GiThreeLeaves className="w-[80px] h-[80px] text-[#FF9933] max-md:w-[40px] max-md:h-[40px]" />
+                <h1 className="font-bold text-[#FF9933] text-[15px] max-md:text-[10px]">
                   100% Trusted Farmers
                 </h1>
                 <p className=" text-[12px] w-[200px] max-md:w-[120px] text-white max-md:text-[9px] text-left mt-[10px]">
@@ -372,8 +372,8 @@ const Homepage = () => {
             <div className="flex flex-row space-x-[24px] max-md:space-x-[10px] items-center justify-center">
               <div className="bg-[#CBE86A] w-[4px] h-[220px] max-md:h-[170px] max-md:w-[2px] rounded-full"></div>
               <div className="flex flex-col items-center justify-center">
-                <PiMedalLight className="w-[80px] h-[80px] text-white max-md:w-[40px] max-md:h-[40px]" />
-                <h1 className="font-bold text-white text-[15px]  max-md:text-[10px]">
+                <PiMedalLight className="w-[80px] h-[80px] text-[#FF9933] max-md:w-[40px] max-md:h-[40px]" />
+                <h1 className="font-bold text-[#FF9933] text-[15px]  max-md:text-[10px]">
                   Awards and Recognition
                 </h1>
                 <p className=" text-[12px] w-[200px] max-md:w-[120px] text-white text-left mt-[10px] max-md:text-[9px]">
