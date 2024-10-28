@@ -168,7 +168,7 @@ const Homepage = () => {
               <h2 className="font-bold text-white max-md:text-[14px] text-[20px]">
                 Farm2Global
               </h2>
-              <h2 className="font-bold text-white text-[15px] max-md:text-[12px]">
+              <h2 className="font-bold text-[#FF9933] text-[15px] max-md:text-[12px]">
                 {slides[currentState].name}
               </h2>
             </div>
