@@ -67,8 +67,8 @@ const Homepage = () => {
   }, [slides.length]);
   return (
     <div className="bg-[#25883F]">
-      <nav className="bg-[#25883F] border-b-[1px] border-gray-400 mx-[50px] text-white py-4">
-        <div className="container max-md:px-[10px] mx-auto  px-[70px] pt-[20px] flex justify-between items-center">
+      <nav className="bg-[#25883F] border-b-[1px] border-gray-400 mx-[50px] text-white py-2">
+        <div className="container max-md:px-[10px] mx-auto  px-[70px] pt-[0px] flex justify-between items-center">
           <div className="flex flex-row space-x-[10px] items-center">
             <img src={logo} className="w-[100px] h-[80px]" alt="logo" />
             <p className="text-2xl max-sm:text-[13px] max-md:text-[15px] max-md:font-bold font-bold text-white">
@@ -162,7 +162,7 @@ const Homepage = () => {
             onClick={Next}
             className="absolute text-[#CBE86A] text-[30px] max-md:top-[90px] top-[190px] right-[10px] hover:cursor-pointer"
           />
-          <div className="absolute space-x-[17px] max-md:justify-between pl-[7px]  bg-[#25883F] max-md:w-[250px] max-md:h-[100px] max-sm:pr-[30px] max-sm:right-0 max-sm:w-full w-[330px] h-[150px] bottom-[200px] max-md:bottom-0 left-[170px] max-sm:left-[0px] items-center flex flex-row max-sm:pl-[10px]  rounded-[15px]">
+          <div className="absolute space-x-[17px] max-md:justify-between pl-[7px]  bg-[#25883F] max-md:w-[250px] max-md:h-[100px] max-sm:pr-[30px] max-sm:right-0 max-sm:w-full w-[330px] h-[150px] bottom-[200px] max-md:bottom-0 left-[170px] max-sm:left-[0px] items-center flex flex-row max-sm:pl-[10px] max-sm:rounded-[0px]  rounded-[15px]">
             <div className="bg-[#CBE86A] w-[4px] h-[120px] max-md:h-[75px] max-md:w-[2px] rounded-full"></div>
             <div className="flex flex-col">
               <h2 className="font-bold text-white max-md:text-[14px] text-[20px]">
@@ -195,8 +195,7 @@ const Homepage = () => {
           <div className="flex flex-row ml-[100px] max-sm:space-x-[50px] max-md:space-x-[120px] max-md:ml-[20px] space-x-[250px] pb-[60px]">
             <p className=" text-[14px] max-md:text-[10px] max-md:w-[300px] w-[570px] text-left max-md:mt-[30px] mt-[50px]">
               Discover the cutting-edge world of agriculture where technology
-              meets sustainability.Our mission is to revolutionilize farming for
-              a brighter tomorrow.Our mission is to revolutionize farming for
+              meets sustainability.Our mission is to revolutionize farming for
               the brighter tomorrow of our beloved farmers by helping them to
               avoid Post-Harvest Losses(PHL).
             </p>
