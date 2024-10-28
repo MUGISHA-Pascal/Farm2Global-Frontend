@@ -112,7 +112,7 @@ const Homepage = () => {
                 </li>
                 <li>
                   <a href="#" className="hover:text-green-300">
-                    Crops Cartegories
+                    Crops Categories
                   </a>
                 </li>
               </ul>
@@ -141,7 +141,7 @@ const Homepage = () => {
             </li>
             <li>
               <a href="#" className="hover:text-green-300">
-                Crops Cartegories
+                Crops Categories
               </a>
             </li>
           </ul>
