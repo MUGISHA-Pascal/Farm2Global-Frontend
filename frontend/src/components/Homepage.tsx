@@ -172,12 +172,12 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="bg-[#CBE86A] flex flex-row max-md:flex-col max-md:pb-[10px]">
-        <div className="h-[480px] w-[2000px] max-md:w-full max-md:h-[300px] relative">
+      <section className="bg-[#CBE86A] flex flex-col max-md:flex-col max-md:pb-[10px]">
+        <div className="h-[580px] max-md:w-full max-md:h-[300px] relative">
           <img
             alt="image"
             src={slides[currentState].image}
-            className={`h-[480px] w-[1000px] max-md:h-[300px] absolute bg-url(${slides[currentState].image})`}
+            className={`h-[580px] w-full max-md:h-[300px] absolute bg-url(${slides[currentState].image})`}
           />
           <GrPrevious
             onClick={Previous}
@@ -187,7 +187,7 @@ const Homepage = () => {
             onClick={Next}
             className="absolute text-[#CBE86A] text-[30px] max-md:top-[90px] top-[190px] right-[10px] hover:cursor-pointer"
           />
-          <div className="absolute space-x-[17px] max-md:space-x-[14px]  bg-[#25883F] max-md:w-[250px] max-md:h-[100px] w-[330px] h-[150px] bottom-[10px] max-md:bottom-[10px] left-[170px] max-sm:left-[70px] items-center flex flex-row pl-[10px] rounded-[15px]">
+          <div className="absolute space-x-[17px] max-md:space-x-[14px]  bg-[#25883F] max-md:w-[250px] max-md:h-[100px] w-[330px] h-[150px] bottom-[10px] max-md:bottom-[10px] left-[470px] max-sm:left-[70px] items-center flex flex-row pl-[10px] rounded-[15px]">
             <div className="bg-[#CBE86A] w-[4px] h-[120px] max-md:h-[75px] max-md:w-[2px] rounded-full"></div>
             <div className="flex flex-col">
               <h2 className="font-bold text-white max-md:text-[14px] text-[20px]">
@@ -203,11 +203,43 @@ const Homepage = () => {
             </button>
           </div>
         </div>
-        <div className="bg-[#CBE86A] px-4 w-full flex flex-col space-y-[40px] pl-[30px] max-md:pl-0 items-start max-md:items-center">
-          <h2 className="text-[20px] font-semibold text-center mt-[30px] max-md:text-[17px] max-md:mt-[20px]">
-            Modern and Futuristic Benefits
-          </h2>
+      </section>
+      <section className="flex flex-row bg-[#CBE86A] space-x-[70px] py-[70px] pl-[130px] items-center">
+        <div className="flex flex-col space-y-[60px]">
+          <div className="flex flex-col space-y-[13px]">
+            <h1 className="text-[35px] text-black text-left max-md:text-[17px] font-md">
+              Our Services
+            </h1>
+            <p className="text-[13px] text-black w-[400px] text-left">
+              Bridging the visibility gap between the East African local farmers
+              and the international foods market.
+            </p>
+          </div>
           <div className="flex flex-col text-center space-y-[30px]">
+            <div>
+              <div className="flex flex-row space-x-[10px] items-center">
+                <HiOutlineLightBulb className="w-[20px] h-[20px] max-md:h-[13px] max-md:w-[13px] " />
+                <h3 className="text-[15px] font-semibold max-md:text-[13px]">
+                  Find Credible Local Farmers
+                </h3>
+              </div>
+              <p className="mt-2 text-[12px] max-md:text-[10px] max-md:w-[260px] w-[460px] text-left ml-[30px]">
+                With our experts team, we are commited to find local trustfull
+                farmers for your needs.
+              </p>
+            </div>
+            <div>
+              <div className="flex flex-row space-x-[10px] items-center">
+                <HiOutlineLightBulb className="w-[20px] h-[20px] max-md:h-[13px] max-md:w-[13px] " />
+                <h3 className="text-[15px] font-semibold max-md:text-[13px]">
+                  Local Farmers Global Visibility{" "}
+                </h3>
+              </div>
+              <p className="mt-2 text-[12px] max-md:text-[10px] max-md:w-[260px] w-[460px] text-left ml-[30px]">
+                We are committed to take our local farmers' recognitions beyond
+                the borders.
+              </p>
+            </div>
             <div>
               <div className="flex flex-row space-x-[10px] items-center">
                 <HiOutlineLightBulb className="w-[20px] h-[20px] max-md:h-[13px] max-md:w-[13px] " />
@@ -245,11 +277,8 @@ const Homepage = () => {
               </p>
             </div>
           </div>
-
-          <p className="mt-2 text-[12px] w-[460px] max-md:text-[10px] max-md:ml-[140px] text-left ml-[30px]">
-            learn more about what we are doing
-          </p>
         </div>
+        <div className="bg-black w-[400px] h-[400px] mt-[130px]"></div>
       </section>
 
       <section className="py-20 max-md:py-[30px]">
@@ -343,7 +372,7 @@ const Homepage = () => {
       </section>
       <section className="bg-[#CBE86A] flex flex-col space-y-[30px] md:py-[70px] max-md:py-[30px] md:px-[100px] max-md:items-center">
         <div className="flex flex-col space-y-[14px] md:space-y-[7px]">
-          <h1 className="text-[40px] text-black text-left inline max-md:text-[17px] font-semibold">
+          <h1 className="text-[35px] text-black text-left inline max-md:text-[17px] font-md">
             Our Partners
           </h1>
           <p className=" text-[14px] text-black text-left mt-[50px] max-md:text-[10px] ">
