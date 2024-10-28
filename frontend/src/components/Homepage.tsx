@@ -184,8 +184,8 @@ const Homepage = () => {
         <div className="container mx-auto px-4 pt-20 max-md:pt-[40px] text-center">
           <div className="flex pl-[90px] max-md:pl-[20px]">
             <h1 className="text-[40px] text-left inline w-[700px] max-md:w-[300px] max-md:text-[20px]">
-              Farm2Global, Future of Agriculture Post Harvest Supply Chain in
-              East Africa.
+              Farm2Global, The Future of Efficient Agriculture Post Harvest
+              Supply Chain in East Africa.
             </h1>
             {/* <button className="text-gray-300 max-md:text-[10px] w-[140px] space-x-[10px] items-center mt-[60px] flex flex-row">
               <p>Learn more</p>
