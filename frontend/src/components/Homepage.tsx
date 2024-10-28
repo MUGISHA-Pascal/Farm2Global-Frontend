@@ -270,8 +270,10 @@ const Homepage = () => {
                 </h3>
               </div>
               <p className="mt-2 text-[12px] w-[460px] max-md:text-[10px] max-md:w-[260px] text-left ml-[30px]">
-                Implement eco-friendly farming methods to reduce waste and
-                increase sustainability.
+                Our platform fosters sustainable agriculture by connecting
+                buyers directly with farmers, reducing intermediaries,
+                minimizing food waste, and promoting efficient resource use in
+                crop distribution.
               </p>
             </div>
             <div>
