@@ -147,35 +147,6 @@ const Homepage = () => {
           </ul>
         </div>
       </nav>
-
-      <section className="bg-[#25883F] flex flex-row  text-white">
-        <div className="container mx-auto px-4 pt-20 max-md:pt-[40px] text-center">
-          <div className="flex pl-[90px] max-md:pl-[20px]">
-            <h1 className="text-[40px] text-left inline w-[700px] max-md:w-[300px] max-md:text-[20px]">
-              Welcome to the Future of Agriculture Post Harvest Supply Chain.
-            </h1>
-            {/* <button className="text-gray-300 max-md:text-[10px] w-[140px] space-x-[10px] items-center mt-[60px] flex flex-row">
-              <p>Learn more</p>
-              <BsFillArrowUpRightCircleFill className="w-[30px] hover:opacity-60 h-[30px] max-md:w-[20px] max-md:h-[20px] text-[#CBE86A]" />
-            </button> */}
-          </div>
-          <div className="flex flex-row ml-[100px] max-sm:space-x-[50px] max-md:space-x-[120px] max-md:ml-[20px] space-x-[250px] pb-[60px]">
-            <p className=" text-[14px] max-md:text-[10px] max-md:w-[300px] w-[570px] text-left max-md:mt-[30px] mt-[50px]">
-              Discover the cutting-edge world of agriculture where technology
-              meets sustainability.Our mission is to revolutionilize farming for
-              a brighter tomorrow.Our mission is to revolutionize farming for
-              the brighter tomorrow of our beloved farmers by helping them to
-              avoid Post-Harvest Losses(PHL).
-            </p>
-            {/* <img
-              src={leafImage}
-              alt="leaf"
-              className="w-[300px] h-[180px] mt-[30px] max-sm:mt-[80px] max-md:h-[75px] max-md:w-[130px] max-sm:w-[100px] max-sm:h-[55px]"
-            /> */}
-          </div>
-        </div>
-      </section>
-
       <section className="bg-[#CBE86A] flex flex-col max-md:flex-col ">
         <div className="h-[580px] max-md:w-full max-md:h-[325px] relative">
           <img
@@ -208,10 +179,40 @@ const Homepage = () => {
           </div>
         </div>
       </section>
+
+      <section className="bg-[#25883F] flex flex-row  text-white">
+        <div className="container mx-auto px-4 pt-20 max-md:pt-[40px] text-center">
+          <div className="flex pl-[90px] max-md:pl-[20px]">
+            <h1 className="text-[40px] text-left inline w-[700px] max-md:w-[300px] max-md:text-[20px]">
+              Farm2Global, Future of Agriculture Post Harvest Supply Chain in
+              East Africa.
+            </h1>
+            {/* <button className="text-gray-300 max-md:text-[10px] w-[140px] space-x-[10px] items-center mt-[60px] flex flex-row">
+              <p>Learn more</p>
+              <BsFillArrowUpRightCircleFill className="w-[30px] hover:opacity-60 h-[30px] max-md:w-[20px] max-md:h-[20px] text-[#CBE86A]" />
+            </button> */}
+          </div>
+          <div className="flex flex-row ml-[100px] max-sm:space-x-[50px] max-md:space-x-[120px] max-md:ml-[20px] space-x-[250px] pb-[60px]">
+            <p className=" text-[14px] max-md:text-[10px] max-md:w-[300px] w-[570px] text-left max-md:mt-[30px] mt-[50px]">
+              Discover the cutting-edge world of agriculture where technology
+              meets sustainability.Our mission is to revolutionilize farming for
+              a brighter tomorrow.Our mission is to revolutionize farming for
+              the brighter tomorrow of our beloved farmers by helping them to
+              avoid Post-Harvest Losses(PHL).
+            </p>
+            {/* <img
+              src={leafImage}
+              alt="leaf"
+              className="w-[300px] h-[180px] mt-[30px] max-sm:mt-[80px] max-md:h-[75px] max-md:w-[130px] max-sm:w-[100px] max-sm:h-[55px]"
+            /> */}
+          </div>
+        </div>
+      </section>
+
       <section className="flex flex-row bg-[#CBE86A] space-x-[70px] max-sm:py-[40px] max-sm:pl-[60px] py-[70px] pl-[130px] items-center">
         <div className="flex flex-col space-y-[60px]">
           <div className="flex flex-col space-y-[13px]">
-            <h1 className="text-[35px] text-black text-left max-md:text-[17px] font-md">
+            <h1 className="text-[35px] text-[#FF9933] text-left max-md:text-[17px] font-bold">
               Our Services
             </h1>
             <p className="text-[13px] text-black text-left">
@@ -248,12 +249,14 @@ const Homepage = () => {
               <div className="flex flex-row space-x-[10px] items-center">
                 <HiOutlineLightBulb className="w-[20px] h-[20px] max-md:h-[13px] max-md:w-[13px] " />
                 <h3 className="text-[15px] font-semibold max-md:text-[13px]">
-                  Precision Farming
+                  Integrated Shipping Solutions
                 </h3>
               </div>
               <p className="mt-2 text-[12px] max-md:text-[10px] max-md:w-[260px] w-[460px] text-left ml-[30px]">
-                Enhance crop production through real-time monitoring and
-                efficient resource management.
+                We offer seamless and efficient shipping services to ensure the
+                swift, cost-effective delivery of crops purchased through our
+                platform. This allows buyers to focus on their core activities,
+                while we manage the logistics for them.
               </p>
             </div>
             <div>
@@ -272,12 +275,13 @@ const Homepage = () => {
               <div className="flex flex-row space-x-[10px] items-center">
                 <TbTargetArrow className="w-[20px] h-[20px] max-md:h-[13px] max-md:w-[13px]" />
                 <h3 className="text-[15px] font-semibold max-md:text-[13px]">
-                  Smart Automation
+                  Real-Time Delivery Tracking
                 </h3>
               </div>
               <p className="mt-2 text-[12px] w-[460px] max-md:text-[10px] max-md:w-[260px] text-left ml-[30px]">
-                Utilize AI-driven automation to optimize farm operations and
-                labor.
+                Our real-time tracking feature empowers buyers with
+                up-to-the-minute updates on their orders, providing transparency
+                and peace of mind throughout the delivery process.
               </p>
             </div>
           </div>
@@ -291,7 +295,7 @@ const Homepage = () => {
         <div className="flex flex-row md:space-x-[200px] max-md:flex-col max-md:space-y-[30px]">
           <div className="flex flex-col space-y-[70px] max-md:space-y-[35px] pl-[150px] max-md:pl-[60px]">
             <div className="flex flex-col space-y-[20px]">
-              <h1 className="text-[40px] text-white text-left inline w-[500px] leading-[50px] max-md:text-[17px]">
+              <h1 className="text-[40px] text-[#FF9933] text-left font-bold inline w-[500px] leading-[50px] max-md:text-[17px]">
                 Enable Local Farmers Go Global
               </h1>
               <p className=" text-[14px] w-[500px] max-md:w-[270px] text-white text-left mt-[50px] max-md:text-[10px]">
@@ -380,7 +384,7 @@ const Homepage = () => {
       </section>
       <section className="bg-[#CBE86A] flex flex-col space-y-[30px] max-sm:px-[10px] md:py-[70px] max-md:py-[30px] md:px-[100px] max-md:items-center">
         <div className="flex flex-col space-y-[14px] md:space-y-[7px]">
-          <h1 className="text-[35px] text-black text-left inline max-md:text-[17px] font-md">
+          <h1 className="text-[35px] text-[#FF9933] text-left inline max-md:text-[17px] font-bold">
             Our Partners
           </h1>
           <p className=" text-[14px] text-black text-left mt-[50px] max-md:text-[10px] ">
