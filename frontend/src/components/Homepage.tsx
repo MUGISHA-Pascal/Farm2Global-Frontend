@@ -14,8 +14,11 @@ import { BiPhoneCall } from "react-icons/bi";
 import { TbBrandFacebook } from "react-icons/tb";
 import { PiWhatsappLogoLight } from "react-icons/pi";
 import { RiTwitterXFill } from "react-icons/ri";
+import { HiLocationMarker } from "react-icons/hi";
 import { BiSolidHappyAlt } from "react-icons/bi";
 import { FaRegCopyright } from "react-icons/fa6";
+import { FaSearch } from "react-icons/fa";
+import { FaShippingFast } from "react-icons/fa";
 import minimex from "../assets/minimex.png";
 import { GrPrevious } from "react-icons/gr";
 import monsalwa from "../assets/monsalwa.png";
@@ -26,6 +29,7 @@ import coffee from "../assets/coffee.png";
 import cotton from "../assets/cotton.png";
 import fruits from "../assets/fruits.png";
 import maize from "../assets/maize.png";
+import { FaGlobe } from "react-icons/fa";
 import { GrNext } from "react-icons/gr";
 import rice from "../assets/rice.png";
 import wheat from "../assets/wheat.png";
@@ -222,7 +226,7 @@ const Homepage = () => {
           <div className="grid grid-cols-2 max-sm:grid-cols-1 text-center space-y-[30px]">
             <div className="flex flex-col justify-end">
               <div className="flex flex-row space-x-[10px] items-center ">
-                <HiOutlineLightBulb className="w-[20px] h-[20px] max-md:h-[13px] max-md:w-[13px] " />
+                <FaSearch className="w-[20px] text-[#FF9933] h-[20px] max-md:h-[13px] max-md:w-[13px] " />
                 <h3 className="text-[15px] font-semibold max-md:text-[13px]">
                   Find Credible Local Farmers
                 </h3>
@@ -234,7 +238,7 @@ const Homepage = () => {
             </div>
             <div>
               <div className="flex flex-row space-x-[10px] items-center">
-                <HiOutlineLightBulb className="w-[20px] h-[20px] max-md:h-[13px] max-md:w-[13px] " />
+                <FaGlobe className="w-[20px] text-[#FF9933] h-[20px] max-md:h-[13px] max-md:w-[13px] " />
                 <h3 className="text-[15px] font-semibold max-md:text-[13px]">
                   Local Farmers Global Visibility{" "}
                 </h3>
@@ -246,7 +250,7 @@ const Homepage = () => {
             </div>
             <div>
               <div className="flex flex-row space-x-[10px] items-center">
-                <HiOutlineLightBulb className="w-[20px] h-[20px] max-md:h-[13px] max-md:w-[13px] " />
+                <FaShippingFast className="w-[20px] text-[#FF9933] h-[20px] max-md:h-[13px] max-md:w-[13px] " />
                 <h3 className="text-[15px] font-semibold max-md:text-[13px]">
                   Integrated Shipping Solutions
                 </h3>
@@ -260,7 +264,7 @@ const Homepage = () => {
             </div>
             <div>
               <div className="flex flex-row space-x-[10px] items-center">
-                <SlSettings className="w-[20px] h-[20px] max-md:h-[13px] max-md:w-[13px]" />
+                <SlSettings className="w-[20px] text-[#FF9933] h-[20px] max-md:h-[13px] max-md:w-[13px]" />
                 <h3 className="text-[15px] font-semibold max-md:text-[13px]">
                   Sustainable Innovations
                 </h3>
@@ -272,7 +276,7 @@ const Homepage = () => {
             </div>
             <div>
               <div className="flex flex-row space-x-[10px] items-center">
-                <TbTargetArrow className="w-[20px] h-[20px] max-md:h-[13px] max-md:w-[13px]" />
+                <HiLocationMarker className="w-[20px] h-[20px] text-[#FF9933] max-md:h-[13px] max-md:w-[13px]" />
                 <h3 className="text-[15px] font-semibold max-md:text-[13px]">
                   Real-Time Delivery Tracking
                 </h3>
