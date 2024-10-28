@@ -136,7 +136,7 @@ const Homepage = () => {
             </li>
             <li>
               <a href="#" className="hover:text-green-300">
-                Contact us
+                Contact Us
               </a>
             </li>
             <li>
