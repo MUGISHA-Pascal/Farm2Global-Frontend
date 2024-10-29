@@ -428,17 +428,17 @@ const Homepage = () => {
         <div className="md:flex md:flex-col md:space-y-[30px] max-md:grid max-md:grid-cols-2">
           <div className="flex flex-col max-md:space-y-[10px]">
             <h1 className="text-[20px] font-semibold max-md:text-[9px] text-white text-left inline w-[500px] md:leading-[50px]">
-              Farm2Global Advance
+              Farm2Global
             </h1>
             <p className=" text-[12px] w-[450px] max-md:w-[140px] text-white text-left max-md:text-[7px]">
-              Discover the cutting-edge World of agriculture where technology
-              meets sustainability. Our mission is to revolutionilize farming
-              for a brighter tomorrow
+              Discover the world where agriculture meets technology for
+              sustainability. Our mission is to revolutionize farming for our
+              collective brighter future.
             </p>
           </div>
           <div className="flex flex-row max-md:flex-col md:space-x-[70px] max-md:space-y-[15px]">
             <div className="flex flex-row space-x-[10px] items-center">
-              <BiPhoneCall className="bg-gray-700 p-[7px] shadow-md text-[30px] max-md:p-[3px] max-md:text-[20px] rounded-full text-white" />
+              <BiPhoneCall className="bg-[#FF9933] p-[7px] shadow-md text-[30px] max-md:p-[3px] max-md:text-[20px] rounded-full text-white" />
               <div className="flex flex-col items-start">
                 <p className="text-[10px] text-white font-bold max-md:text-[7px]">
                   Have a question ?
@@ -449,10 +449,10 @@ const Homepage = () => {
               </div>
             </div>
             <div className="flex flex-row space-x-[10px] items-center">
-              <MdOutlineMailOutline className="bg-gray-700 p-[7px] shadow-md text-[30px] max-md:p-[3px] max-md:text-[20px] rounded-full text-white" />
+              <MdOutlineMailOutline className="bg-[#FF9933] p-[7px] shadow-md text-[30px] max-md:p-[3px] max-md:text-[20px] rounded-full text-white" />
               <div className="flex flex-col items-start">
                 <p className="text-[10px] font-bold text-white max-md:text-[7px]">
-                  Contact us at ?
+                  Email Us
                 </p>
                 <p className=" text-[12px] max-md:text-[7px] text-white">
                   farmz2global@gmail.com
@@ -501,9 +501,9 @@ const Homepage = () => {
             </p>
             <div className="flex flex-col space-y-[20px]">
               <div className="flex flex-row space-x-[9px]">
-                <TbBrandFacebook className="bg-gray-700 p-[7px] shadow-md text-[30px] max-md:p-[3px] max-md:text-[20px] rounded-full text-white" />
-                <PiWhatsappLogoLight className="bg-gray-700 p-[7px] shadow-md text-[30px] max-md:p-[3px] max-md:text-[20px] rounded-full text-white" />
-                <RiTwitterXFill className="bg-gray-700 p-[7px] shadow-md text-[30px] max-md:p-[3px] max-md:text-[20px] rounded-full text-white" />
+                <TbBrandFacebook className="bg-[#FF9933] p-[7px] shadow-md text-[30px] max-md:p-[3px] max-md:text-[20px] rounded-full text-white" />
+                <PiWhatsappLogoLight className="bg-[#FF9933] p-[7px] shadow-md text-[30px] max-md:p-[3px] max-md:text-[20px] rounded-full text-white" />
+                <RiTwitterXFill className="bg-[#FF9933] p-[7px] shadow-md text-[30px] max-md:p-[3px] max-md:text-[20px] rounded-full text-white" />
               </div>
               <div className="text-[10px] max-md:text-[7px] text-white text-left flex flex-row items-center space-x-2 pt-[10px]">
                 <FaRegCopyright />
