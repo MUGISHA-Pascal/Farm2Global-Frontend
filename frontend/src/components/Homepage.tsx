@@ -477,7 +477,7 @@ const Homepage = () => {
               Newsletter
             </h1>
             <p className="text-[10px] text-white text-left max-md:text-[7px] max-md:w-[140px] w-[400px]">
-              Be the first one to know about discounts , offers and events ,
+              Subscribe to know about discounts , offers and events ,
               Unsubscribe whenever you like
             </p>
           </div>
@@ -491,7 +491,7 @@ const Homepage = () => {
               id="email"
               className="focus:outline-none placeholder:text-gray-500 text-white placeholder:text-[12px] text-[12px] ml-[30px] w-[345px] h-[42px] bg-gray-700"
             />
-            <button className="bg-[#CBE86A] font-bold w-[70px] rounded-full hover:bg-opacity-80 text-[#25883F] hover:border-[#25883F] hover:border-[1px] text-[12px] h-[35px]">
+            <button className="bg-[#FF9933] font-bold w-[70px] rounded-full hover:bg-opacity-80 text-[#25883F] hover:border-[#25883F] hover:border-[1px] text-[12px] h-[35px]">
               Submit
             </button>
           </div>
