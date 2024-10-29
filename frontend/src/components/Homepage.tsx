@@ -357,7 +357,7 @@ const Homepage = () => {
             <div className="flex flex-row space-x-[24px] max-md:space-x-[10px] items-center justify-center">
               <div className="bg-[#CBE86A] w-[4px] h-[220px] max-md:h-[170px] max-md:w-[2px] rounded-full"></div>
               <div className="flex flex-col items-center justify-center">
-                <GiThreeLeaves className="w-[80px] h-[80px] text-[#FF9933] max-md:w-[40px] max-md:h-[40px]" />
+                <IoIosPeople className="w-[80px] h-[80px] text-[#FF9933] max-md:w-[40px] max-md:h-[40px]" />
                 <h1 className="font-bold text-[#FF9933] text-[15px] max-md:text-[10px]">
                   100% Trusted Farmers
                 </h1>
@@ -440,10 +440,10 @@ const Homepage = () => {
             <div className="flex flex-row space-x-[10px] items-center">
               <BiPhoneCall className="bg-gray-700 p-[7px] shadow-md text-[30px] max-md:p-[3px] max-md:text-[20px] rounded-full text-white" />
               <div className="flex flex-col items-start">
-                <p className="text-[10px] text-white max-md:text-[7px]">
+                <p className="text-[10px] text-white font-bold max-md:text-[7px]">
                   Have a question ?
                 </p>
-                <p className="font-semibold text-[12px] max-md:text-[7px] text-white">
+                <p className="text-[12px] max-md:text-[7px] text-white">
                   +(250)78-225-6907
                 </p>
               </div>
@@ -451,10 +451,10 @@ const Homepage = () => {
             <div className="flex flex-row space-x-[10px] items-center">
               <MdOutlineMailOutline className="bg-gray-700 p-[7px] shadow-md text-[30px] max-md:p-[3px] max-md:text-[20px] rounded-full text-white" />
               <div className="flex flex-col items-start">
-                <p className="text-[10px] text-white max-md:text-[7px]">
+                <p className="text-[10px] font-bold text-white max-md:text-[7px]">
                   Contact us at ?
                 </p>
-                <p className="font-semibold text-[12px] max-md:text-[7px] text-white">
+                <p className=" text-[12px] max-md:text-[7px] text-white">
                   farmz2global@gmail.com
                 </p>
               </div>
