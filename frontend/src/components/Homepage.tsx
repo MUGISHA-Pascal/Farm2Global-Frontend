@@ -23,6 +23,7 @@ import minimex from "../assets/minimex.png";
 import { GrPrevious } from "react-icons/gr";
 import monsalwa from "../assets/monsalwa.png";
 import azam from "../assets/azam.png";
+import { Link, Element } from "react-scroll";
 import africa from "../assets/africa.png";
 import adma from "../assets/adma.png";
 import coffee from "../assets/coffee.png";
@@ -95,9 +96,9 @@ const Homepage = () => {
               />
               <ul className="flex space-x-[10px] items-center w-full flex-col space-y-[10px] font-normal text-[12px] text-gray-300">
                 <li>
-                  <a href="#" className="hover:text-green-300">
+                  <Link to="aboutUs" className="hover:text-green-300">
                     About Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#" className="hover:text-green-300">
@@ -124,24 +125,68 @@ const Homepage = () => {
           )}
           <ul className="flex space-x-6 max-md:hidden font-normal text-gray-300 text-[14px]">
             <li>
-              <a href="#" className="hover:text-green-300">
+              <Link
+                to="aboutUs"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+                className="hover:text-green-300 hover:cursor-pointer"
+              >
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-green-300">
+              <Link
+                to="services"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+                className="hover:text-green-300 hover:cursor-pointer"
+              >
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-green-300">
-                Partners
-              </a>
+              <Link
+                to="features"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+                className="hover:text-green-300 hover:cursor-pointer"
+              >
+                Features
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-green-300">
-                Contact Us
-              </a>
+              <li>
+                <Link
+                  to="partners"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className="hover:text-green-300 hover:cursor-pointer"
+                >
+                  Partners
+                </Link>
+              </li>
+            </li>
+            <li>
+              <li>
+                <Link
+                  to="contactUs"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                  className="hover:text-green-300 hover:cursor-pointer"
+                >
+                  Contact us
+                </Link>
+              </li>
             </li>
             <li>
               <a href="#" className="hover:text-green-300">
@@ -184,7 +229,10 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="bg-[#25883F] flex flex-row  text-white">
+      <Element
+        name="aboutUs"
+        className="bg-[#25883F] flex flex-row  text-white"
+      >
         <div className="container mx-auto px-4 pt-20 max-md:pt-[40px] text-center">
           <div className="flex pl-[90px] max-md:pl-[20px]">
             <h1 className="text-[40px] font-bold text-left inline w-[700px] max-md:w-[300px] max-md:text-[20px]">
@@ -210,9 +258,12 @@ const Homepage = () => {
             /> */}
           </div>
         </div>
-      </section>
+      </Element>
 
-      <section className="flex flex-row bg-[#CBE86A] space-x-[70px] max-sm:py-[40px] max-sm:pl-[60px] py-[70px] pl-[130px] items-center">
+      <Element
+        name="services"
+        className="flex flex-row bg-[#CBE86A] space-x-[70px] max-sm:py-[40px] max-sm:pl-[60px] py-[70px] pl-[130px] items-center"
+      >
         <div className="flex flex-col space-y-[60px]">
           <div className="flex flex-col space-y-[13px]">
             <h1 className="text-[35px] text-[#FF9933] text-left max-md:text-[17px] font-bold">
@@ -294,9 +345,9 @@ const Homepage = () => {
         {/* <div className="bg-[#25883F] rounded-md w-[400px] h-[400px] flex flex-col items-center mt-[130px]">
           <div className="bg-black w-[100px] h-[100px] rounded-full"></div>
         </div> */}
-      </section>
+      </Element>
 
-      <section className="py-20 max-md:py-[30px]">
+      <Element name="features" className="py-20 max-md:py-[30px]">
         <div className="flex flex-row md:space-x-[200px] max-md:flex-col max-md:space-y-[30px]">
           <div className="flex flex-col space-y-[70px] max-md:space-y-[35px] pl-[150px] max-md:pl-[60px]">
             <div className="flex flex-col space-y-[20px]">
@@ -386,8 +437,11 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-      </section>
-      <section className="bg-[#CBE86A] flex flex-col space-y-[30px] max-sm:px-[10px] md:py-[70px] max-md:py-[30px] md:px-[100px] max-md:items-center">
+      </Element>
+      <Element
+        name="partners"
+        className="bg-[#CBE86A] flex flex-col space-y-[30px] max-sm:px-[10px] md:py-[70px] max-md:py-[30px] md:px-[100px] max-md:items-center"
+      >
         <div className="flex flex-col space-y-[14px] md:space-y-[7px]">
           <h1 className="text-[35px] text-[#FF9933] text-left inline max-md:text-[17px] font-bold">
             Our Partners
@@ -423,8 +477,11 @@ const Homepage = () => {
             className="w-auto h-[60px] max-md:w-[70px] max-md:h-auto"
           />
         </div>
-      </section>
-      <footer className="flex flex-row max-md:flex-col md:space-x-[70px] pl-[100px] max-md:pl-[30px] pb-[40px] pt-[30px]">
+      </Element>
+      <Element
+        name="contactUs"
+        className="flex flex-row max-md:flex-col md:space-x-[70px] pl-[100px] max-md:pl-[30px] pb-[40px] pt-[30px]"
+      >
         <div className="md:flex md:flex-col md:space-y-[30px] max-md:grid max-md:grid-cols-2">
           <div className="flex flex-col max-md:space-y-[10px]">
             <h1 className="text-[20px] font-semibold max-md:text-[9px] text-white text-left inline w-[500px] md:leading-[50px]">
@@ -512,7 +569,7 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-      </footer>
+      </Element>
     </div>
   );
 };
