@@ -5,6 +5,7 @@ import Homepage from "./components/Homepage";
 import Navbar from "./components/Navbar";
 import Signup from "./components/Signup";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route element={<Homepage />} path="/" />
           <Route element={<Signup />} path="/signup" />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

@@ -37,6 +37,9 @@ const Navbar = () => {
                 <li>
                   <RouterLink
                     to="/"
+                    onClick={() => {
+                      setNavShow(false);
+                    }}
                     className="hover:text-green-300 hover:cursor-pointer"
                   >
                     Home
@@ -47,6 +50,9 @@ const Navbar = () => {
                     to="aboutUs"
                     spy={true}
                     smooth={true}
+                    onClick={() => {
+                      setNavShow(false);
+                    }}
                     offset={0}
                     duration={500}
                     className="hover:text-green-300 hover:cursor-pointer"
@@ -60,6 +66,9 @@ const Navbar = () => {
                     spy={true}
                     smooth={true}
                     offset={0}
+                    onClick={() => {
+                      setNavShow(false);
+                    }}
                     duration={500}
                     className="hover:text-green-300 hover:cursor-pointer"
                   >
@@ -72,6 +81,9 @@ const Navbar = () => {
                     spy={true}
                     smooth={true}
                     offset={0}
+                    onClick={() => {
+                      setNavShow(false);
+                    }}
                     duration={500}
                     className="hover:text-green-300 hover:cursor-pointer"
                   >
@@ -85,6 +97,9 @@ const Navbar = () => {
                       spy={true}
                       smooth={true}
                       offset={0}
+                      onClick={() => {
+                        setNavShow(false);
+                      }}
                       duration={500}
                       className="hover:text-green-300 hover:cursor-pointer"
                     >
@@ -98,6 +113,9 @@ const Navbar = () => {
                       to="contactUs"
                       spy={true}
                       smooth={true}
+                      onClick={() => {
+                        setNavShow(false);
+                      }}
                       offset={0}
                       duration={500}
                       className="hover:text-green-300 hover:cursor-pointer"
@@ -109,6 +127,9 @@ const Navbar = () => {
                 <li>
                   <RouterLink
                     to="/signup"
+                    onClick={() => {
+                      setNavShow(false);
+                    }}
                     className="hover:text-green-300 hover:cursor-pointer"
                   >
                     Sign up

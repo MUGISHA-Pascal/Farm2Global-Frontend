@@ -1,4 +1,3 @@
-// src/Signup.tsx
 import React, { useState } from "react";
 
 const Signup: React.FC = () => {
@@ -23,7 +22,7 @@ const Signup: React.FC = () => {
   };
 
   return (
-    <div className="w-full h-full p-[20px] bg-[#25883F] flex flex-col items-center shadow-lg">
+    <div className="w-full h-full p-[20px] bg-[#25883F] flex flex-col items-center">
       <form
         onSubmit={handleSubmit}
         className="w-[700px] max-sm:w-[350px]  bg-white p-6 rounded-lg shadow-lg"
@@ -33,12 +32,16 @@ const Signup: React.FC = () => {
         </h2>
         <div className="sm:grid sm:grid-cols-2 max-sm:flex max-sm:flex-col max-sm:space-y-[7px] sm:gap-4 mb-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label
+              className="block text-sm font-medium text-gray-700"
+              htmlFor="firstname"
+            >
               First Name
             </label>
             <input
               type="text"
               name="firstName"
+              id="firstname"
               value={formData.firstName}
               onChange={handleChange}
               required
