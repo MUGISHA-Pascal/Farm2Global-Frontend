@@ -142,7 +142,7 @@ const Signup: React.FC = () => {
           </div>
           <div className="col-span-2">
             <label className="block text-sm max-sm:text-[13px] font-medium text-gray-700">
-              Farmer Generated Unique ID
+              Registration Access Code
             </label>
             <input
               type="text"
