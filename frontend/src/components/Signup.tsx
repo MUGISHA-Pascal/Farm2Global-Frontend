@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 
 const Signup: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -50,12 +51,16 @@ const Signup: React.FC = () => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="lastName"
+              className="block text-sm font-medium text-gray-700"
+            >
               Last Name
             </label>
             <input
               type="text"
               name="lastName"
+              id="lastName"
               value={formData.lastName}
               onChange={handleChange}
               required
@@ -64,12 +69,16 @@ const Signup: React.FC = () => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="country"
+              className="block text-sm font-medium text-gray-700"
+            >
               Country
             </label>
             <input
               type="text"
               name="country"
+              id="country"
               value={formData.country}
               onChange={handleChange}
               required
@@ -78,12 +87,16 @@ const Signup: React.FC = () => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="district"
+              className="block text-sm font-medium text-gray-700"
+            >
               District
             </label>
             <input
               type="text"
               name="district"
+              id="district"
               value={formData.district}
               onChange={handleChange}
               required
@@ -92,12 +105,16 @@ const Signup: React.FC = () => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="phoneNo"
+              className="block text-sm font-medium text-gray-700"
+            >
               Phone No
             </label>
             <input
               type="tel"
               name="phoneNo"
+              id="phoneNo"
               value={formData.phoneNo}
               onChange={handleChange}
               required
@@ -106,12 +123,16 @@ const Signup: React.FC = () => {
             />
           </div>
           <div>
-            <label className="block text-sm max-sm:text-[13px] font-medium text-gray-700">
+            <label
+              htmlFor="password"
+              className="block text-sm max-sm:text-[13px] font-medium text-gray-700"
+            >
               Password
             </label>
             <input
               type="password"
               name="password"
+              id="password"
               value={formData.password}
               onChange={handleChange}
               required
@@ -126,6 +147,7 @@ const Signup: React.FC = () => {
             <input
               type="text"
               name="uniqueID"
+              id="uniqueID"
               value={formData.uniqueID}
               onChange={handleChange}
               required
@@ -136,12 +158,23 @@ const Signup: React.FC = () => {
             />
           </div>
         </div>
-        <button
-          type="submit"
-          className="w-[200px] bg-[#FF9933] max-sm:text-[17px] font-bold text-white p-[6px] rounded-md hover:bg-[#CBE86A] transition duration-300"
-        >
-          Register
-        </button>
+        <div className="flex flex-row space-x-[20px] items-center justify-center">
+          <button
+            type="submit"
+            className="w-[200px] bg-[#FF9933] max-sm:text-[17px] font-bold text-white p-[6px] rounded-md hover:bg-[#CBE86A] transition duration-300"
+          >
+            Register
+          </button>
+          <div className="text-[13px]">
+            <p className="inline text-gray-500">don't have an account </p>
+            <RouterLink
+              to="/login"
+              className="hover:text-green-300 underline text-green-400 hover:cursor-pointer"
+            >
+              Login
+            </RouterLink>
+          </div>
+        </div>
       </form>
     </div>
   );
