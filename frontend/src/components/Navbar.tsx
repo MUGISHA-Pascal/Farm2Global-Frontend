@@ -4,6 +4,7 @@ import logo from "../assets/logo.png";
 import { CiMenuBurger } from "react-icons/ci";
 import { VscChromeClose } from "react-icons/vsc";
 import { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 const Navbar = () => {
   const [navShow, setNavShow] = useState(false);
 
@@ -34,24 +35,84 @@ const Navbar = () => {
               />
               <ul className="flex space-x-[10px] items-center w-full flex-col space-y-[10px] font-normal text-[12px] text-gray-300">
                 <li>
-                  <Link to="aboutUs" className="hover:text-green-300">
+                  <RouterLink
+                    to="/"
+                    className="hover:text-green-300 hover:cursor-pointer"
+                  >
+                    Home
+                  </RouterLink>
+                </li>
+                <li>
+                  <Link
+                    to="aboutUs"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={500}
+                    className="hover:text-green-300 hover:cursor-pointer"
+                  >
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-green-300">
+                  <Link
+                    to="services"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={500}
+                    className="hover:text-green-300 hover:cursor-pointer"
+                  >
                     Services
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-green-300">
-                    Partners
-                  </a>
+                  <Link
+                    to="features"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={500}
+                    className="hover:text-green-300 hover:cursor-pointer"
+                  >
+                    Features
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-green-300">
-                    Contact us
-                  </a>
+                  <li>
+                    <Link
+                      to="partners"
+                      spy={true}
+                      smooth={true}
+                      offset={0}
+                      duration={500}
+                      className="hover:text-green-300 hover:cursor-pointer"
+                    >
+                      Partners
+                    </Link>
+                  </li>
+                </li>
+                <li>
+                  <li>
+                    <Link
+                      to="contactUs"
+                      spy={true}
+                      smooth={true}
+                      offset={0}
+                      duration={500}
+                      className="hover:text-green-300 hover:cursor-pointer"
+                    >
+                      Contact us
+                    </Link>
+                  </li>
+                </li>
+                <li>
+                  <RouterLink
+                    to="/signup"
+                    className="hover:text-green-300 hover:cursor-pointer"
+                  >
+                    Sign up
+                  </RouterLink>
                 </li>
                 <li>
                   <a href="#" className="hover:text-green-300">
@@ -63,11 +124,19 @@ const Navbar = () => {
           )}
           <ul className="flex space-x-6 max-md:hidden font-normal text-gray-300 text-[14px]">
             <li>
+              <RouterLink
+                to="/"
+                className="hover:text-green-300 hover:cursor-pointer"
+              >
+                Home
+              </RouterLink>
+            </li>
+            <li>
               <Link
                 to="aboutUs"
                 spy={true}
                 smooth={true}
-                offset={50}
+                offset={0}
                 duration={500}
                 className="hover:text-green-300 hover:cursor-pointer"
               >
@@ -79,7 +148,7 @@ const Navbar = () => {
                 to="services"
                 spy={true}
                 smooth={true}
-                offset={50}
+                offset={0}
                 duration={500}
                 className="hover:text-green-300 hover:cursor-pointer"
               >
@@ -91,7 +160,7 @@ const Navbar = () => {
                 to="features"
                 spy={true}
                 smooth={true}
-                offset={50}
+                offset={0}
                 duration={500}
                 className="hover:text-green-300 hover:cursor-pointer"
               >
@@ -104,7 +173,7 @@ const Navbar = () => {
                   to="partners"
                   spy={true}
                   smooth={true}
-                  offset={50}
+                  offset={0}
                   duration={500}
                   className="hover:text-green-300 hover:cursor-pointer"
                 >
@@ -118,13 +187,21 @@ const Navbar = () => {
                   to="contactUs"
                   spy={true}
                   smooth={true}
-                  offset={50}
+                  offset={0}
                   duration={500}
                   className="hover:text-green-300 hover:cursor-pointer"
                 >
                   Contact us
                 </Link>
               </li>
+            </li>
+            <li>
+              <RouterLink
+                to="/signup"
+                className="hover:text-green-300 hover:cursor-pointer"
+              >
+                Sign up
+              </RouterLink>
             </li>
             <li>
               <a href="#" className="hover:text-green-300">

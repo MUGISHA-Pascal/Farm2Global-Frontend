@@ -19,124 +19,123 @@ const Signup: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission, e.g., send data to the server
     console.log("Form submitted:", formData);
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-[#25883F] rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-6 text-center text-white">
-        Farmer Registration
-      </h2>
-      <div
-        className="mb-6"
-        style={{ backgroundColor: "#CBE86A", height: "2px" }}
-      ></div>{" "}
-      {/* Separating Div */}
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">
-            First Name
-          </label>
-          <input
-            type="text"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
-            required
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-            style={{ borderColor: "#FF9933" }} // Using color for border
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">
-            Last Name
-          </label>
-          <input
-            type="text"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-            required
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-            style={{ borderColor: "#FF9933" }} // Using color for border
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">
-            Country
-          </label>
-          <input
-            type="text"
-            name="country"
-            value={formData.country}
-            onChange={handleChange}
-            required
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-            style={{ borderColor: "#FF9933" }} // Using color for border
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">
-            District
-          </label>
-          <input
-            type="text"
-            name="district"
-            value={formData.district}
-            onChange={handleChange}
-            required
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-            style={{ borderColor: "#FF9933" }} // Using color for border
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">
-            Phone No
-          </label>
-          <input
-            type="tel"
-            name="phoneNo"
-            value={formData.phoneNo}
-            onChange={handleChange}
-            required
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-            style={{ borderColor: "#FF9933" }} // Using color for border
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">
-            Password
-          </label>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-            style={{ borderColor: "#FF9933" }} // Using color for border
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">
-            Farmer Generated Unique ID
-          </label>
-          <input
-            type="text"
-            name="uniqueID"
-            value={formData.uniqueID}
-            onChange={handleChange}
-            required
-            pattern="[A-Za-z0-9]{6}"
-            title="6 Capital Digits (numbers & letters)"
-            className="mt-1 p-2 border border-gray-300 rounded-md w-full"
-            style={{ borderColor: "#FF9933" }} // Using color for border
-          />
+    <div className="w-full h-full p-[20px] bg-[#25883F] flex flex-col items-center shadow-lg">
+      <form
+        onSubmit={handleSubmit}
+        className="w-[700px] max-sm:w-[350px]  bg-white p-6 rounded-lg shadow-lg"
+      >
+        <h2 className="text-2xl max-sm:text-[17px] font-bold mb-6 text-center text-[#25883F]">
+          Farmer Registration
+        </h2>
+        <div className="sm:grid sm:grid-cols-2 max-sm:flex max-sm:flex-col max-sm:space-y-[7px] sm:gap-4 mb-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              First Name
+            </label>
+            <input
+              type="text"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              required
+              className="mt-1 p-[6px] border max-sm:text-[13px] border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
+              style={{ borderColor: "#FF9933" }}
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Last Name
+            </label>
+            <input
+              type="text"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              required
+              className="mt-1 p-[6px] border max-sm:text-[17px] border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
+              style={{ borderColor: "#FF9933" }}
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Country
+            </label>
+            <input
+              type="text"
+              name="country"
+              value={formData.country}
+              onChange={handleChange}
+              required
+              className="mt-1 p-[6px] border max-sm:text-[17px] border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
+              style={{ borderColor: "#FF9933" }}
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              District
+            </label>
+            <input
+              type="text"
+              name="district"
+              value={formData.district}
+              onChange={handleChange}
+              required
+              className="mt-1 p-[6px] border max-sm:text-[17px] border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
+              style={{ borderColor: "#FF9933" }}
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Phone No
+            </label>
+            <input
+              type="tel"
+              name="phoneNo"
+              value={formData.phoneNo}
+              onChange={handleChange}
+              required
+              className="mt-1 p-[6px] border max-sm:text-[13px] border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
+              style={{ borderColor: "#FF9933" }}
+            />
+          </div>
+          <div>
+            <label className="block text-sm max-sm:text-[13px] font-medium text-gray-700">
+              Password
+            </label>
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+              className="mt-1 p-[6px] border max-sm:text-[13px] border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
+              style={{ borderColor: "#FF9933" }}
+            />
+          </div>
+          <div className="col-span-2">
+            <label className="block text-sm max-sm:text-[13px] font-medium text-gray-700">
+              Farmer Generated Unique ID
+            </label>
+            <input
+              type="text"
+              name="uniqueID"
+              value={formData.uniqueID}
+              onChange={handleChange}
+              required
+              pattern="[A-Za-z0-9]{6}"
+              title="6 Capital Digits (numbers & letters)"
+              className="mt-1 p-[6px] border max-sm:text-[13px] border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
+              style={{ borderColor: "#FF9933" }}
+            />
+          </div>
         </div>
         <button
           type="submit"
-          className="w-full bg-[#FF9933] text-white p-2 rounded-md hover:bg-[#CBE86A]"
+          className="w-[200px] bg-[#FF9933] max-sm:text-[17px] font-bold text-white p-[6px] rounded-md hover:bg-[#CBE86A] transition duration-300"
         >
           Register
         </button>
