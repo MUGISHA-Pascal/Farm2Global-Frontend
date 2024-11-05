@@ -30,7 +30,7 @@ const Login: React.FC = () => {
         <h2 className="text-2xl max-sm:text-[17px] font-bold mb-6 text-center text-[#25883F]">
           Farmer Login
         </h2>
-        <div className="flex flex-col w-full space-y-4">
+        <div className="flex flex-row items-center justify-center w-full space-x-4">
           <div>
             <label
               htmlFor="phoneNo"
@@ -45,7 +45,7 @@ const Login: React.FC = () => {
               value={formData.phoneNo}
               onChange={handleChange}
               required
-              className="mt-1 p-[6px]  border max-sm:text-[13px] border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
+              className="mt-1 p-[6px] w-[300px]  border max-sm:text-[13px] border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
               style={{ borderColor: "#FF9933" }}
             />
           </div>
@@ -63,7 +63,7 @@ const Login: React.FC = () => {
               value={formData.password}
               onChange={handleChange}
               required
-              className="mt-1 p-[6px] border max-sm:text-[13px] border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
+              className="mt-1 p-[6px] border max-sm:text-[13px] border-gray-300 rounded-md w-[300px] bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
               style={{ borderColor: "#FF9933" }}
             />
           </div>
