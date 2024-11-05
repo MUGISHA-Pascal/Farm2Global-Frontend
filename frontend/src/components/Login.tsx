@@ -30,7 +30,7 @@ const Login: React.FC = () => {
         <h2 className="text-2xl max-sm:text-[17px] font-bold mb-6 text-center text-[#25883F]">
           Farmer Login
         </h2>
-        <div className="flex flex-row items-center justify-center w-full space-x-4">
+        <div className="flex flex-col items-center justify-center w-full space-y-4">
           <div>
             <label
               htmlFor="phoneNo"

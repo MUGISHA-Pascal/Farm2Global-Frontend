@@ -124,6 +124,12 @@ const Navbar = () => {
                     </Link>
                   </li>
                 </li>
+
+                <li>
+                  <a href="#" className="hover:text-green-300">
+                    Crops Categories
+                  </a>
+                </li>
                 <li>
                   <RouterLink
                     to="/signup"
@@ -134,11 +140,6 @@ const Navbar = () => {
                   >
                     Sign up
                   </RouterLink>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-green-300">
-                    Crops Categories
-                  </a>
                 </li>
               </ul>
             </div>
@@ -216,6 +217,12 @@ const Navbar = () => {
                 </Link>
               </li>
             </li>
+
+            <li>
+              <a href="#" className="hover:text-green-300">
+                Crops Categories
+              </a>
+            </li>
             <li>
               <RouterLink
                 to="/signup"
@@ -223,11 +230,6 @@ const Navbar = () => {
               >
                 Sign up
               </RouterLink>
-            </li>
-            <li>
-              <a href="#" className="hover:text-green-300">
-                Crops Categories
-              </a>
             </li>
           </ul>
         </div>
