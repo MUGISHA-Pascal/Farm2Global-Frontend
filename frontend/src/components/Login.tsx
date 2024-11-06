@@ -25,7 +25,7 @@ const Login: React.FC = () => {
     <div className="w-full h-full p-[20px] bg-[#25883F] flex flex-col items-center">
       <form
         onSubmit={handleSubmit}
-        className="w-[700px] max-sm:w-[350px] items-center  flex flex-col space-y-[10px] bg-white p-6 rounded-lg shadow-lg"
+        className="w-[400px] max-sm:w-[350px] items-center  flex flex-col space-y-[10px] bg-white p-6 rounded-lg shadow-lg"
       >
         <h2 className="text-2xl max-sm:text-[17px] font-bold mb-6 text-center text-[#25883F]">
           Farmer Login
@@ -72,7 +72,7 @@ const Login: React.FC = () => {
           type="submit"
           className="w-[200px] bg-[#FF9933] max-sm:text-[17px] font-bold text-white p-[6px] rounded-md hover:bg-[#CBE86A] transition duration-300"
         >
-          login
+          Login
         </button>
       </form>
     </div>

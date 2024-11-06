@@ -166,7 +166,7 @@ const Signup: React.FC = () => {
             Register
           </button>
           <div className="text-[13px]">
-            <p className="inline text-gray-500">already have an account </p>
+            <p className="inline text-gray-500">Already have an account </p>
             <RouterLink
               to="/login"
               className="hover:text-green-300 underline text-green-400 hover:cursor-pointer"

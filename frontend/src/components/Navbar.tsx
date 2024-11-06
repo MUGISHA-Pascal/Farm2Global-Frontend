@@ -5,14 +5,16 @@ import { CiMenuBurger } from "react-icons/ci";
 import { VscChromeClose } from "react-icons/vsc";
 import { useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
+import { IoMdArrowDropdown } from "react-icons/io";
 const Navbar = () => {
   const [navShow, setNavShow] = useState(false);
+  const [categoryShow, setCategoryShow] = useState(false);
 
   return (
     <div className="bg-[#25883F]">
       {" "}
       <nav className="bg-[#25883F] border-b-[1px] border-gray-400 mx-[50px] text-white py-2">
-        <div className="container max-md:px-[10px] mx-auto  px-[70px] pt-[0px] flex justify-between items-center">
+        <div className="container max-md:px-[10px] mx-auto  px-[70px] pr-[40px] pt-[0px] flex justify-between items-center">
           <div className="flex flex-row space-x-[10px] items-center">
             <img src={logo} className="w-[100px] h-[80px]" alt="logo" />
             <p className="text-2xl max-sm:text-[13px] max-md:text-[15px] max-md:font-bold font-bold text-white">
@@ -144,7 +146,7 @@ const Navbar = () => {
               </ul>
             </div>
           )}
-          <ul className="flex space-x-6 max-md:hidden font-normal text-gray-300 text-[14px]">
+          <ul className="flex space-x-4 max-md:hidden font-normal text-gray-300 text-[13px]">
             <li>
               <RouterLink
                 to="/"
@@ -218,10 +220,55 @@ const Navbar = () => {
               </li>
             </li>
 
-            <li>
+            <li
+              onClick={() => {
+                setCategoryShow(true);
+              }}
+              className="flex flex-row space-x-[10px] items-center justify-center"
+            >
               <a href="#" className="hover:text-green-300">
                 Crops Categories
               </a>
+              <IoMdArrowDropdown />
+              {categoryShow && (
+                <div
+                  onClick={() => {
+                    setCategoryShow(false);
+                  }}
+                  className="absolute z-30 p-[20px] items-start top-[80px] text-white rounded-[13px] border-[1px]  border-gray-300  bg-[#25883F] flex flex-col space-y-[10px]"
+                >
+                  <a href="" className="hover:text-green-300">
+                    Maize (Corn)
+                  </a>
+                  <a href="" className="hover:text-green-300">
+                    Oilseeds (Sunflower)
+                  </a>
+                  <a href="" className="hover:text-green-300">
+                    Peanuts (Groundnuts)
+                  </a>
+                  <a href="" className="hover:text-green-300">
+                    Soybeans
+                  </a>
+                  <a href="" className="hover:text-green-300">
+                    Rice
+                  </a>
+                  <a href="" className="hover:text-green-300">
+                    Wheat
+                  </a>
+                  <a href="" className="hover:text-green-300">
+                    Cotton
+                  </a>
+                  <a href="" className="hover:text-green-300">
+                    Coffee
+                  </a>
+                  <a href="" className="hover:text-green-300">
+                    Tea
+                  </a>
+                  <a href="" className="hover:text-green-300">
+                    Fruits
+                  </a>
+                </div>
+              )}
             </li>
             <li>
               <RouterLink
