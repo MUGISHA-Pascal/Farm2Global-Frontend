@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-scroll";
 import logo from "../assets/logo.png";
 import { CiMenuBurger } from "react-icons/ci";
@@ -9,7 +9,17 @@ import { IoMdArrowDropdown } from "react-icons/io";
 const Navbar = () => {
   const [navShow, setNavShow] = useState(false);
   const [categoryShow, setCategoryShow] = useState(false);
-
+  useEffect(() => {
+    const handleClickOutside = (event: any) => {
+      if (!event.target.closest(".dropdown-category")) {
+        setCategoryShow(false);
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
   return (
     <div className="bg-[#25883F]">
       {" "}
@@ -221,22 +231,18 @@ const Navbar = () => {
             </li>
 
             <li
-              onClick={() => {
-                setCategoryShow(true);
+              onClick={(e) => {
+                e.stopPropagation();
+                setCategoryShow(!categoryShow);
               }}
-              className="flex flex-row space-x-[10px] items-center justify-center"
+              className="flex flex-row space-x-[10px] dropdown-category items-center justify-center"
             >
               <a href="#" className="hover:text-green-300">
                 Crops Categories
               </a>
               <IoMdArrowDropdown />
               {categoryShow && (
-                <div
-                  onClick={() => {
-                    setCategoryShow(false);
-                  }}
-                  className="absolute z-30 p-[20px] items-start top-[80px] text-white rounded-[13px] border-[1px]  border-gray-300  bg-[#25883F] flex flex-col space-y-[10px]"
-                >
+                <div className="absolute z-10 p-[30px] items-start top-[80px] text-white rounded-[13px] border-[1px]  border-gray-300  bg-[#25883F] flex flex-col space-y-[10px]">
                   <a href="" className="hover:text-green-300">
                     Maize (Corn)
                   </a>
