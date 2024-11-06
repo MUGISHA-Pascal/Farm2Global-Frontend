@@ -242,35 +242,35 @@ const Navbar = () => {
               </a>
               <IoMdArrowDropdown />
               {categoryShow && (
-                <div className="absolute font-bold z-10 p-[30px] items-start top-[80px] text-white rounded-[13px] border-[1px]  border-gray-300  bg-[#25883F] flex flex-col space-y-[10px]">
-                  <a href="" className="hover:text-green-300 ">
+                <div className="absolute  z-10 p-[30px] items-start top-[80px] text-white rounded-[13px] border-[1px]  border-gray-300  bg-[#25883F] flex flex-col space-y-[10px]">
+                  <a href="" className="hover:text-green-300 font-bold ">
                     Maize (Corn)
                   </a>
-                  <a href="" className="hover:text-green-300">
+                  <a href="" className="hover:text-green-300 font-bold">
                     Oilseeds (Sunflower)
                   </a>
-                  <a href="" className="hover:text-green-300">
+                  <a href="" className="hover:text-green-300 font-bold">
                     Peanuts (Groundnuts)
                   </a>
-                  <a href="" className="hover:text-green-300">
+                  <a href="" className="hover:text-green-300 font-bold">
                     Soybeans
                   </a>
-                  <a href="" className="hover:text-green-300">
+                  <a href="" className="hover:text-green-300 font-bold">
                     Rice
                   </a>
-                  <a href="" className="hover:text-green-300">
+                  <a href="" className="hover:text-green-300 font-bold">
                     Wheat
                   </a>
-                  <a href="" className="hover:text-green-300">
+                  <a href="" className="hover:text-green-300 font-bold">
                     Cotton
                   </a>
-                  <a href="" className="hover:text-green-300">
+                  <a href="" className="hover:text-green-300 font-bold">
                     Coffee
                   </a>
-                  <a href="" className="hover:text-green-300">
+                  <a href="" className="hover:text-green-300 font-bold">
                     Tea
                   </a>
-                  <a href="" className="hover:text-green-300">
+                  <a href="" className="hover:text-green-300 font-bold">
                     Fruits
                   </a>
                 </div>
