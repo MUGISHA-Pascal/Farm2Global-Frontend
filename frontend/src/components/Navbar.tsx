@@ -38,7 +38,7 @@ const Navbar = () => {
             }}
           />
           {navShow && (
-            <div className="flex pb-[20px] flex-col space-y-[10px] w-[160px] rounded-[10px] right-[10px] absolute items-end z-10 border-[1px] border-gray-300 p-[16px] top-[40px] bg-[#25883F]">
+            <div className="flex pb-[20px] text-[#FF9933] flex-col space-y-[10px] w-[160px] rounded-[10px] right-[10px] absolute items-end z-10 border-[1px] border-gray-300 p-[16px] top-[40px] bg-[#25883F]">
               <VscChromeClose
                 className="hover:text-green-300"
                 onClick={() => {
@@ -156,7 +156,7 @@ const Navbar = () => {
               </ul>
             </div>
           )}
-          <ul className="flex space-x-4 max-md:hidden font-normal text-gray-300 text-[13px]">
+          <ul className="flex text-[#FF9933] space-x-4 max-md:hidden font-normal  text-[13px]">
             <li>
               <RouterLink
                 to="/"
@@ -243,7 +243,7 @@ const Navbar = () => {
               <IoMdArrowDropdown />
               {categoryShow && (
                 <div className="absolute z-10 p-[30px] items-start top-[80px] text-white rounded-[13px] border-[1px]  border-gray-300  bg-[#25883F] flex flex-col space-y-[10px]">
-                  <a href="" className="hover:text-green-300">
+                  <a href="" className="hover:text-green-300 ">
                     Maize (Corn)
                   </a>
                   <a href="" className="hover:text-green-300">
