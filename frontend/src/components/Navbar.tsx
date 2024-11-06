@@ -242,7 +242,7 @@ const Navbar = () => {
               </a>
               <IoMdArrowDropdown />
               {categoryShow && (
-                <div className="absolute  z-10 p-[30px] items-start top-[80px] text-white rounded-[13px] border-[1px]  border-gray-300  bg-[#25883F] flex flex-col space-y-[10px]">
+                <div className="absolute font-normal  z-10 p-[30px] items-start top-[80px] text-white rounded-[13px] border-[1px]  border-gray-300  bg-[#25883F] flex flex-col space-y-[10px]">
                   <a href="" className="hover:text-green-300 ">
                     Maize (Corn)
                   </a>
