@@ -7,11 +7,13 @@ import { MdOutlineAnalytics } from "react-icons/md";
 import { BsPerson } from "react-icons/bs";
 import { MdOutlinePayments } from "react-icons/md";
 import { AiFillQuestionCircle } from "react-icons/ai";
-
+import { RiArrowDropDownLine } from "react-icons/ri";
+import profileImage from "../assets/demoProfile.png";
+import { BrowserRouter } from "react-router-dom";
 const Dashboard = () => {
   return (
     <div className="flex w-full flex-row">
-      <menu className="flex py-[30px] flex-col space-y-[70px] border-gray-400 border-r-[1px] mt-[6px] w-[200px] pl-[17px]">
+      <menu className="flex py-[30px] flex-col space-y-[70px] border-gray-400 border-r-[1px] mt-[6px] w-[230px] pl-[17px]">
         <div className="flex w-full flex-col space-y-[30px] items-start">
           <div className="mainmenu w-full flex flex-col space-y-[13px] items-start">
             <h2 className="text-[#ff9933] font-100 text-[10px]">MAIN MENU</h2>
@@ -99,7 +101,27 @@ const Dashboard = () => {
           </div>
         </div>
       </menu>
-      <main>main</main>
+      <main className="flex flex-col flex-1">
+        <header className="flex flex-row h-[90px] items-center justify-between p-[30px] pl-[40px] w-full">
+          <h2 className="font-bold text-white text-[20px]">Farmer Dashboard</h2>
+          <div className="flex flex-row items-center space-x-[10px]">
+            <img
+              src={profileImage}
+              alt="profile"
+              className="w-[30px] h-[30px]"
+            />
+            <p className="font-bold text-white text-[12px]">John doe</p>
+            <RiArrowDropDownLine className="text-gray-400 text-[20px] " />
+          </div>
+        </header>
+        <div className="flex-1 bg-[#1E6E33] px-[20px] py-[17px]">
+          <div className="bg-[#1B7633] w-full h-[320px] rounded-[10px]"></div>
+          <div className="flex flex-row space-x-[20px] mt-[20px] w-full">
+            <div className="bg-[#1B7633] w-[700px] h-[260px] rounded-[10px]"></div>
+            <div className="bg-[#1B7633] w-[272px] h-[260px] rounded-[10px]"></div>
+          </div>
+        </div>
+      </main>
     </div>
   );
 };
