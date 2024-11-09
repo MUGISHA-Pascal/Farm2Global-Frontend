@@ -6,6 +6,7 @@ import { VscChromeClose } from "react-icons/vsc";
 import { useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import { IoMdArrowDropdown } from "react-icons/io";
+import { IoMdArrowDropright } from "react-icons/io";
 const Navbar = () => {
   const [navShow, setNavShow] = useState(false);
   const [categoryShow, setCategoryShow] = useState(false);
@@ -150,7 +151,7 @@ const Navbar = () => {
               </ul>
             </div>
           )}
-          <ul className="flex font-bold text-[#FF9933] space-x-4 max-md:hidden  text-[13px]">
+          <ul className="flex font-bold text-[#FF9933] space-x-4 max-md:hidden  text-[14px]">
             <li>
               <RouterLink
                 to="/"
@@ -226,43 +227,73 @@ const Navbar = () => {
                 e.stopPropagation();
                 setCategoryShow(!categoryShow);
               }}
-              className="flex flex-row space-x-[10px] dropdown-category items-center justify-center"
+              className=" dropdown-category"
             >
-              <a href="#" className="hover:text-green-300">
-                Crops Categories
-              </a>
-              <IoMdArrowDropdown />
+              <div className="flex flex-row hover:cursor-pointer space-x-[10px]  items-center justify-center hover:text-green-300">
+                <p>Crops Categories</p>
+                <IoMdArrowDropdown />
+              </div>
               {categoryShow && (
-                <div className="absolute font-normal  z-10 p-[30px] items-start top-[80px] text-white rounded-[13px] border-[1px]  border-gray-300  bg-[#25883F] flex flex-col space-y-[10px]">
-                  <a href="" className="hover:text-green-300 ">
-                    Maize (Corn)
+                <div className="absolute font-normal  z-10 p-[30px] items-start top-[70px]  text-[#CCD2E3] rounded-[10px] border-[1px]  border-gray-400  bg-[#25883F] flex flex-col space-y-[10px]">
+                  <a
+                    href=""
+                    className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
+                  >
+                    <IoMdArrowDropright /> <p>Maize (Corn)</p>
                   </a>
-                  <a href="" className="hover:text-green-300">
-                    Oilseeds (Sunflower)
+                  <a
+                    href=""
+                    className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
+                  >
+                    <IoMdArrowDropright /> <p>Oilseeds (Sunflower)</p>
                   </a>
-                  <a href="" className="hover:text-green-300">
-                    Peanuts (Groundnuts)
+                  <a
+                    href=""
+                    className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
+                  >
+                    <IoMdArrowDropright /> <p>Peanuts (Groundnuts)</p>
                   </a>
-                  <a href="" className="hover:text-green-300">
-                    Soybeans
+                  <a
+                    href=""
+                    className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
+                  >
+                    <IoMdArrowDropright /> <p>Soybeans</p>
                   </a>
-                  <a href="" className="hover:text-green-300">
-                    Rice
+                  <a
+                    href=""
+                    className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
+                  >
+                    <IoMdArrowDropright /> <p>Rice</p>
                   </a>
-                  <a href="" className="hover:text-green-300">
-                    Wheat
+                  <a
+                    href=""
+                    className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
+                  >
+                    <IoMdArrowDropright /> <p> Wheat</p>
                   </a>
-                  <a href="" className="hover:text-green-300">
-                    Cotton
+                  <a
+                    href=""
+                    className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
+                  >
+                    <IoMdArrowDropright /> <p> Cotton</p>
                   </a>
-                  <a href="" className="hover:text-green-300">
-                    Coffee
+                  <a
+                    href=""
+                    className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
+                  >
+                    <IoMdArrowDropright /> <p> Coffee</p>
                   </a>
-                  <a href="" className="hover:text-green-300">
-                    Tea
+                  <a
+                    href=""
+                    className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
+                  >
+                    <IoMdArrowDropright /> <p> Tea</p>
                   </a>
-                  <a href="" className="hover:text-green-300">
-                    Fruits
+                  <a
+                    href=""
+                    className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
+                  >
+                    <IoMdArrowDropright /> <p> Fruits</p>
                   </a>
                 </div>
               )}
