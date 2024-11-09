@@ -120,21 +120,15 @@ const Navbar = () => {
                   </li>
                 </li>
                 <li>
-                  <li>
-                    <Link
-                      to="contactUs"
-                      spy={true}
-                      smooth={true}
-                      onClick={() => {
-                        setNavShow(false);
-                      }}
-                      offset={0}
-                      duration={500}
-                      className="hover:text-green-300 hover:cursor-pointer"
-                    >
-                      Contact us
-                    </Link>
-                  </li>
+                  <RouterLink
+                    to="/signup"
+                    onClick={() => {
+                      setNavShow(false);
+                    }}
+                    className="hover:text-green-300 hover:cursor-pointer"
+                  >
+                    Sign up
+                  </RouterLink>
                 </li>
 
                 <li>
@@ -216,18 +210,15 @@ const Navbar = () => {
               </li>
             </li>
             <li>
-              <li>
-                <Link
-                  to="contactUs"
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={500}
-                  className="hover:text-green-300 hover:cursor-pointer"
-                >
-                  Contact us
-                </Link>
-              </li>
+              <RouterLink
+                to="/dashboard"
+                onClick={() => {
+                  setNavShow(false);
+                }}
+                className="hover:text-green-300 hover:cursor-pointer"
+              >
+                Dashboard
+              </RouterLink>
             </li>
 
             <li

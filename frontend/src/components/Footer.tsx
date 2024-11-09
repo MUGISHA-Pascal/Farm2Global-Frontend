@@ -68,7 +68,7 @@ const Footer = () => {
             whenever you like
           </p>
         </div>
-        <div className="bg-gray-700 items-center max-md:hidden relative w-[450px] max-md:w-[200px] h-[42px] rounded-full flex flex-row p-0">
+        <div className="bg-gray-700 items-center max-md:hidden relative w-[448px] max-md:w-[200px] h-[42px] rounded-full flex flex-row p-0">
           <label htmlFor="email" className="absolute top-[12px] left-[7px]">
             <MdOutlineMailOutline className="text-gray-500 text-[18px]" />
           </label>
