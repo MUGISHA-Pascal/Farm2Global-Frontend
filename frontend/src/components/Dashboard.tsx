@@ -9,7 +9,7 @@ import { MdOutlinePayments } from "react-icons/md";
 import { AiFillQuestionCircle } from "react-icons/ai";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import profileImage from "../assets/demoProfile.png";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Outlet } from "react-router-dom";
 const Dashboard = () => {
   return (
     <div className="flex w-full flex-row">
@@ -115,11 +115,7 @@ const Dashboard = () => {
           </div>
         </header>
         <div className="flex-1 bg-[#1E6E33] px-[20px] py-[17px]">
-          <div className="bg-[#1B7633] w-full h-[320px] rounded-[10px]"></div>
-          <div className="flex flex-row space-x-[20px] mt-[20px] w-full">
-            <div className="bg-[#1B7633] w-[700px] h-[260px] rounded-[10px]"></div>
-            <div className="bg-[#1B7633] w-[272px] h-[260px] rounded-[10px]"></div>
-          </div>
+          <Outlet />
         </div>
       </main>
     </div>
