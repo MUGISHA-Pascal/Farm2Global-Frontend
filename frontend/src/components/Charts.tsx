@@ -1,4 +1,7 @@
 import React, { useEffect, useRef } from "react";
+import { IoPieChartOutline } from "react-icons/io5";
+import { MdOutlineCrisisAlert } from "react-icons/md";
+
 import {
   Chart,
   LineController,
@@ -153,8 +156,52 @@ const LineChart = () => {
         <canvas id="LineChart"></canvas>
       </div>
       <div className="flex flex-row space-x-[20px] mt-[20px] w-full">
-        <div className="bg-[#1B7633] w-[700px] h-[260px] rounded-[10px] flex flex-col"></div>
-        <div className="bg-[#1B7633] w-[272px] h-[260px] rounded-[10px]"></div>
+        <div className="bg-[#1B7633] w-[600px] h-[260px] rounded-[10px] flex flex-col">
+          <div className="flex flex-row border-b-[1px] border-gray-400 space-x-[10px] items-center justify-start p-[10px]">
+            <div className="bg-[#FF9933] p-[4px] rounded-full ">
+              <IoPieChartOutline className="text-white" />
+            </div>
+            <h2 className="text-[18px] text-white font-bold">
+              Sales Demography
+            </h2>
+          </div>
+        </div>
+        <div className="bg-[#1B7633] w-[372px] h-[260px] rounded-[10px] flex flex-col space-y-[10px] p-[10px]">
+          <div className="flex flex-row border-b-[1px] border-gray-400 space-x-[10px] items-center justify-start p-[10px]">
+            <div className="bg-[#FF9933] p-[4px] rounded-full ">
+              <MdOutlineCrisisAlert className="text-white" />
+            </div>
+            <h2 className="text-[18px] text-white font-bold">
+              Tips For Increasing Sales
+            </h2>
+          </div>
+          <div className="scrollableDiv bg-[#2FA24D] flex flex-col space-y-[10px] rounded-[10px] text-left p-[10px] text-[10px] text-white h-[180px] overflow-y-auto">
+            <p>
+              <b>Showcase Reviews on Product Pages: </b> Add customer reviews
+              and ratings directly on your product pages. Highlight the positive
+              experiences customers have had with your products.
+            </p>
+
+            <p>
+              <b>Social Proof:</b> Share customer testimonials and success
+              stories on your website, social media, and email campaigns. This
+              reinforces the value of your product and encourages others to buy.
+            </p>
+
+            <p>
+              <b>Incentivize Reviews:</b> Offer a small discount or reward for
+              customers who leave a review. This can boost engagement and
+              provide you with more valuable feedback.
+            </p>
+
+            <p>
+              <b>Respond to Reviews:</b> Whether the reviews are positive or
+              negative, engage with customers by thanking them for their
+              feedback. It shows that you care about customer satisfaction and
+              helps build a loyal customer base.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
