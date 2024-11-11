@@ -9,7 +9,7 @@ code {
     monospace;
 }
 .scrollableDiv::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
   margin-right: 10px;
 }
 .scrollableDiv::-webkit-scrollbar-thumb {
@@ -17,7 +17,7 @@ code {
   border-radius: 10px;
 }
 .scrollableDiv::-webkit-scrollbar-track {
-  background-color: #2fa24d;
+  background-color: #25883f;
 }
 @tailwind base;
 @tailwind components;

@@ -25,7 +25,7 @@ const Navbar = () => {
     <div className="bg-[#25883F]">
       {" "}
       <nav className="bg-[#25883F] border-b-[1px] border-gray-400 mx-[50px] text-white py-2">
-        <div className="container max-md:px-[10px] mx-auto  px-[70px] pr-[40px] pt-[0px] flex justify-between items-center">
+        <div className="container max-md:px-[10px] mx-auto   pt-[0px] flex justify-between items-center">
           <div className="flex flex-row space-x-[10px] items-center">
             <img src={logo} className="w-[100px] h-[80px]" alt="logo" />
             <p className="text-2xl max-sm:text-[13px] max-md:text-[15px] max-md:font-bold font-bold text-white">
@@ -39,7 +39,7 @@ const Navbar = () => {
             }}
           />
           {navShow && (
-            <div className="flex pb-[20px] text-[#FF9933] flex-col space-y-[10px] w-[160px] rounded-[10px] right-[10px] absolute items-end z-10 border-[1px] border-gray-300 p-[16px] top-[40px] bg-[#25883F]">
+            <div className="flex pb-[20px] text-white flex-col space-y-[10px] w-[160px] rounded-[10px] right-[10px] absolute items-end z-10 border-[1px] border-gray-300 p-[16px] top-[40px] bg-[#25883F]">
               <VscChromeClose
                 className="hover:text-green-300"
                 onClick={() => {
@@ -151,7 +151,7 @@ const Navbar = () => {
               </ul>
             </div>
           )}
-          <ul className="flex font-bold text-[#FF9933] space-x-4 max-md:hidden  text-[14px]">
+          <ul className="flex font-bold text-white space-x-4 max-md:hidden  text-[14px]">
             <li>
               <RouterLink
                 to="/"
