@@ -108,11 +108,11 @@ const LineChart = () => {
               title: {
                 display: true,
                 text: "Month",
-                color: "#FFFFFF",
-                font: { weight: "bold" },
+                color: "#CCD2E3",
+                font: { weight: "normal" },
               },
               ticks: {
-                color: "#FFFFFF",
+                color: "#CCD2E3",
               },
               grid: {
                 display: false,
@@ -122,11 +122,13 @@ const LineChart = () => {
               title: {
                 display: true,
                 text: "Reach (K)",
-                color: "#FFFFFF",
-                font: { weight: "bold" },
+                color: "#CCD2E3",
+                font: { weight: "normal" },
               },
               ticks: {
-                color: "#FFFFFF",
+                color: "#CCD2E3",
+                stepSize: 40,
+                padding: 10,
                 callback: (value) => `${value}K`,
               },
               grid: {
@@ -147,7 +149,7 @@ const LineChart = () => {
 
   return (
     <div className="flex-1 bg-[#1E6E33]">
-      <div className="bg-[#1B7633] w-full h-[320px] rounded-[10px]">
+      <div className="bg-[#1B7633]  h-[320px] rounded-[10px] w-full">
         <canvas id="LineChart"></canvas>
       </div>
       <div className="flex flex-row space-x-[20px] mt-[20px] w-full">
