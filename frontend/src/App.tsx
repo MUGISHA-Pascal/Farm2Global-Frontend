@@ -10,6 +10,8 @@ import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import Charts from "./components/Charts";
 import AddCrops from "./components/AddCrops";
+import HomeContent from "./components/HomeContent";
+import ExplorePage from "./components/ExplorePage";
 
 function App() {
   return (
@@ -17,7 +19,10 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route element={<Homepage />} path="/" />
+          <Route element={<Homepage />} path="/">
+            <Route element={<HomeContent />} path="" />
+            <Route element={<ExplorePage />} path="explore" />
+          </Route>
           <Route element={<Signup />} path="/signup" />
           <Route element={<Login />} path="/login" />
           <Route element={<Dashboard />} path="/dashboard">

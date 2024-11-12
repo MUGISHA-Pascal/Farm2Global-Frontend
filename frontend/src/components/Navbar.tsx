@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <div className="bg-[#25883F]">
       {" "}
-      <nav className="bg-[#25883F] border-b-[1px] border-gray-400 mx-[50px] text-white py-2">
+      <nav className="bg-[#25883F]  mx-[50px] text-white py-2">
         <div className="container max-md:px-[10px] mx-auto   pt-[0px] flex justify-between items-center">
           <div className="flex flex-row space-x-[10px] items-center">
             <img src={logo} className="w-[100px] h-[80px]" alt="logo" />
