@@ -320,27 +320,27 @@ const Homepage = () => {
           <img
             src={adma}
             alt="adma"
-            className="w-[100px] h-auto max-md:w-[70px]"
+            className="w-[100px] shadow-lg h-auto max-md:w-[70px]"
           />
           <img
             src={africa}
             alt="africa"
-            className="w-[100px] max-md:w-[70px] h-auto"
+            className="w-[100px] shadow-lg max-md:w-[70px] h-auto"
           />
           <img
             src={azam}
             alt="azam"
-            className="w-[100px] h-auto max-md:w-[70px]"
+            className="w-[100px] shadow-lg h-auto max-md:w-[70px]"
           />
           <img
             src={monsalwa}
             alt="monsalwa"
-            className="w-[100px] h-auto max-md:w-[70px]"
+            className="w-[100px] shadow-lg h-auto max-md:w-[70px]"
           />
           <img
             src={minimex}
             alt="minimex"
-            className="w-auto h-[60px] max-md:w-[70px] max-md:h-auto"
+            className="w-auto h-[60px] shadow-lg max-md:w-[70px] max-md:h-auto"
           />
         </div>
       </Element>

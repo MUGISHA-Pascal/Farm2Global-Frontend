@@ -151,7 +151,7 @@ const Navbar = () => {
               </ul>
             </div>
           )}
-          <ul className="flex font-bold text-white space-x-4 max-md:hidden  text-[14px]">
+          <ul className="flex font-semibold text-white space-x-4 max-md:hidden  text-[14px]">
             <li>
               <RouterLink
                 to="/"

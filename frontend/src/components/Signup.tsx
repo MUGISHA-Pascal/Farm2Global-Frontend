@@ -11,6 +11,7 @@ const Signup: React.FC = () => {
     password: "",
     uniqueID: "",
   });
+  const [registerChoice, setRegisterChoice] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -29,7 +30,7 @@ const Signup: React.FC = () => {
         className="w-[700px] max-sm:w-[350px]  bg-white p-6 rounded-lg shadow-lg"
       >
         <h2 className="text-2xl max-sm:text-[17px] font-bold mb-6 text-center text-[#25883F]">
-          Farmer Registration
+          Customer Registration
         </h2>
         <div className="sm:grid sm:grid-cols-2 max-sm:flex max-sm:flex-col max-sm:space-y-[7px] sm:gap-4 mb-4">
           <div>
@@ -140,7 +141,7 @@ const Signup: React.FC = () => {
               style={{ borderColor: "#FF9933" }}
             />
           </div>
-          <div className="col-span-2">
+          <div>
             <label className="block text-sm max-sm:text-[13px] font-medium text-gray-700">
               Registration Access Code
             </label>
@@ -157,15 +158,37 @@ const Signup: React.FC = () => {
               style={{ borderColor: "#FF9933" }}
             />
           </div>
+          <div>
+            <select
+              value={registerChoice}
+              onChange={(e) => {
+                setRegisterChoice(e.target.value);
+              }}
+              required
+              title="select"
+              className=" p-[6px] mt-[10px] border text-sm max-sm:text-[13px] text-gray-700 border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
+              style={{ borderColor: "#FF9933" }}
+            >
+              <option value="" className="max-sm:text-[7px] p-0">
+                Register as
+              </option>
+              <option value="farmer" className="max-sm:text-[7px] p-0">
+                Farmer
+              </option>
+              <option value="buyer" className="max-sm:text-[7px] p-0">
+                Buyer
+              </option>
+            </select>
+          </div>
         </div>
         <div className="flex flex-row space-x-[20px] items-center justify-center">
           <button
             type="submit"
-            className="w-[200px] bg-[#FF9933] max-sm:text-[17px] font-bold text-white p-[6px] rounded-md hover:bg-[#CBE86A] transition duration-300"
+            className="w-[200px] bg-[#FF9933] max-sm:w-[100px] max-sm:p-[4px] max-sm:text-[13px] font-bold text-white p-[6px] rounded-md hover:bg-[#CBE86A] transition duration-300"
           >
             Register
           </button>
-          <div className="text-[13px]">
+          <div className="text-[13px] max-sm:text-[10px]">
             <p className="inline text-gray-500">Already have an account </p>
             <RouterLink
               to="/login"
