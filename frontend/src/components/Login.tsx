@@ -28,7 +28,7 @@ const Login: React.FC = () => {
         className="w-[400px] max-sm:w-[350px] items-center  flex flex-col space-y-[10px] bg-white p-6 rounded-lg shadow-lg"
       >
         <h2 className="text-2xl max-sm:text-[17px] font-bold mb-6 text-center text-[#25883F]">
-          Farmer Login
+          Customer Login
         </h2>
         <div className="flex flex-col items-center justify-center w-full space-y-4">
           <div>

@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { IoSearchSharp } from "react-icons/io5";
 import { Link as RouterLink } from "react-router-dom";
 import farmerImage from "../assets/farmer.png";
 
 const ExplorePage = () => {
+  const [searchBy, setSearchBy] = useState("");
+  const [search, setSearch] = useState("");
+
   const farmers = [
     {
       Id: 1,
@@ -142,6 +145,61 @@ const ExplorePage = () => {
       image: farmerImage,
     },
   ];
+  interface farmerInterface {
+    Id: number;
+    FarmerName: string;
+    District: string;
+    HarvestSeason: string;
+    QualityPerSeason: string;
+    Contact: string;
+    image: string;
+  }
+  let filteredFarmers;
+  switch (searchBy) {
+    case "Name":
+      filteredFarmers =
+        search === ""
+          ? farmers
+          : farmers.filter((item) =>
+              item.FarmerName.toLowerCase().includes(search.toLowerCase())
+            );
+      break;
+    case "District":
+      filteredFarmers =
+        search === ""
+          ? farmers
+          : farmers.filter((item) =>
+              item.District.toLowerCase().includes(search.toLowerCase())
+            );
+      break;
+    case "Season":
+      filteredFarmers =
+        search === ""
+          ? farmers
+          : farmers.filter((item) =>
+              item.HarvestSeason.toLowerCase().includes(search.toLowerCase())
+            );
+      break;
+    case "Quality/season":
+      filteredFarmers =
+        search === ""
+          ? farmers
+          : farmers.filter((item) =>
+              item.QualityPerSeason.toLowerCase().includes(search.toLowerCase())
+            );
+      break;
+    case "Contact":
+      filteredFarmers =
+        search === ""
+          ? farmers
+          : farmers.filter((item) =>
+              item.Contact.toLowerCase().includes(search.toLowerCase())
+            );
+      break;
+    default:
+      filteredFarmers = farmers;
+      break;
+  }
   return (
     <div className="bg-[#25883F] flex flex-col items-center justify-center w-full border-t-[1px] border-gray-400">
       <header className="p-[10px] w-full h-[90px] px-[20px] items-center flex flex-row justify-between">
@@ -155,11 +213,41 @@ const ExplorePage = () => {
           <p className="text-[14px] font-semibold">back</p>
         </RouterLink>
         <h2 className="font-bold text-white text-[22px]">Available farmers</h2>
-        <div className="bg-white items-center max-md:hidden relative w-[348px] max-md:w-[200px] h-[42px] rounded-full flex flex-row p-0">
+        <div className="bg-white pl-[8px]  items-center max-md:hidden relative w-[466px] max-md:w-[200px] h-[42px] rounded-full flex flex-row p-0">
+          <select
+            value={searchBy}
+            onChange={(e) => {
+              setSearchBy(e.target.value);
+            }}
+            className="w-[110px] focus:outline-none border-[2px] p-[4px] rounded-full border-[#4E9A61] text-gray-500 text-[12px] "
+          >
+            <option value="" className="text-[12px] ">
+              search by
+            </option>
+            <option value="Name" className="text-[12px] ">
+              name
+            </option>
+            <option value="District" className="text-[12px] ">
+              District
+            </option>
+            <option value="Season" className="text-[12px] ">
+              Season
+            </option>
+            <option value="Quality/season" className="text-[12px] ">
+              Quality/season
+            </option>
+            <option value="Contact" className="text-[12px] ">
+              Contact
+            </option>
+          </select>
           <input
             type="text"
-            placeholder="Search by District"
-            id="email"
+            placeholder="Search"
+            id="search"
+            value={search}
+            onChange={(e) => {
+              setSearch(e.target.value);
+            }}
             className="focus:outline-none placeholder:text-gray-500 text-gray-600 placeholder:text-[12px] text-[12px] ml-[20px] w-[290px] h-[42px] bg-white"
           />
           <button
@@ -173,10 +261,10 @@ const ExplorePage = () => {
       </header>
       <main className="w-[1220px] mb-[10px] p-[5px] bg-[#4E9A61] rounded-[20px] ">
         <main className="farmersMain overflow-y-auto h-screen bg-[#4E9A61] m-[10px] rounded-[20px] w-[1200px] grid grid-cols-4 gap-[20px] p-[30px]">
-          {farmers.map((farmer) => (
+          {filteredFarmers.map((farmer) => (
             <div
               key={farmer.Id}
-              className="flex flex-col h-[280px] w-[250px] bg-[#1B7633]   p-[6px] rounded-[7px] space-y-[10px]"
+              className="flex flex-col h-[290px] w-[250px] bg-[#1B7633]   p-[6px] rounded-[7px] space-y-[10px]"
             >
               <img
                 src={farmer.image}
