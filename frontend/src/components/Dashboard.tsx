@@ -138,7 +138,7 @@ const Dashboard = () => {
           )}
           {/* </div> */}
 
-          <h2 className="font-bold text-white text-[20px] max-md:text-[15px]">
+          <h2 className="font-bold text-white text-[20px] max-md:text-[13px]">
             Farmer Dashboard
           </h2>
           <div className="flex flex-row items-center space-x-[10px] max-md:space-x-[5px]">
@@ -153,7 +153,7 @@ const Dashboard = () => {
             <RiArrowDropDownLine className="text-gray-400 text-[20px] " />
           </div>
         </header>
-        <div className="flex-1 bg-[#1E6E33] px-[20px] py-[17px]">
+        <div className="flex-1 bg-[#1E6E33] px-[20px] py-[17px] max-md:px-[3px] max-md:py-[10px]">
           <Outlet />
         </div>
       </main>

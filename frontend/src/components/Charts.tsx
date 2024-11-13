@@ -197,32 +197,34 @@ const LineChart = () => {
   }, []);
 
   return (
-    <div className="flex-1 bg-[#1E6E33]">
+    <div className="flex-1 bg-[#1E6E33] max-md:p-0">
       <div className="bg-[#1B7633] p-[10px] max-md:p-[0px] h-[320px] max-md:h-[250px] max-md:w-[350px] rounded-[10px] w-full relative">
         <canvas id="LineChart"></canvas>
       </div>
-      <div className="flex flex-row space-x-[20px] mt-[20px] w-full">
-        <div className="bg-[#1B7633] w-[600px] h-[260px] max-md:w-[350px] rounded-[10px] flex flex-col">
+      <div className="flex flex-row max-md:space-y-[10px] md:space-x-[20px] mt-[20px] w-full max-md:flex-col ">
+        <div className="bg-[#1B7633] w-[600px] max-md:h-[440px] h-[260px] max-md:w-[350px] rounded-[10px] flex flex-col">
           <div className="flex flex-row  border-b-[1px] border-gray-400 space-x-[10px] items-center justify-start p-[10px]">
             <div className="bg-[#FF9933] p-[4px] rounded-full ">
               <IoPieChartOutline className="text-white" />
             </div>
-            <h2 className="text-[18px] max-md:text-[12px] text-white font-bold">
+            <h2 className="text-[18px]  max-md:text-[12px] text-white font-bold">
               Sales Demography
             </h2>
           </div>
           <div className=" p-[4px]  max-md:pt-[20px] px-[20px] w-full flex flex-row max-md:flex-col md:space-x-[90px] max-md:space-y-[10px] items-center justify-center">
             <div className="w-[195px] h-[195px] max-md:w-[150px] max-md:h-[150px]">
               <canvas id="DonutChart"></canvas>
-              <p className="absolute top-[480px] max-md:text-[12px] max-md:top-[600px] max-md:left-[165px] left-[77px] text-white font-bold">
+              <p className="absolute top-[680px] max-md:text-[12px] max-md:top-[600px] max-md:left-[145px] left-[297px] text-white font-bold">
                 Countries
               </p>
             </div>
 
-            <div className="ml-10 px-[20px] py-[5px] text-[10px] rounded-[10px] flex flex-col space-y-[7px] bg-[#25883F] w-[400px] text-white">
-              <h3 className="text-[13px] font-semibold">Audience by Country</h3>
+            <div className="ml-10 max-md:ml-[5px] px-[20px] py-[5px] text-[10px] rounded-[10px] flex flex-col space-y-[7px] bg-[#25883F] max-md:w-[350px] w-[400px] text-white">
+              <h3 className="text-[13px] font-semibold max-md:text-[10px]">
+                Audience by Country
+              </h3>
               <ul className="flex flex-col space-y-[9px]">
-                <li className="flex flex-row space-x-[70px] items-center my-1">
+                <li className="flex flex-row space-x-[70px] max-md:space-x-[150px] items-center my-1">
                   <div className="flex flex-row space-x-[15px] items-center">
                     <span className="w-2 h-2 bg-[#FF4081] rounded-full mr-2"></span>
                     <p>Tanzania</p>
@@ -234,7 +236,7 @@ const LineChart = () => {
                     </div>
                   </div>
                 </li>
-                <li className="flex flex-row space-x-[70px] items-center my-1">
+                <li className="flex flex-row space-x-[70px] max-md:space-x-[150px] items-center my-1">
                   <div className="flex flex-row space-x-[15px] items-center">
                     <span className="w-2 h-2 bg-[#FF9500] rounded-full mr-2"></span>
                     <p>Rwanda</p>
@@ -246,7 +248,7 @@ const LineChart = () => {
                     </div>
                   </div>
                 </li>
-                <li className="flex flex-row space-x-[73px] items-center my-1">
+                <li className="flex flex-row space-x-[73px] max-md:space-x-[153px] items-center my-1">
                   <div className="flex flex-row space-x-[15px] items-center">
                     <span className="w-2 h-2 bg-[#2AC49B] rounded-full mr-2"></span>
                     <p>Uganda</p>
@@ -258,7 +260,7 @@ const LineChart = () => {
                     </div>
                   </div>
                 </li>
-                <li className="flex flex-row space-x-[85px] items-center my-1">
+                <li className="flex flex-row space-x-[85px] max-md:space-x-[165px] items-center my-1">
                   <div className="flex flex-row space-x-[15px] items-center">
                     <span className="w-2 h-2 bg-[#7C4DFF] rounded-full mr-2"></span>
                     <p>Kenya</p>
@@ -270,7 +272,7 @@ const LineChart = () => {
                     </div>
                   </div>
                 </li>
-                <li className="flex flex-row space-x-[77px] items-center my-1">
+                <li className="flex flex-row space-x-[77px] max-md:space-x-[157px] items-center my-1">
                   <div className="flex flex-row space-x-[15px] items-center">
                     <span className="w-2 h-2 bg-[#7E57C2] rounded-full mr-2"></span>
                     <p>Burundi</p>
