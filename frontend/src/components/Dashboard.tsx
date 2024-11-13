@@ -10,10 +10,24 @@ import { AiFillQuestionCircle } from "react-icons/ai";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import profileImage from "../assets/demoProfile.png";
 import { BrowserRouter, Outlet } from "react-router-dom";
+import { LuMenu } from "react-icons/lu";
+import { useEffect, useState } from "react";
 const Dashboard = () => {
+  const [menuShow, setMenuShow] = useState(false);
+  useEffect(() => {
+    const handlMenuShow = (event: MouseEvent) => {
+      if (!(event.target as HTMLElement).closest(".dropdown-menu")) {
+        setMenuShow(false);
+      }
+    };
+    document.addEventListener("click", handlMenuShow);
+    return () => {
+      document.removeEventListener("click", handlMenuShow);
+    };
+  }, []);
   return (
-    <div className="flex w-full flex-row">
-      <menu className="flex py-[30px] flex-col space-y-[70px] border-gray-400 border-r-[1px] mt-[6px] w-[230px] pl-[17px]">
+    <div className="flex w-full flex-row border-t-[1px] border-gray-400">
+      <menu className="flex max-md:hidden py-[30px] flex-col space-y-[70px] border-gray-400 border-r-[1px] mt-[6px] w-[200px] pl-[17px]">
         <div className="flex w-full flex-col space-y-[30px] items-start">
           <div className="mainmenu w-full flex flex-col space-y-[13px] items-start">
             <h2 className="text-[#ff9933] font-100 text-[10px]">MAIN MENU</h2>
@@ -102,15 +116,34 @@ const Dashboard = () => {
         </div>
       </menu>
       <main className="flex flex-col flex-1">
-        <header className="flex flex-row h-[90px] items-center justify-between p-[30px] pl-[40px] w-full">
-          <h2 className="font-bold text-white text-[20px]">Farmer Dashboard</h2>
-          <div className="flex flex-row items-center space-x-[10px]">
+        <header className="flex flex-row h-[90px] max-md:space-x-[57px] items-center md:justify-between p-[30px] max-md:p-[13px] md:pl-[40px] w-full">
+          <LuMenu
+            onClick={() => setMenuShow(!menuShow)}
+            className="md:hidden text-white text-[20px]"
+          />
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+            className="dropdown-menu"
+          >
+            {menuShow && (
+              <div className="bg-white w-[100px] absolute z-10 top-[200px] h-[300px]"></div>
+            )}
+          </div>
+
+          <h2 className="font-bold text-white text-[20px] max-md:text-[15px]">
+            Farmer Dashboard
+          </h2>
+          <div className="flex flex-row items-center space-x-[10px] max-md:space-x-[5px]">
             <img
               src={profileImage}
               alt="profile"
-              className="w-[30px] h-[30px]"
+              className="w-[30px] h-[30px] max-md:w-[20px] max-md:h-[20px]"
             />
-            <p className="font-bold text-white text-[12px]">John doe</p>
+            <p className="font-bold text-white text-[12px] max-md:text-[9px]">
+              John doe
+            </p>
             <RiArrowDropDownLine className="text-gray-400 text-[20px] " />
           </div>
         </header>
