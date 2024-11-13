@@ -198,25 +198,25 @@ const LineChart = () => {
 
   return (
     <div className="flex-1 bg-[#1E6E33]">
-      <div className="bg-[#1B7633] p-[10px] h-[320px] rounded-[10px] w-full relative">
+      <div className="bg-[#1B7633] p-[10px] max-md:p-[0px] h-[320px] max-md:h-[250px] max-md:w-[350px] rounded-[10px] w-full relative">
         <canvas id="LineChart"></canvas>
-        <p className="absolute top-[480px] left-[77px] text-white font-bold">
-          Countries
-        </p>
       </div>
       <div className="flex flex-row space-x-[20px] mt-[20px] w-full">
-        <div className="bg-[#1B7633] w-[600px] h-[260px] rounded-[10px] flex flex-col">
-          <div className="flex flex-row border-b-[1px] border-gray-400 space-x-[10px] items-center justify-start p-[10px]">
+        <div className="bg-[#1B7633] w-[600px] h-[260px] max-md:w-[350px] rounded-[10px] flex flex-col">
+          <div className="flex flex-row  border-b-[1px] border-gray-400 space-x-[10px] items-center justify-start p-[10px]">
             <div className="bg-[#FF9933] p-[4px] rounded-full ">
               <IoPieChartOutline className="text-white" />
             </div>
-            <h2 className="text-[18px] text-white font-bold">
+            <h2 className="text-[18px] max-md:text-[12px] text-white font-bold">
               Sales Demography
             </h2>
           </div>
-          <div className=" p-[4px] px-[20px] w-full flex flex-row space-x-[90px] items-center justify-center">
-            <div className="w-[195px] h-[195px]">
+          <div className=" p-[4px]  max-md:pt-[20px] px-[20px] w-full flex flex-row max-md:flex-col md:space-x-[90px] max-md:space-y-[10px] items-center justify-center">
+            <div className="w-[195px] h-[195px] max-md:w-[150px] max-md:h-[150px]">
               <canvas id="DonutChart"></canvas>
+              <p className="absolute top-[480px] max-md:text-[12px] max-md:top-[600px] max-md:left-[165px] left-[77px] text-white font-bold">
+                Countries
+              </p>
             </div>
 
             <div className="ml-10 px-[20px] py-[5px] text-[10px] rounded-[10px] flex flex-col space-y-[7px] bg-[#25883F] w-[400px] text-white">

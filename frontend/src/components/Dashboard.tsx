@@ -118,19 +118,25 @@ const Dashboard = () => {
       <main className="flex flex-col flex-1">
         <header className="flex flex-row h-[90px] max-md:space-x-[57px] items-center md:justify-between p-[30px] max-md:p-[13px] md:pl-[40px] w-full">
           <LuMenu
-            onClick={() => setMenuShow(!menuShow)}
+            // onClick={() => {
+            //   setMenuShow(!menuShow);
+            //   console.log("h");
+            // }}
+            onClick={() => {
+              console.log("how");
+            }}
             className="md:hidden text-white text-[20px]"
           />
-          <div
+          {/* <div
             onClick={(e) => {
               e.stopPropagation();
             }}
             className="dropdown-menu"
-          >
-            {menuShow && (
-              <div className="bg-white w-[100px] absolute z-10 top-[200px] h-[300px]"></div>
-            )}
-          </div>
+          > */}
+          {menuShow && (
+            <div className="bg-white w-[100px] absolute z-10 top-[200px] h-[300px]"></div>
+          )}
+          {/* </div> */}
 
           <h2 className="font-bold text-white text-[20px] max-md:text-[15px]">
             Farmer Dashboard
