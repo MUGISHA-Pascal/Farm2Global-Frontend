@@ -4,10 +4,13 @@ import { IoSearchSharp } from "react-icons/io5";
 import { Link as RouterLink } from "react-router-dom";
 import farmerImage from "../assets/farmer.png";
 import StarRating from "./StarRating";
+import { MdOutlineNavigateNext } from "react-icons/md";
+import { GrFormPrevious } from "react-icons/gr";
 
 const ExplorePage = () => {
   const [searchBy, setSearchBy] = useState("");
   const [search, setSearch] = useState("");
+  const [CurrentPage, setCurrent] = useState(1);
 
   const farmers = [
     {
@@ -175,6 +178,72 @@ const ExplorePage = () => {
       image: farmerImage,
       price: "0.5USD/Kg",
     },
+    {
+      Id: 16,
+      FarmerName: " Pascal",
+      District: "Burundi",
+      HarvestSeason: "spring",
+      Country: "Rwanda",
+      QualityPerSeason: "2300kg",
+      Contact: "0782256077",
+      image: farmerImage,
+      price: "0.5USD/Kg",
+    },
+    {
+      Id: 17,
+      FarmerName: " yves",
+      District: "Kenya",
+      HarvestSeason: "spring",
+      Country: "Rwanda",
+      QualityPerSeason: "2300kg",
+      Contact: "0782256077",
+      image: farmerImage,
+      price: "0.5USD/Kg",
+    },
+    {
+      Id: 18,
+      FarmerName: "MUGISHA Pascal",
+      District: "Burundi",
+      HarvestSeason: "spring",
+      Country: "Rwanda",
+      QualityPerSeason: "2300kg",
+      Contact: "0782256077",
+      image: farmerImage,
+      price: "0.5USD/Kg",
+    },
+    {
+      Id: 19,
+      FarmerName: "MUGISHA yves",
+      District: "Rwanda",
+      HarvestSeason: "spring",
+      Country: "Rwanda",
+      QualityPerSeason: "2300kg",
+      Contact: "0782256077",
+      image: farmerImage,
+      price: "0.5USD/Kg",
+    },
+    {
+      Id: 20,
+      FarmerName: " Pascal",
+      District: "Burundi",
+      HarvestSeason: "spring",
+      Country: "Rwanda",
+      QualityPerSeason: "2300kg",
+      Contact: "0782256077",
+      image: farmerImage,
+      price: "0.5USD/Kg",
+    },
+    {
+      Id: 21,
+      FarmerName: " yves",
+      District: "Kenya",
+      HarvestSeason: "spring",
+      Country: "Rwanda",
+      QualityPerSeason: "2300kg",
+      Contact: "0782256077",
+      image: farmerImage,
+      price: "0.5USD/Kg",
+    },
   ];
   interface farmerInterface {
     Id: number;
@@ -247,6 +316,27 @@ const ExplorePage = () => {
       filteredFarmers = farmers;
       break;
   }
+  const totalNumberElements = 20;
+  const lastIndex = CurrentPage * totalNumberElements;
+  const firstIndex = lastIndex - totalNumberElements;
+  let paginatedfilteredusers = filteredFarmers.slice(firstIndex, lastIndex);
+  const totalNumberPages = Math.ceil(
+    filteredFarmers.length / totalNumberElements
+  );
+
+  const handleNext = () => {
+    if (CurrentPage < totalNumberPages) {
+      setCurrent(CurrentPage + 1);
+    }
+  };
+  const handleNumberClick = (pageNumber: number) => {
+    setCurrent(pageNumber);
+  };
+  const handlePrevious = () => {
+    if (CurrentPage > 1) {
+      setCurrent(CurrentPage - 1);
+    }
+  };
   return (
     <div className="bg-[#25883F] flex flex-col items-center justify-center w-full border-t-[1px] border-gray-400">
       <header className="p-[10px] max-md:grid max-md:grid-cols-2 max-md:gap-1 w-full max-md:h-[100px] h-[90px] md:px-[20px] max-md:px-[10px] md:items-center md:flex md:flex-row md:justify-between">
@@ -320,7 +410,7 @@ const ExplorePage = () => {
       </header>
       <main className="w-[1220px] max-sm:w-full mb-[10px] p-[5px] bg-[#4E9A61] rounded-[20px] ">
         <main className="farmersMain overflow-y-auto h-screen bg-[#4E9A61] md:m-[10px] rounded-[20px] max-md:w-full w-[1200px] place-items-center grid md:grid-cols-4 max-sm:gap-[10px] max-md:grid-cols-2 max-md:p-[1px] gap-[20px] p-[30px]">
-          {filteredFarmers.map((farmer) => (
+          {paginatedfilteredusers.map((farmer) => (
             <div
               key={farmer.Id}
               className="flex flex-col items-center h-[400px] max-md:h-[290px] max-sm:w-[160px] w-[200px] bg-[#1B7633]   p-[6px] rounded-[7px] space-y-[10px]"
@@ -393,6 +483,34 @@ const ExplorePage = () => {
             </div>
           ))}
         </main>
+        <div className="flex flex-row ml-[530px] space-x-[10px] font-bold text-white max-sm:ml-[130px] items-center text-[10px]">
+          <GrFormPrevious
+            onClick={handlePrevious}
+            className="font-bold text-[35px]"
+          />
+          {Array.from(
+            { length: totalNumberPages },
+            (_, index) => index + 1
+          ).map((PageNumber) => (
+            <button
+              key={PageNumber}
+              onClick={() => {
+                handleNumberClick(PageNumber);
+              }}
+              className={`w-[30px] h-[30px] rounded-full max-sm:text-[7px] ${
+                CurrentPage === PageNumber
+                  ? "bg-[#FF9933]"
+                  : "bg-[#ff9933] opacity-50"
+              }`}
+            >
+              {PageNumber}
+            </button>
+          ))}
+          <MdOutlineNavigateNext
+            className="font-bold text-[40px]"
+            onClick={handleNext}
+          />
+        </div>
       </main>
     </div>
   );
