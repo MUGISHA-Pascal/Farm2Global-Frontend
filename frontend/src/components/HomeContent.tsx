@@ -303,7 +303,7 @@ const HomeContent = () => {
                   Farmers registration process involved multiple steps including
                   Unique Digital ID issuance, Personal,Business and
                   Administrative documents verification and onsite visit to
-                  ensure their credibility
+                  ensure their credibility.
                 </p>
               </div>
             </div>

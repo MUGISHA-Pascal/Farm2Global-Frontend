@@ -347,7 +347,7 @@ const ExplorePage = () => {
   return (
     <div className="bg-[#25883F] flex flex-col items-center justify-center w-full border-t-[1px] border-gray-400">
       <div
-        className="bg-[#ff9933] fixed max-md:right-[20px] max-md:bottom-[20px] bottom-[70px] rounded-full p-[10px] z-30 right-[70px]"
+        className="bg-[#ff9933] fixed max-md:right-[20px] max-md:bottom-[20px] bottom-[40px] rounded-full p-[10px] z-30 right-[40px]"
         onClick={scrolltoTop}
       >
         <MdOutlineKeyboardDoubleArrowUp className="text-white" />
