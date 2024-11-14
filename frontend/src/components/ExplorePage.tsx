@@ -6,7 +6,8 @@ import farmerImage from "../assets/farmer.png";
 import StarRating from "./StarRating";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
-
+import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
+import { animateScroll as scroll } from "react-scroll";
 const ExplorePage = () => {
   const [searchBy, setSearchBy] = useState("");
   const [search, setSearch] = useState("");
@@ -337,19 +338,31 @@ const ExplorePage = () => {
       setCurrent(CurrentPage - 1);
     }
   };
+  const scrolltoTop = () => {
+    scroll.scrollToTop({
+      duration: 500,
+      smooth: "easeInOutQuad",
+    });
+  };
   return (
     <div className="bg-[#25883F] flex flex-col items-center justify-center w-full border-t-[1px] border-gray-400">
+      <div
+        className="bg-[#ff9933] fixed max-md:right-[20px] max-md:bottom-[20px] bottom-[70px] rounded-full p-[10px] z-30 right-[70px]"
+        onClick={scrolltoTop}
+      >
+        <MdOutlineKeyboardDoubleArrowUp className="text-white" />
+      </div>
       <header className="p-[10px] max-md:grid max-md:grid-cols-2 max-md:gap-1 w-full max-md:h-[100px] h-[90px] md:px-[20px] max-md:px-[10px] md:items-center md:flex md:flex-row md:justify-between">
         <RouterLink
           to="/"
           className="flex flex-row text-white space-x-[10px] max-sm:space-x-[5px] items-center "
         >
-          <div className="bg-[#4E9A61] p-[6px] hover:border-[1px] border-white rounded-full">
+          <div className="bg-[#FF9933] p-[6px] hover:border-[1px] border-white rounded-full">
             <FaArrowLeft className="text-white max-sm:w-[10px] max-sm:h-[10px] " />
           </div>
           <p className="text-[14px] font-semibold max-sm:text-[10px]">back</p>
         </RouterLink>
-        <h2 className="font-bold text-white text-[22px] max-sm:text-[17px]">
+        <h2 className="font-bold text-[#FF9933] text-[22px] max-sm:text-[17px]">
           Available farmers
         </h2>
         <div className="bg-white pl-[8px]  items-center  relative w-[466px] max-md:w-[350px] h-[42px] rounded-full flex flex-row p-0">
@@ -359,7 +372,7 @@ const ExplorePage = () => {
             onChange={(e) => {
               setSearchBy(e.target.value);
             }}
-            className="w-[110px] focus:outline-none border-[2px] p-[4px] rounded-full border-[#4E9A61] text-gray-500 text-[12px] "
+            className="w-[110px] focus:outline-none border-[2px] p-[4px] rounded-full border-[#FF9933] text-gray-500 text-[12px] "
           >
             <option value="" className="text-[12px] max-md:text-[7px] ">
               search by
@@ -476,7 +489,7 @@ const ExplorePage = () => {
               </div>
               <a
                 href="#"
-                className="bg-[#FF9933] text-white font-semibold max-md:rounded-[7px] max-md:text-[10px] text-[15px]  max-md:w-[110px]  w-[140px] hover:opacity-50 rounded-[10px] p-[5px]"
+                className="bg-[#FF9933] text-white font-normal max-md:rounded-[7px] max-md:text-[10px] text-[15px]  max-md:w-[110px]  w-[140px] hover:opacity-50 rounded-[10px] p-[5px]"
               >
                 BUY PRODUCT
               </a>
