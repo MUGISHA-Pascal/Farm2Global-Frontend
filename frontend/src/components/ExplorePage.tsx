@@ -413,7 +413,7 @@ const ExplorePage = () => {
           {paginatedfilteredusers.map((farmer) => (
             <div
               key={farmer.Id}
-              className="flex flex-col items-center h-[400px] max-md:h-[290px] max-sm:w-[160px] w-[200px] bg-[#1B7633]   p-[6px] rounded-[7px] space-y-[10px]"
+              className="flex flex-col items-center h-[400px] max-md:h-[290px] max-sm:w-[160px] w-[260px] bg-[#1B7633]   p-[6px] rounded-[7px] space-y-[10px]"
             >
               <img
                 src={farmer.image}
@@ -476,7 +476,7 @@ const ExplorePage = () => {
               </div>
               <a
                 href="#"
-                className="bg-[#25883F] text-[#FF9933] font-semibold max-md:rounded-[7px] max-md:text-[10px] text-[15px]  max-md:w-[110px]  w-[140px] hover:opacity-50 rounded-[10px] p-[5px]"
+                className="bg-[#FF9933] text-white font-semibold max-md:rounded-[7px] max-md:text-[10px] text-[15px]  max-md:w-[110px]  w-[140px] hover:opacity-50 rounded-[10px] p-[5px]"
               >
                 BUY PRODUCT
               </a>
