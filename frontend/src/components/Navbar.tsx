@@ -234,7 +234,7 @@ const Navbar = () => {
                 <IoMdArrowDropdown />
               </div>
               {categoryShow && (
-                <div className="absolute font-normal  z-10 p-[30px] items-start top-[70px]  text-[#CCD2E3] rounded-[10px] border-[1px]  border-gray-400  bg-[#25883F] flex flex-col space-y-[10px]">
+                <div className="absolute font-normal  z-40 p-[30px] items-start top-[70px]  text-[#CCD2E3] rounded-[10px] border-[1px]  border-gray-400  bg-[#25883F] flex flex-col space-y-[10px]">
                   <a
                     href=""
                     className="hover:text-green-300 flex flex-row space-x-[10px] items-center"

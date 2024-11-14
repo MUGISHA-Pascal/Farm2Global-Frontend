@@ -76,17 +76,17 @@ const HomeContent = () => {
           <img
             alt="image"
             src={slides[currentState].image}
-            className={`h-[580px] w-full max-md:h-[240px] absolute z-10 bg-url(${slides[currentState].image})`}
+            className={`h-[580px] w-full max-md:h-[240px] absolute  bg-url(${slides[currentState].image})`}
           />
           <GrPrevious
             onClick={Previous}
-            className="absolute z-10 text-[#CBE86A] max-md:top-[90px] top-[190px] left-[10px] text-[30px] hover:cursor-pointer"
+            className="absolute  text-[#CBE86A] max-md:top-[90px] top-[190px] left-[10px] text-[30px] hover:cursor-pointer"
           />
           <GrNext
             onClick={Next}
-            className="absolute z-10 text-[#CBE86A] text-[30px] max-md:top-[90px] top-[190px] right-[10px] hover:cursor-pointer"
+            className="absolute  text-[#CBE86A] text-[30px] max-md:top-[90px] top-[190px] right-[10px] hover:cursor-pointer"
           />
-          <div className="absolute z-10 space-x-[17px] max-md:justify-between pl-[7px]  bg-[#25883F] max-md:w-[250px] max-md:h-[100px] max-sm:pr-[30px] max-sm:right-0 max-sm:w-full w-[330px] h-[150px] bottom-[200px] max-md:bottom-0 left-[170px] max-sm:left-[0px] items-center flex flex-row max-sm:pl-[10px] max-sm:rounded-[0px]  rounded-[15px]">
+          <div className="absolute  space-x-[17px] max-md:justify-between pl-[7px]  bg-[#25883F] max-md:w-[250px] max-md:h-[100px] max-sm:pr-[30px] max-sm:right-0 max-sm:w-full w-[330px] h-[150px] bottom-[200px] max-md:bottom-0 left-[170px] max-sm:left-[0px] items-center flex flex-row max-sm:pl-[10px] max-sm:rounded-[0px]  rounded-[15px]">
             <div className="bg-[#CBE86A] w-[4px] h-[120px] max-md:h-[75px] max-md:w-[2px] rounded-full"></div>
             <div className="flex flex-col">
               <h2 className="font-bold text-white max-md:text-[14px] text-[20px]">
@@ -230,7 +230,7 @@ const HomeContent = () => {
         className="py-20 hover:cursor-pointer max-md:py-[30px]"
       >
         <div
-          className="bg-[#1B7633] fixed bottom-[70px] rounded-full p-[10px] z-30 left-[1200px]"
+          className="bg-[#1B7633] fixed max-md:right-[20px] max-md:bottom-[20px] bottom-[70px] rounded-full p-[10px] z-30 right-[70px]"
           onClick={scrolltoTop}
         >
           <MdOutlineKeyboardDoubleArrowUp className="text-white" />
@@ -341,27 +341,27 @@ const HomeContent = () => {
           <img
             src={adma}
             alt="adma"
-            className="w-[100px] shadow-lg h-auto max-md:w-[70px]"
+            className="w-[100px] rounded-[10px] shadow-lg h-auto max-md:w-[70px]"
           />
           <img
             src={africa}
             alt="africa"
-            className="w-[100px] shadow-lg max-md:w-[70px] h-auto"
+            className="w-[100px]  rounded-[10px] shadow-lg max-md:w-[70px] h-auto"
           />
           <img
             src={azam}
             alt="azam"
-            className="w-[100px] shadow-lg h-auto max-md:w-[70px]"
+            className="w-[100px]  rounded-[10px] shadow-lg h-auto max-md:w-[70px]"
           />
           <img
             src={monsalwa}
             alt="monsalwa"
-            className="w-[100px] shadow-lg h-auto max-md:w-[70px]"
+            className="w-[100px]  rounded-[10px] shadow-lg h-auto max-md:w-[70px]"
           />
           <img
             src={minimex}
             alt="minimex"
-            className="w-auto h-[60px] shadow-lg max-md:w-[70px] max-md:h-auto"
+            className="w-auto h-[60px]  rounded-[10px] shadow-lg max-md:w-[70px] max-md:h-auto"
           />
         </div>
       </Element>

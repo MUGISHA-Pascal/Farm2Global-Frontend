@@ -311,7 +311,7 @@ const ExplorePage = () => {
           />
           <button
             type="submit"
-            className="bg-[#4E9A61] h-[30px] w-[30px] flex flex-row items-center justify-center font-bold rounded-full hover:bg-opacity-80 text-white hover:border-white hover:border-[1px] text-[12px] "
+            className="bg-[#FF9933] h-[30px] w-[30px] flex flex-row items-center justify-center font-bold rounded-full hover:bg-opacity-80 text-white hover:border-white hover:border-[1px] text-[12px] "
           >
             <IoSearchSharp />
             <p className="text-[1px]">.</p>
@@ -319,19 +319,19 @@ const ExplorePage = () => {
         </div>
       </header>
       <main className="w-[1220px] max-sm:w-full mb-[10px] p-[5px] bg-[#4E9A61] rounded-[20px] ">
-        <main className="farmersMain overflow-y-auto h-screen bg-[#4E9A61] md:m-[10px] rounded-[20px] max-md:w-full w-[1200px] place-items-center grid md:grid-cols-4 max-sm:gap-[5px] max-md:grid-cols-2 max-md:p-[1px] gap-[20px] p-[30px]">
+        <main className="farmersMain overflow-y-auto h-screen bg-[#4E9A61] md:m-[10px] rounded-[20px] max-md:w-full w-[1200px] place-items-center grid md:grid-cols-4 max-sm:gap-[10px] max-md:grid-cols-2 max-md:p-[1px] gap-[20px] p-[30px]">
           {filteredFarmers.map((farmer) => (
             <div
               key={farmer.Id}
-              className="flex flex-col items-center h-[417px] max-md:h-[290px] max-sm:w-[160px] w-[250px] bg-[#1B7633]   p-[6px] rounded-[7px] space-y-[10px]"
+              className="flex flex-col items-center h-[400px] max-md:h-[290px] max-sm:w-[160px] w-[200px] bg-[#1B7633]   p-[6px] rounded-[7px] space-y-[10px]"
             >
               <img
                 src={farmer.image}
                 alt="farmer image"
-                className="rounded-[7px] h-[150px] w-full max-sm:h-[90px] object-cover bg-cover "
+                className="rounded-[7px] h-[150px] w-full max-md:h-[100px] object-cover bg-cover "
               />
 
-              <div className="flex flex-row w-full text-[11px] max-sm:text-[7px] text-white px-[14px] max-sm:space-x-[14px] md:justify-between">
+              {/* <div className="flex flex-row w-full text-[11px] max-sm:text-[7px] text-white px-[14px] max-sm:space-x-[14px] md:justify-between">
                 <div className="flex flex-col space-y-[4px] max-sm:space-y-[4px] items-start">
                   <b>Name :</b>
                   <b>Country :</b>
@@ -350,19 +350,45 @@ const ExplorePage = () => {
                   <p>{farmer.price}</p>
                   <p>{farmer.Contact}</p>
                 </div>
+              </div> */}
+              <div className="flex flex-col space-y-[4px] items-start text-[11px] max-sm:text-[7px] text-white">
+                <div className="flex flex-row items-center space-x-2 justify-center">
+                  <b>Name :</b>
+                  <p>{farmer.FarmerName}</p>
+                </div>
+                <div className="flex flex-row items-center space-x-2  justify-center">
+                  <b>Country :</b>
+                  <p>{farmer.Country}</p>
+                </div>
+                <div className="flex flex-row items-center space-x-2  justify-center">
+                  <b>District :</b>
+                  <p>{farmer.District}</p>
+                </div>
+                <div className="flex flex-row items-center space-x-2  justify-center">
+                  <b>Harv.Season :</b>
+                  <p>{farmer.HarvestSeason}</p>
+                </div>
+                <div className="flex flex-row items-center space-x-2  justify-center">
+                  <b>Qty/Season :</b>
+                  <p>{farmer.QualityPerSeason}</p>
+                </div>
+                <div className="flex flex-row items-center space-x-2  justify-center">
+                  <b>Price :</b>
+                  <p>{farmer.price}</p>
+                </div>
+                <div className="flex flex-row items-center space-x-2  justify-center">
+                  <b>Contact :</b>
+                  <p>{farmer.Contact}</p>
+                </div>
               </div>
-
-              <div className="w-[170px] rounded-[10px] max-md:rounded-[7px] p-[5px] max-md:p-[3px] max-md:w-[110px] flex flex-col items-center bg-[#25883F] justify-center">
-                <h2 className="font-semibold text-white max-md:text-[12px]">
-                  Rate
-                </h2>
+              <div className="w-[140px] rounded-[10px] max-md:rounded-[7px] p-[5px] max-md:p-[3px] max-md:w-[110px] flex flex-col items-center bg-[#25883F] justify-center">
                 <StarRating />
               </div>
               <a
                 href="#"
-                className="bg-[#25883F] text-white font-semibold max-md:rounded-[7px] max-md:text-[10px] text-[15px]  max-md:w-[110px]  w-[170px] hover:opacity-50 rounded-[10px] p-[5px]"
+                className="bg-[#25883F] text-[#FF9933] font-semibold max-md:rounded-[7px] max-md:text-[10px] text-[15px]  max-md:w-[110px]  w-[140px] hover:opacity-50 rounded-[10px] p-[5px]"
               >
-                Purchase products
+                BUY PRODUCT
               </a>
             </div>
           ))}
