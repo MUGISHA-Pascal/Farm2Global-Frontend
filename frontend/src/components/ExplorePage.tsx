@@ -3,6 +3,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { IoSearchSharp } from "react-icons/io5";
 import { Link as RouterLink } from "react-router-dom";
 import farmerImage from "../assets/farmer.png";
+import StarRating from "./StarRating";
 
 const ExplorePage = () => {
   const [searchBy, setSearchBy] = useState("");
@@ -14,135 +15,165 @@ const ExplorePage = () => {
       FarmerName: "MUGISHA Pascal",
       District: "Burundi",
       HarvestSeason: "spring",
+      Country: "Rwanda",
       QualityPerSeason: "2300kg",
       Contact: "0782256077",
       image: farmerImage,
+      price: "0.5USD/Kg",
     },
     {
       Id: 2,
       FarmerName: "MUGISHA yves",
       District: "Rwanda",
       HarvestSeason: "spring",
+      Country: "Rwanda",
       QualityPerSeason: "2300kg",
       Contact: "0782256077",
       image: farmerImage,
+      price: "0.5USD/Kg",
     },
     {
       Id: 3,
       FarmerName: " Pascal",
       District: "Burundi",
       HarvestSeason: "spring",
+      Country: "Rwanda",
       QualityPerSeason: "2300kg",
       Contact: "0782256077",
       image: farmerImage,
+      price: "0.5USD/Kg",
     },
     {
       Id: 4,
       FarmerName: " yves",
       District: "Kenya",
       HarvestSeason: "spring",
+      Country: "Rwanda",
       QualityPerSeason: "2300kg",
       Contact: "0782256077",
       image: farmerImage,
+      price: "0.5USD/Kg",
     },
     {
       Id: 5,
       FarmerName: "MUGISHA Pascal",
       District: "Burundi",
       HarvestSeason: "spring",
+      Country: "Rwanda",
       QualityPerSeason: "2300kg",
       Contact: "0782256077",
       image: farmerImage,
+      price: "0.5USD/Kg",
     },
     {
       Id: 6,
       FarmerName: "MUGISHA yves",
       District: "Rwanda",
       HarvestSeason: "spring",
+      Country: "Rwanda",
       QualityPerSeason: "2300kg",
       Contact: "0782256077",
       image: farmerImage,
+      price: "0.5USD/Kg",
     },
     {
       Id: 7,
       FarmerName: " Pascal",
       District: "Burundi",
       HarvestSeason: "spring",
+      Country: "Rwanda",
       QualityPerSeason: "2300kg",
       Contact: "0782256077",
       image: farmerImage,
+      price: "0.5USD/Kg",
     },
     {
       Id: 8,
       FarmerName: " yves",
       District: "Kenya",
       HarvestSeason: "spring",
+      Country: "Rwanda",
       QualityPerSeason: "2300kg",
       Contact: "0782256077",
       image: farmerImage,
+      price: "0.5USD/Kg",
     },
     {
       Id: 9,
       FarmerName: "MUGISHA yves",
       District: "Rwanda",
       HarvestSeason: "spring",
+      Country: "Rwanda",
       QualityPerSeason: "2300kg",
       Contact: "0782256077",
       image: farmerImage,
+      price: "0.5USD/Kg",
     },
     {
       Id: 10,
       FarmerName: " Pascal",
       District: "Burundi",
       HarvestSeason: "spring",
+      Country: "Rwanda",
       QualityPerSeason: "2300kg",
       Contact: "0782256077",
       image: farmerImage,
+      price: "0.5USD/Kg",
     },
     {
       Id: 11,
       FarmerName: " yves",
       District: "Kenya",
       HarvestSeason: "spring",
+      Country: "Rwanda",
       QualityPerSeason: "2300kg",
       Contact: "0782256077",
       image: farmerImage,
+      price: "0.5USD/Kg",
     },
     {
       Id: 12,
       FarmerName: "MUGISHA Pascal",
       District: "Burundi",
       HarvestSeason: "spring",
+      Country: "Rwanda",
       QualityPerSeason: "2300kg",
       Contact: "0782256077",
       image: farmerImage,
+      price: "0.5USD/Kg",
     },
     {
       Id: 13,
       FarmerName: "MUGISHA yves",
       District: "Rwanda",
       HarvestSeason: "spring",
+      Country: "Rwanda",
       QualityPerSeason: "2300kg",
       Contact: "0782256077",
       image: farmerImage,
+      price: "0.5USD/Kg",
     },
     {
       Id: 14,
       FarmerName: " Pascal",
       District: "Burundi",
       HarvestSeason: "spring",
+      Country: "Rwanda",
       QualityPerSeason: "2300kg",
       Contact: "0782256077",
       image: farmerImage,
+      price: "0.5USD/Kg",
     },
     {
       Id: 15,
       FarmerName: " yves",
       District: "Kenya",
       HarvestSeason: "spring",
+      Country: "Rwanda",
       QualityPerSeason: "2300kg",
       Contact: "0782256077",
       image: farmerImage,
+      price: "0.5USD/Kg",
     },
   ];
   interface farmerInterface {
@@ -164,6 +195,14 @@ const ExplorePage = () => {
               item.FarmerName.toLowerCase().includes(search.toLowerCase())
             );
       break;
+    case "Country":
+      filteredFarmers =
+        search === ""
+          ? farmers
+          : farmers.filter((item) =>
+              item.Country.toLowerCase().includes(search.toLowerCase())
+            );
+      break;
     case "District":
       filteredFarmers =
         search === ""
@@ -178,6 +217,14 @@ const ExplorePage = () => {
           ? farmers
           : farmers.filter((item) =>
               item.HarvestSeason.toLowerCase().includes(search.toLowerCase())
+            );
+      break;
+    case "Price":
+      filteredFarmers =
+        search === ""
+          ? farmers
+          : farmers.filter((item) =>
+              item.price.toLowerCase().includes(search.toLowerCase())
             );
       break;
     case "Quality/season":
@@ -202,7 +249,7 @@ const ExplorePage = () => {
   }
   return (
     <div className="bg-[#25883F] flex flex-col items-center justify-center w-full border-t-[1px] border-gray-400">
-      <header className="p-[10px] max-md:grid max-md:grid-cols-2 max-md:gap-1 w-full max-md:h-[100px] h-[90px] px-[20px] md:items-center md:flex md:flex-row md:justify-between">
+      <header className="p-[10px] max-md:grid max-md:grid-cols-2 max-md:gap-1 w-full max-md:h-[100px] h-[90px] md:px-[20px] max-md:px-[10px] md:items-center md:flex md:flex-row md:justify-between">
         <RouterLink
           to="/"
           className="flex flex-row text-white space-x-[10px] max-sm:space-x-[5px] items-center "
@@ -228,7 +275,10 @@ const ExplorePage = () => {
               search by
             </option>
             <option value="Name" className="text-[12px] max-md:text-[7px]">
-              name
+              Name
+            </option>
+            <option value="Country" className="text-[12px] max-md:text-[7px]">
+              Country
             </option>
             <option value="District" className="text-[12px] max-md:text-[7px]">
               District
@@ -240,10 +290,13 @@ const ExplorePage = () => {
               value="Quality/season"
               className="text-[12px] max-md:text-[7px]"
             >
-              Quality/season
+              Qty/season
             </option>
             <option value="Contact" className="text-[12px] max-md:text-[7px]">
               Contact
+            </option>
+            <option value="Price" className="text-[12px] max-md:text-[7px]">
+              Price
             </option>
           </select>
           <input
@@ -266,11 +319,11 @@ const ExplorePage = () => {
         </div>
       </header>
       <main className="w-[1220px] max-sm:w-full mb-[10px] p-[5px] bg-[#4E9A61] rounded-[20px] ">
-        <main className="farmersMain overflow-y-auto h-screen bg-[#4E9A61] m-[10px] rounded-[20px] max-md:w-full w-[1200px] grid md:grid-cols-4 max-sm:gap-[5px] max-md:grid-cols-2 max-md:p-[2px] gap-[20px] p-[30px]">
+        <main className="farmersMain overflow-y-auto h-screen bg-[#4E9A61] md:m-[10px] rounded-[20px] max-md:w-full w-[1200px] place-items-center grid md:grid-cols-4 max-sm:gap-[5px] max-md:grid-cols-2 max-md:p-[1px] gap-[20px] p-[30px]">
           {filteredFarmers.map((farmer) => (
             <div
               key={farmer.Id}
-              className="flex flex-col h-[290px] max-sm:h-[200px] max-sm:w-[170px] w-[250px] bg-[#1B7633]   p-[6px] rounded-[7px] space-y-[10px]"
+              className="flex flex-col items-center h-[370px] max-sm:h-[270px] max-sm:w-[160px] w-[250px] bg-[#1B7633]   p-[6px] rounded-[7px] space-y-[10px]"
             >
               <img
                 src={farmer.image}
@@ -278,21 +331,31 @@ const ExplorePage = () => {
                 className="rounded-[7px] h-[150px] w-full max-sm:h-[90px] object-cover bg-cover "
               />
 
-              <div className="flex flex-row text-[11px] max-sm:text-[7px] text-white px-[14px] max-sm:space-x-[14px] space-x-[10px]">
-                <div className="flex flex-col space-y-[7px] max-sm:space-y-[3px] items-start">
+              <div className="flex flex-row w-full text-[11px] max-sm:text-[7px] text-white px-[14px] max-sm:space-x-[14px] md:justify-between">
+                <div className="flex flex-col space-y-[4px] max-sm:space-y-[4px] items-start">
                   <b>Farmer Name :</b>
+                  <b>Country :</b>
                   <b>District :</b>
-                  <b>Harvest Season(s) :</b>
-                  <b>Quality/Season :</b>
+                  <b>Harv.Season :</b>
+                  <b>Qty/Season :</b>
+                  <b>Price :</b>
                   <b>Contact :</b>
                 </div>
-                <div className="flex flex-col space-y-[7px] items-start">
+                <div className="flex flex-col space-y-[4px] items-start">
                   <p>{farmer.FarmerName}</p>
+                  <p>{farmer.Country}</p>
                   <p>{farmer.District}</p>
                   <p>{farmer.HarvestSeason}</p>
                   <p>{farmer.QualityPerSeason}</p>
+                  <p>{farmer.price}</p>
                   <p>{farmer.Contact}</p>
                 </div>
+              </div>
+              <div className="w-[170px] rounded-[10px] max-md:rounded-[7px] p-[5px] max-md:p-[3px] max-md:w-[110px] flex flex-col items-center border-[1px] border-white justify-center">
+                <h2 className="font-semibold text-white max-md:text-[12px]">
+                  Rate
+                </h2>
+                <StarRating />
               </div>
             </div>
           ))}
