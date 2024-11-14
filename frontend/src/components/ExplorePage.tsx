@@ -323,7 +323,7 @@ const ExplorePage = () => {
           {filteredFarmers.map((farmer) => (
             <div
               key={farmer.Id}
-              className="flex flex-col items-center h-[370px] max-sm:h-[270px] max-sm:w-[160px] w-[250px] bg-[#1B7633]   p-[6px] rounded-[7px] space-y-[10px]"
+              className="flex flex-col items-center h-[417px] max-md:h-[290px] max-sm:w-[160px] w-[250px] bg-[#1B7633]   p-[6px] rounded-[7px] space-y-[10px]"
             >
               <img
                 src={farmer.image}
@@ -333,7 +333,7 @@ const ExplorePage = () => {
 
               <div className="flex flex-row w-full text-[11px] max-sm:text-[7px] text-white px-[14px] max-sm:space-x-[14px] md:justify-between">
                 <div className="flex flex-col space-y-[4px] max-sm:space-y-[4px] items-start">
-                  <b>Farmer Name :</b>
+                  <b>Name :</b>
                   <b>Country :</b>
                   <b>District :</b>
                   <b>Harv.Season :</b>
@@ -351,12 +351,19 @@ const ExplorePage = () => {
                   <p>{farmer.Contact}</p>
                 </div>
               </div>
-              <div className="w-[170px] rounded-[10px] max-md:rounded-[7px] p-[5px] max-md:p-[3px] max-md:w-[110px] flex flex-col items-center border-[1px] border-white justify-center">
+
+              <div className="w-[170px] rounded-[10px] max-md:rounded-[7px] p-[5px] max-md:p-[3px] max-md:w-[110px] flex flex-col items-center bg-[#25883F] justify-center">
                 <h2 className="font-semibold text-white max-md:text-[12px]">
                   Rate
                 </h2>
                 <StarRating />
               </div>
+              <a
+                href="#"
+                className="bg-[#25883F] text-white font-semibold max-md:rounded-[7px] max-md:text-[10px] text-[15px]  max-md:w-[110px]  w-[170px] hover:opacity-50 rounded-[10px] p-[5px]"
+              >
+                Purchase products
+              </a>
             </div>
           ))}
         </main>

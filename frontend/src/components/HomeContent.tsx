@@ -31,6 +31,8 @@ import rice from "../assets/rice.png";
 import wheat from "../assets/wheat.png";
 import Countup from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
+import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
+import { animateScroll as scroll } from "react-scroll";
 const HomeContent = () => {
   const [currentState, setCurrentState] = useState(0);
   const [counter, setCounter] = useState(false);
@@ -61,6 +63,12 @@ const HomeContent = () => {
     }, 7000);
     return () => clearInterval(interval);
   }, [slides.length]);
+  const scrolltoTop = () => {
+    scroll.scrollToTop({
+      duration: 500,
+      smooth: "easeInOutQuad",
+    });
+  };
   return (
     <div>
       <section className="bg-[#CBE86A] flex flex-col max-md:flex-col ">
@@ -68,17 +76,17 @@ const HomeContent = () => {
           <img
             alt="image"
             src={slides[currentState].image}
-            className={`h-[580px] w-full max-md:h-[240px] absolute bg-url(${slides[currentState].image})`}
+            className={`h-[580px] w-full max-md:h-[240px] absolute z-10 bg-url(${slides[currentState].image})`}
           />
           <GrPrevious
             onClick={Previous}
-            className="absolute text-[#CBE86A] max-md:top-[90px] top-[190px] left-[10px] text-[30px] hover:cursor-pointer"
+            className="absolute z-10 text-[#CBE86A] max-md:top-[90px] top-[190px] left-[10px] text-[30px] hover:cursor-pointer"
           />
           <GrNext
             onClick={Next}
-            className="absolute text-[#CBE86A] text-[30px] max-md:top-[90px] top-[190px] right-[10px] hover:cursor-pointer"
+            className="absolute z-10 text-[#CBE86A] text-[30px] max-md:top-[90px] top-[190px] right-[10px] hover:cursor-pointer"
           />
-          <div className="absolute space-x-[17px] max-md:justify-between pl-[7px]  bg-[#25883F] max-md:w-[250px] max-md:h-[100px] max-sm:pr-[30px] max-sm:right-0 max-sm:w-full w-[330px] h-[150px] bottom-[200px] max-md:bottom-0 left-[170px] max-sm:left-[0px] items-center flex flex-row max-sm:pl-[10px] max-sm:rounded-[0px]  rounded-[15px]">
+          <div className="absolute z-10 space-x-[17px] max-md:justify-between pl-[7px]  bg-[#25883F] max-md:w-[250px] max-md:h-[100px] max-sm:pr-[30px] max-sm:right-0 max-sm:w-full w-[330px] h-[150px] bottom-[200px] max-md:bottom-0 left-[170px] max-sm:left-[0px] items-center flex flex-row max-sm:pl-[10px] max-sm:rounded-[0px]  rounded-[15px]">
             <div className="bg-[#CBE86A] w-[4px] h-[120px] max-md:h-[75px] max-md:w-[2px] rounded-full"></div>
             <div className="flex flex-col">
               <h2 className="font-bold text-white max-md:text-[14px] text-[20px]">
@@ -217,7 +225,16 @@ const HomeContent = () => {
         </div> */}
       </Element>
 
-      <Element name="features" className="py-20 max-md:py-[30px]">
+      <Element
+        name="features"
+        className="py-20 hover:cursor-pointer max-md:py-[30px]"
+      >
+        <div
+          className="bg-[#1B7633] fixed bottom-[70px] rounded-full p-[10px] z-30 left-[1200px]"
+          onClick={scrolltoTop}
+        >
+          <MdOutlineKeyboardDoubleArrowUp className="text-white" />
+        </div>
         <div className="flex flex-row md:space-x-[200px] max-md:flex-col max-md:space-y-[30px]">
           <div className="flex flex-col space-y-[70px] max-md:space-y-[35px] pl-[150px] max-md:pl-[60px]">
             <div className="flex flex-col space-y-[20px]">
