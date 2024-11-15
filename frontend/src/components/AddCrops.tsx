@@ -28,7 +28,7 @@ const AddCrops = () => {
         className="w-[700px] md:mt-[50px] max-sm:w-[350px] space-y-[14px]  bg-white p-6 rounded-lg shadow-lg"
       >
         <h2 className="text-2xl max-sm:text-[17px] font-bold mb-6 text-center text-[#25883F]">
-          Add Crop
+          Add New Crop
         </h2>
         <div className="sm:grid sm:grid-cols-2 max-sm:flex max-sm:flex-col max-sm:space-y-[7px] sm:gap-4 mb-4">
           <div>
@@ -43,7 +43,7 @@ const AddCrops = () => {
               style={{ borderColor: "#FF9933" }}
             >
               <option value="" className="text-gray-500  max-sm:text-[7px] p-0">
-                Select crop name
+                Select Crop Name
               </option>
               <option value="Maize" className="max-sm:text-[7px] p-0">
                 Maize (Corn)
@@ -89,7 +89,7 @@ const AddCrops = () => {
               style={{ borderColor: "#FF9933" }}
             >
               <option value="" className="max-sm:text-[7px] text-gray-500 p-0">
-                Select harvest season
+                Select Harvest Season
               </option>
               <option value="Spring" className="max-sm:text-[7px] p-0">
                 Spring
@@ -128,13 +128,13 @@ const AddCrops = () => {
               htmlFor="PricePerKg"
               className="block text-sm font-medium text-gray-700"
             >
-              Price/Kg
+              Price Per Kg
             </label>
             <input
               type="tel"
               name="PricePerKg"
               id="PricePerKg"
-              placeholder="usd"
+              placeholder="USD"
               value={formData.PricePerKg}
               onChange={handleChange}
               required
@@ -148,7 +148,7 @@ const AddCrops = () => {
             htmlFor="QtyPerSeason"
             className="block text-sm font-medium text-gray-700"
           >
-            Quantity/Season
+            Harvest Qty
           </label>
           <input
             type="number"
@@ -156,7 +156,7 @@ const AddCrops = () => {
             id="QtyPerSeason"
             value={formData.QtyPerSeason}
             onChange={handleChange}
-            placeholder="kilograms"
+            placeholder="Kilograms"
             required
             className="mt-1 p-[6px] border placeholder:text-[12px] max-sm:text-[17px] border-gray-300 rounded-md w-[330px] bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
             style={{ borderColor: "#FF9933" }}
