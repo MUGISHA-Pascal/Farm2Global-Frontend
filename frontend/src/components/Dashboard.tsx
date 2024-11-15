@@ -12,17 +12,19 @@ import profileImage from "../assets/demoProfile.png";
 import { BrowserRouter, Link, Outlet } from "react-router-dom";
 import { LuMenu } from "react-icons/lu";
 import { useEffect, useState } from "react";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { IoMdArrowDropright } from "react-icons/io";
 const Dashboard = () => {
-  const [menuShow, setMenuShow] = useState(false);
+  const [categoryShow, setCategoryShow] = useState(false);
   useEffect(() => {
-    const handlMenuShow = (event: MouseEvent) => {
-      if (!(event.target as HTMLElement).closest(".dropdown-menu")) {
-        setMenuShow(false);
+    const handleClickOutside = (event: any) => {
+      if (!event.target.closest(".dropdown-category")) {
+        setCategoryShow(false);
       }
     };
-    document.addEventListener("click", handlMenuShow);
+    document.addEventListener("click", handleClickOutside);
     return () => {
-      document.removeEventListener("click", handlMenuShow);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, []);
   return (
@@ -117,27 +119,70 @@ const Dashboard = () => {
       </menu>
       <main className="flex flex-col flex-1">
         <header className="flex flex-row h-[90px] max-md:space-x-[57px] items-center md:justify-between p-[30px] max-md:p-[13px] md:pl-[40px] w-full">
-          <LuMenu
-            // onClick={() => {
-            //   setMenuShow(!menuShow);
-            //   console.log("h");
-            // }}
-            onClick={() => {
-              console.log("how");
-            }}
-            className="md:hidden text-white text-[20px]"
-          />
-          {/* <div
+          <div
             onClick={(e) => {
               e.stopPropagation();
+              setCategoryShow(!categoryShow);
             }}
-            className="dropdown-menu"
-          > */}
-          {menuShow && (
-            <div className="bg-white w-[100px] absolute z-10 top-[200px] h-[300px]"></div>
-          )}
-          {/* </div> */}
-
+            className="dropdown-category md:hidden text-white"
+          >
+            <div className="flex flex-row hover:cursor-pointer space-x-[10px]   items-center justify-center hover:text-green-300">
+              <LuMenu className="text-[20px]" />
+            </div>
+            {categoryShow && (
+              <div className="absolute font-normal left-0  z-40 p-[30px] items-start top-[184px]  text-[#CCD2E3] rounded-tr-[10px]  rounded-br-[10px] border-[1px]  border-gray-400  bg-[#25883F] flex flex-col space-y-[10px]">
+                <Link
+                  to="/dashboard/"
+                  className="flex flex-row space-x-[10px] w-full hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] items-center"
+                >
+                  <BiSolidDashboard className="text-[17px] hover:text-white text-[#ff9933]" />{" "}
+                  <p>Dashboard</p>
+                </Link>
+                <a
+                  href="#"
+                  className="flex  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full flex-row space-x-[10px]  items-center"
+                >
+                  <IoSearchSharp className="text-[#ff9933] hover:text-white text-[17px]" />{" "}
+                  <p>View Crops</p>
+                </a>
+                <Link
+                  to="add-crop"
+                  className="flex flex-row  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full space-x-[10px]  items-center"
+                >
+                  <IoMdAddCircleOutline className="text-[#ff9933] hover:text-white text-[17px]" />{" "}
+                  <p>Add Crops</p>
+                </Link>
+                <a
+                  href="#"
+                  className="flex  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full flex-row space-x-[10px]  items-center"
+                >
+                  <RiDeleteBin6Line className="text-[#ff9933] text-[17px] hover:text-white" />{" "}
+                  <p>Delete Crops</p>
+                </a>
+                <a
+                  href="#"
+                  className="flex flex-row  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full space-x-[10px]  items-center"
+                >
+                  <MdOutlineAnalytics className="text-[#ff9933] hover:text-white text-[17px]" />{" "}
+                  <p>Analytics</p>
+                </a>
+                <a
+                  href="#"
+                  className="flex flex-row  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full space-x-[10px] items-center"
+                >
+                  <BsPerson className="text-[#ff9933] hover:text-white text-[17px]" />{" "}
+                  <p text-shadow>Edit Profile</p>
+                </a>
+                <a
+                  href="#"
+                  className="flex flex-row  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full space-x-[10px] items-center"
+                >
+                  <MdOutlinePayments className="text-[#ff9933] hover:text-white text-[17px]" />{" "}
+                  <p>Edit Payment</p>
+                </a>
+              </div>
+            )}
+          </div>{" "}
           <h2 className="font-bold text-white text-[20px] max-md:text-[13px]">
             Farmer Dashboard
           </h2>
@@ -150,7 +195,6 @@ const Dashboard = () => {
             <p className="font-bold text-white text-[12px] max-md:text-[9px]">
               John doe
             </p>
-            <RiArrowDropDownLine className="text-gray-400 text-[20px] " />
           </div>
         </header>
         <div className="flex-1 bg-[#1E6E33] px-[20px] py-[17px] max-md:px-[3px] max-md:py-[10px]">
