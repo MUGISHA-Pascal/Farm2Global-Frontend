@@ -134,7 +134,7 @@ const AddCrops = () => {
               type="tel"
               name="PricePerKg"
               id="PricePerKg"
-              placeholder="usd/kg"
+              placeholder="usd"
               value={formData.PricePerKg}
               onChange={handleChange}
               required
@@ -156,7 +156,7 @@ const AddCrops = () => {
             id="QtyPerSeason"
             value={formData.QtyPerSeason}
             onChange={handleChange}
-            placeholder="kg/season"
+            placeholder="kilograms"
             required
             className="mt-1 p-[6px] border placeholder:text-[12px] max-sm:text-[17px] border-gray-300 rounded-md w-[330px] bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
             style={{ borderColor: "#FF9933" }}
