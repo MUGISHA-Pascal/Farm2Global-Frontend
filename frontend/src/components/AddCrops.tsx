@@ -25,7 +25,7 @@ const AddCrops = () => {
       {" "}
       <form
         onSubmit={handleSubmit}
-        className="w-[700px] md:mt-[50px] max-sm:w-[350px] space-y-[14px]  bg-white p-6 rounded-lg shadow-lg"
+        className="w-[700px] md:mt-[50px] max-sm:w-[350px] border-[1px] border-[#25883F] space-y-[14px]  bg-white p-6 rounded-lg shadow-lg"
       >
         <h2 className="text-2xl max-sm:text-[17px] font-bold mb-6 text-center text-[#25883F]">
           Add New Crop
