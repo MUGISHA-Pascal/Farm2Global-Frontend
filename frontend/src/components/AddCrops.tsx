@@ -28,7 +28,7 @@ const AddCrops = () => {
         className="w-[700px] md:mt-[50px] max-sm:w-[350px] space-y-[14px]  bg-white p-6 rounded-lg shadow-lg"
       >
         <h2 className="text-2xl max-sm:text-[17px] font-bold mb-6 text-center text-[#25883F]">
-          Add crop
+          Add Crop
         </h2>
         <div className="sm:grid sm:grid-cols-2 max-sm:flex max-sm:flex-col max-sm:space-y-[7px] sm:gap-4 mb-4">
           <div>
@@ -39,10 +39,10 @@ const AddCrops = () => {
               }}
               required
               title="select"
-              className=" p-[6px] mt-[10px] border text-sm max-sm:text-[13px] text-gray-700 border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
+              className=" p-[6px] mt-[10px]  border text-sm max-sm:text-[13px] text-gray-700 border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
               style={{ borderColor: "#FF9933" }}
             >
-              <option value="" className="max-sm:text-[7px] p-0">
+              <option value="" className="text-gray-500  max-sm:text-[7px] p-0">
                 Select crop name
               </option>
               <option value="Maize" className="max-sm:text-[7px] p-0">
@@ -88,7 +88,7 @@ const AddCrops = () => {
               className=" p-[6px] mt-[10px] border text-sm max-sm:text-[13px] text-gray-700 border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
               style={{ borderColor: "#FF9933" }}
             >
-              <option value="" className="max-sm:text-[7px] p-0">
+              <option value="" className="max-sm:text-[7px] text-gray-500 p-0">
                 Select harvest season
               </option>
               <option value="Spring" className="max-sm:text-[7px] p-0">
@@ -110,7 +110,7 @@ const AddCrops = () => {
               htmlFor="CropVariety"
               className="block text-sm font-medium text-gray-700"
             >
-              Crop variety
+              Crop Variety
             </label>
             <input
               type="text"
@@ -148,7 +148,7 @@ const AddCrops = () => {
             htmlFor="QtyPerSeason"
             className="block text-sm font-medium text-gray-700"
           >
-            Qty/Season
+            Quantity/Season
           </label>
           <input
             type="number"
@@ -167,7 +167,7 @@ const AddCrops = () => {
             type="submit"
             className="w-[200px] bg-[#FF9933] md:mt-[10px] max-sm:w-[100px] max-sm:p-[4px] max-sm:text-[13px] font-bold text-white p-[6px] rounded-md hover:bg-[#CBE86A] transition duration-300"
           >
-            Add crop
+            Add Crop
           </button>
         </div>
       </form>
