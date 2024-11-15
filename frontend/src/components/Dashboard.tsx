@@ -9,7 +9,7 @@ import { MdOutlinePayments } from "react-icons/md";
 import { AiFillQuestionCircle } from "react-icons/ai";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import profileImage from "../assets/demoProfile.png";
-import { BrowserRouter, Outlet } from "react-router-dom";
+import { BrowserRouter, Link, Outlet } from "react-router-dom";
 import { LuMenu } from "react-icons/lu";
 import { useEffect, useState } from "react";
 const Dashboard = () => {
@@ -31,14 +31,14 @@ const Dashboard = () => {
         <div className="flex w-full flex-col space-y-[30px] items-start">
           <div className="mainmenu w-full flex flex-col space-y-[13px] items-start">
             <h2 className="text-[#ff9933] font-100 text-[10px]">MAIN MENU</h2>
-            <div className="flex w-full flex-col text-[13px]  text-[#CCD2E3] space-y-[15px]  items-start">
-              <a
-                href="#"
+            <div className="flex w-full flex-col text-[13px]  text-white space-y-[15px]  items-start">
+              <Link
+                to="/dashboard/"
                 className="flex flex-row space-x-[10px] w-full hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] items-center"
               >
                 <BiSolidDashboard className="text-[17px] hover:text-white text-[#ff9933]" />{" "}
                 <p>Dashboard</p>
-              </a>
+              </Link>
               <a
                 href="#"
                 className="flex hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full flex-row space-x-[10px] items-center"
@@ -50,7 +50,7 @@ const Dashboard = () => {
           </div>
           <div className="workspace flex w-full flex-col space-y-[13px] items-start">
             <h2 className="text-[#ff9933]  text-[10px]">Workspace</h2>
-            <div className="flex w-full flex-col text-[13px]  text-[#CCD2E3] space-y-[15px]  items-start">
+            <div className="flex w-full flex-col text-[13px]  text-white space-y-[15px]  items-start">
               <a
                 href="#"
                 className="flex  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full flex-row space-x-[10px]  items-center"
@@ -58,13 +58,13 @@ const Dashboard = () => {
                 <IoSearchSharp className="text-[#ff9933] hover:text-white text-[17px]" />{" "}
                 <p>View Crops</p>
               </a>
-              <a
-                href="#"
+              <Link
+                to="add"
                 className="flex flex-row  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full space-x-[10px]  items-center"
               >
                 <IoMdAddCircleOutline className="text-[#ff9933] hover:text-white text-[17px]" />{" "}
                 <p>Add Crops</p>
-              </a>
+              </Link>
               <a
                 href="#"
                 className="flex  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full flex-row space-x-[10px]  items-center"
@@ -83,7 +83,7 @@ const Dashboard = () => {
           </div>
           <div className="accountsettings w-full flex flex-col space-y-[13px] items-start">
             <h2 className="text-[#ff9933] text-[10px]">Account settings</h2>
-            <div className="flex flex-col w-full text-[13px]  text-[#CCD2E3] space-y-[15px]  items-start">
+            <div className="flex flex-col w-full text-[13px]  text-white space-y-[15px]  items-start">
               <a
                 href="#"
                 className="flex flex-row  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full space-x-[10px] items-center"
@@ -106,7 +106,7 @@ const Dashboard = () => {
             <AiFillQuestionCircle className="text-[#ff9933] text-[22px]" />
           </div>
           <div className="w-[160px] h-[110px] pt-[25px] text-[10px] absolute top-[15px] bg-[#2FA24D] items-center justify-center rounded-[8px] flex flex-col space-y-[6px]">
-            <p className="text-[#CCD2E3]">
+            <p className="text-white">
               Need help with <b className="text-white">Dash</b> ?
             </p>
             <button className="text-white p-[6px] w-[100px] bg-[#ff9933] rounded-[5px]">
