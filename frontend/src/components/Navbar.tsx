@@ -239,19 +239,19 @@ const Navbar = () => {
                     href=""
                     className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
                   >
-                    <IoMdArrowDropright /> <p>Maize (Corn)</p>
+                    <IoMdArrowDropright /> <p>Maize</p>
                   </a>
                   <a
                     href=""
                     className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
                   >
-                    <IoMdArrowDropright /> <p>Oilseeds (Sunflower)</p>
+                    <IoMdArrowDropright /> <p>Sunflower</p>
                   </a>
                   <a
                     href=""
                     className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
                   >
-                    <IoMdArrowDropright /> <p>Peanuts (Groundnuts)</p>
+                    <IoMdArrowDropright /> <p>Groundnuts</p>
                   </a>
                   <a
                     href=""
