@@ -27,7 +27,7 @@ function App() {
           <Route element={<Login />} path="/login" />
           <Route element={<Dashboard />} path="/dashboard">
             <Route element={<Charts />} path="" />
-            <Route element={<AddCrops />} path="add" />
+            <Route element={<AddCrops />} path="add-crop" />
           </Route>
         </Routes>
         <Footer />

@@ -59,7 +59,7 @@ const Dashboard = () => {
                 <p>View Crops</p>
               </a>
               <Link
-                to="add"
+                to="add-crop"
                 className="flex flex-row  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full space-x-[10px]  items-center"
               >
                 <IoMdAddCircleOutline className="text-[#ff9933] hover:text-white text-[17px]" />{" "}

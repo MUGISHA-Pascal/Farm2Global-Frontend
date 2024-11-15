@@ -3,13 +3,11 @@ import { Link as RouterLink } from "react-router-dom";
 
 const AddCrops = () => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    country: "",
-    district: "",
-    phoneNo: "",
-    password: "",
-    uniqueID: "",
+    CropName: "",
+    HarvestSeason: "",
+    QtyPerSeason: "",
+    PricePerKg: "",
+    CropVariety: "",
   });
   const [registerChoice, setRegisterChoice] = useState("");
 
@@ -27,7 +25,7 @@ const AddCrops = () => {
       {" "}
       <form
         onSubmit={handleSubmit}
-        className="w-[700px] max-sm:w-[350px]  bg-white p-6 rounded-lg shadow-lg"
+        className="w-[700px] md:mt-[50px] max-sm:w-[350px]  bg-white p-6 rounded-lg shadow-lg"
       >
         <h2 className="text-2xl max-sm:text-[17px] font-bold mb-6 text-center text-[#25883F]">
           Add crop
@@ -109,37 +107,39 @@ const AddCrops = () => {
           </div>
           <div>
             <label
-              htmlFor="Qty/Season"
+              htmlFor="QtyPerSeason"
               className="block text-sm font-medium text-gray-700"
             >
               Qty/Season
             </label>
             <input
               type="number"
-              name="Qty/Season"
-              id="Qty/Season"
-              value={formData.country}
+              name="QtyPerSeason"
+              id="QtyPerSeason"
+              value={formData.QtyPerSeason}
               onChange={handleChange}
+              placeholder="kg/season"
               required
-              className="mt-1 p-[6px] border max-sm:text-[17px] border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
+              className="mt-1 p-[6px] border placeholder:text-[12px] max-sm:text-[17px] border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
               style={{ borderColor: "#FF9933" }}
             />
           </div>
           <div>
             <label
-              htmlFor="phoneNo"
+              htmlFor="PricePerKg"
               className="block text-sm font-medium text-gray-700"
             >
-              Phone No
+              Price/Kg
             </label>
             <input
               type="tel"
-              name="phoneNo"
-              id="phoneNo"
-              value={formData.phoneNo}
+              name="PricePerKg"
+              id="PricePerKg"
+              placeholder="usd/kg"
+              value={formData.PricePerKg}
               onChange={handleChange}
               required
-              className="mt-1 p-[6px] border max-sm:text-[13px] border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
+              className="mt-1 p-[6px] placeholder:text-[12px] border max-sm:text-[13px] border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
               style={{ borderColor: "#FF9933" }}
             />
           </div>
@@ -154,10 +154,10 @@ const AddCrops = () => {
           <textarea
             name="CropVariety"
             id="CropVariety"
-            value={formData.district}
+            value={formData.CropVariety}
             onChange={handleChange}
             required
-            className="mt-1 p-[6px] border max-sm:text-[17px] border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
+            className="mt-1 p-[6px] border max-sm:text-[17px] border-gray-300 rounded-md w-full bg-white focus:outline-none h-[110px] focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
             style={{ borderColor: "#FF9933" }}
           ></textarea>
         </div>
@@ -166,17 +166,8 @@ const AddCrops = () => {
             type="submit"
             className="w-[200px] bg-[#FF9933] max-sm:w-[100px] max-sm:p-[4px] max-sm:text-[13px] font-bold text-white p-[6px] rounded-md hover:bg-[#CBE86A] transition duration-300"
           >
-            Register
+            Add crop
           </button>
-          <div className="text-[13px] max-sm:text-[10px]">
-            <p className="inline text-gray-500">Already have an account </p>
-            <RouterLink
-              to="/login"
-              className="hover:text-green-300 underline text-green-400 hover:cursor-pointer"
-            >
-              Login
-            </RouterLink>
-          </div>
         </div>
       </form>
     </div>
