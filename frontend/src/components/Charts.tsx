@@ -197,7 +197,7 @@ const LineChart = () => {
   }, []);
 
   return (
-    <div className="flex-1 bg-[#1E6E33] max-md:p-0">
+    <div className="flex-1 bg-[#ffffff] max-md:p-0">
       <div className="bg-[#1B7633] p-[10px] max-md:p-[0px] h-[320px] max-md:h-[250px] max-md:w-[350px] rounded-[10px] w-full relative">
         <canvas id="LineChart"></canvas>
       </div>

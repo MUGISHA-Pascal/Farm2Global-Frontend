@@ -197,7 +197,7 @@ const Dashboard = () => {
             </p>
           </div>
         </header>
-        <div className="flex-1 bg-[#1E6E33] px-[20px] py-[17px] max-md:px-[3px] max-md:py-[10px]">
+        <div className="flex-1 bg-white px-[20px] py-[17px] max-md:px-[3px] max-md:py-[10px]">
           <Outlet />
         </div>
       </main>
