@@ -25,7 +25,7 @@ const AddCrops = () => {
       {" "}
       <form
         onSubmit={handleSubmit}
-        className="w-[700px] md:mt-[50px] max-sm:w-[350px]  bg-white p-6 rounded-lg shadow-lg"
+        className="w-[700px] md:mt-[50px] max-sm:w-[350px] space-y-[14px]  bg-white p-6 rounded-lg shadow-lg"
       >
         <h2 className="text-2xl max-sm:text-[17px] font-bold mb-6 text-center text-[#25883F]">
           Add crop
@@ -107,20 +107,19 @@ const AddCrops = () => {
           </div>
           <div>
             <label
-              htmlFor="QtyPerSeason"
+              htmlFor="CropVariety"
               className="block text-sm font-medium text-gray-700"
             >
-              Qty/Season
+              Crop variety
             </label>
             <input
-              type="number"
-              name="QtyPerSeason"
-              id="QtyPerSeason"
-              value={formData.QtyPerSeason}
+              type="text"
+              name="CropVariety"
+              id="CropVariety"
+              value={formData.CropVariety}
               onChange={handleChange}
-              placeholder="kg/season"
               required
-              className="mt-1 p-[6px] border placeholder:text-[12px] max-sm:text-[17px] border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
+              className="mt-1 p-[6px] border placeholder:text-[12px] w-full max-sm:text-[17px] border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
               style={{ borderColor: "#FF9933" }}
             />
           </div>
@@ -144,27 +143,29 @@ const AddCrops = () => {
             />
           </div>
         </div>
-        <div>
+        <div className="w-full flex flex-col items-center justify-center">
           <label
-            htmlFor="CropVariety"
+            htmlFor="QtyPerSeason"
             className="block text-sm font-medium text-gray-700"
           >
-            Crop variety
+            Qty/Season
           </label>
-          <textarea
-            name="CropVariety"
-            id="CropVariety"
-            value={formData.CropVariety}
+          <input
+            type="number"
+            name="QtyPerSeason"
+            id="QtyPerSeason"
+            value={formData.QtyPerSeason}
             onChange={handleChange}
+            placeholder="kg/season"
             required
-            className="mt-1 p-[6px] border max-sm:text-[17px] border-gray-300 rounded-md w-full bg-white focus:outline-none h-[110px] focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
+            className="mt-1 p-[6px] border placeholder:text-[12px] max-sm:text-[17px] border-gray-300 rounded-md w-[330px] bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
             style={{ borderColor: "#FF9933" }}
-          ></textarea>
+          />
         </div>
         <div className="flex flex-row space-x-[20px] items-center justify-center">
           <button
             type="submit"
-            className="w-[200px] bg-[#FF9933] max-sm:w-[100px] max-sm:p-[4px] max-sm:text-[13px] font-bold text-white p-[6px] rounded-md hover:bg-[#CBE86A] transition duration-300"
+            className="w-[200px] bg-[#FF9933] md:mt-[10px] max-sm:w-[100px] max-sm:p-[4px] max-sm:text-[13px] font-bold text-white p-[6px] rounded-md hover:bg-[#CBE86A] transition duration-300"
           >
             Add crop
           </button>
