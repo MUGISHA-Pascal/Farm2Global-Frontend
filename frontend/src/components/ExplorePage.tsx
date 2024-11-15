@@ -421,8 +421,9 @@ const ExplorePage = () => {
           </button>
         </div>
       </header>
-      <main className="w-[1220px] max-sm:w-full mb-[10px] p-[5px] bg-[#4E9A61] rounded-[20px] ">
-        <main className="farmersMain overflow-y-auto h-screen bg-[#4E9A61] md:m-[10px] rounded-[20px] max-md:w-full w-[1200px] place-items-center grid md:grid-cols-4 max-sm:gap-[10px] max-md:grid-cols-2 max-md:p-[1px] gap-[20px] p-[30px]">
+      <main className="w-[1220px] max-sm:w-full mb-[10px] p-[5px] bg-[#ffffff] rounded-[20px] ">
+        {/* bg-[#4E9A61] */}
+        <main className="farmersMain overflow-y-auto h-screen bg-white md:m-[10px] rounded-[20px] max-md:w-full w-[1200px] place-items-center grid md:grid-cols-4 max-sm:gap-[10px] max-md:grid-cols-2 max-md:p-[1px] gap-[20px] p-[30px]">
           {paginatedfilteredusers.map((farmer) => (
             <div
               key={farmer.Id}
@@ -499,7 +500,7 @@ const ExplorePage = () => {
         <div className="flex flex-row ml-[530px] space-x-[10px] font-bold text-white max-sm:ml-[130px] items-center text-[10px]">
           <GrFormPrevious
             onClick={handlePrevious}
-            className="font-bold text-[35px]"
+            className="font-bold text-[35px] text-[#1B7633]"
           />
           {Array.from(
             { length: totalNumberPages },
@@ -520,7 +521,7 @@ const ExplorePage = () => {
             </button>
           ))}
           <MdOutlineNavigateNext
-            className="font-bold text-[40px]"
+            className="font-bold text-[40px] text-[#1B7633]"
             onClick={handleNext}
           />
         </div>

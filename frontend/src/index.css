@@ -24,11 +24,11 @@ code {
   margin-right: 10px;
 }
 .farmersMain::-webkit-scrollbar-thumb {
-  background-color: #ffffff;
+  background-color: #25883f;
   border-radius: 10px;
 }
 .farmersMain::-webkit-scrollbar-track {
-  background-color: #25883f;
+  background-color: #ffffff;
 }
 body::-webkit-scrollbar {
   width: 6px;
