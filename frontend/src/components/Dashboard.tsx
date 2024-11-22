@@ -53,13 +53,13 @@ const Dashboard = () => {
           <div className="workspace flex w-full flex-col space-y-[13px] items-start">
             <h2 className="text-[#ff9933]  text-[10px]">Workspace</h2>
             <div className="flex w-full flex-col text-[13px]  text-white space-y-[15px]  items-start">
-              <a
-                href="#"
+              <Link
+                  to="view-crop"
                 className="flex  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full flex-row space-x-[10px]  items-center"
               >
                 <IoSearchSharp className="text-[#ff9933] hover:text-white text-[17px]" />{" "}
                 <p>View Crops</p>
-              </a>
+              </Link>
               <Link
                 to="add-crop"
                 className="flex flex-row  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full space-x-[10px]  items-center"

@@ -12,6 +12,7 @@ import Charts from "./components/Charts";
 import AddCrops from "./components/AddCrops";
 import HomeContent from "./components/HomeContent";
 import ExplorePage from "./components/ExplorePage";
+import ViewCrops from "./components/ViewCrops";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route element={<Dashboard />} path="/dashboard">
             <Route element={<Charts />} path="" />
             <Route element={<AddCrops />} path="add-crop" />
+            <Route element={<ViewCrops />} path="view-crop" />
           </Route>
         </Routes>
         <Footer />
