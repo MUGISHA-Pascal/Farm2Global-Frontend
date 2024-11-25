@@ -3,9 +3,11 @@ import { IoSearchSharp } from "react-icons/io5";
 import { MdSystemUpdateAlt } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
 import CropImage from "../assets/crop.jpeg";
+import UpdateCropModal from "./UpdateCropModal";
 const ViewCrops = () => {
   const [searchBy, setSearchBy] = useState("");
   const [search, setSearch] = useState("");
+  const [showModal, setModalShow] = useState(false);
 
   return (
     <div className="h-screen  border-[1px]  border-[#25883F] p-[10px] bg-white shadow rounded-[10px] flex flex-col items-center  w-full ">
@@ -71,6 +73,7 @@ const ViewCrops = () => {
       </header>
       <main className="w-full p-[7px] m-[7px] shadow rounded-[10px] border-[1px] border-[#25883F]">
         <main className="farmersMain w-full   h-[500px] rounded-[10px] grid grid-cols-4 gap-[30px] place-items-center overflow-y-auto">
+          {showModal && <UpdateCropModal setModalShow={setModalShow} />}
           {(() => {
             const itemComponents: JSX.Element[] = [];
             for (let i = 1; i < 10; i++) {
@@ -105,7 +108,11 @@ const ViewCrops = () => {
                       <MdSystemUpdateAlt
                         title="update"
                         className="text-[20px] text-[#25883F]"
+                        onClick={() => {
+                          setModalShow(true);
+                        }}
                       />
+
                       <MdDeleteForever
                         title="delete"
                         className="text-[20px] text-[#25883F]"

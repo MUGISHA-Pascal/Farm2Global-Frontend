@@ -54,11 +54,11 @@ const Dashboard = () => {
             <h2 className="text-[#ff9933]  text-[10px]">Workspace</h2>
             <div className="flex w-full flex-col text-[13px]  text-white space-y-[15px]  items-start">
               <Link
-                  to="view-crop"
+                to="view-crop"
                 className="flex  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full flex-row space-x-[10px]  items-center"
               >
                 <IoSearchSharp className="text-[#ff9933] hover:text-white text-[17px]" />{" "}
-                <p>View Crops</p>
+                <p>Manage Crops</p>
               </Link>
               <Link
                 to="add-crop"
@@ -67,13 +67,13 @@ const Dashboard = () => {
                 <IoMdAddCircleOutline className="text-[#ff9933] hover:text-white text-[17px]" />{" "}
                 <p>Add Crops</p>
               </Link>
-              <a
+              {/* <a
                 href="#"
                 className="flex  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full flex-row space-x-[10px]  items-center"
               >
                 <RiDeleteBin6Line className="text-[#ff9933] text-[17px] hover:text-white" />{" "}
                 <p>Delete Crops</p>
-              </a>
+              </a> */}
               <a
                 href="#"
                 className="flex flex-row  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full space-x-[10px]  items-center"
@@ -197,7 +197,7 @@ const Dashboard = () => {
             </p>
           </div>
         </header>
-        <div className="flex-1 bg-white px-[20px] py-[17px] max-md:px-[3px] max-md:py-[10px]">
+        <div className="relative bg-white flex-1 px-[20px] py-[17px] max-md:px-[3px] max-md:py-[10px]">
           <Outlet />
         </div>
       </main>
