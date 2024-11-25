@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Login: React.FC = () => {
   const baseUrl = "http://localhost:4000";
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     phoneNo: "",
@@ -58,6 +60,7 @@ const Login: React.FC = () => {
       if (phoneError) {
         phoneError.innerHTML = "";
       }
+      navigate("/dashboard");
     } else {
       interface ErrorResponse {
         password?: string;
