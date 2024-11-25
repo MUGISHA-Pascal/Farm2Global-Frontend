@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link as RouterLink } from "react-router-dom";
-
+import { Link as RouterLink, useNavigate } from "react-router-dom";
+const baseUrl = "http://localhost:4000";
 const Signup: React.FC = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -8,19 +8,78 @@ const Signup: React.FC = () => {
     country: "",
     district: "",
     phoneNo: "",
+    role: "",
     password: "",
-    uniqueID: "",
+    registerCode: "",
   });
-  const [registerChoice, setRegisterChoice] = useState("");
+  const navigate = useNavigate();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    console.log(formData);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
+    if (formData.registerCode !== "123456") {
+      const RegisterCodeError = document.getElementById("RegisterCodeError");
+      if (RegisterCodeError) {
+        RegisterCodeError.innerHTML = "Register code not correct";
+      }
+    } else {
+      const response = await fetch(`${baseUrl}/auth/signup`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstname: formData.firstName,
+          lastname: formData.lastName,
+          country: formData.country,
+          district: formData.district,
+          phoneNo: formData.phoneNo,
+          password: formData.password,
+          role: formData.role,
+        }),
+      });
+      setFormData({
+        firstName: "",
+        lastName: "",
+        country: "",
+        district: "",
+        role: "",
+        phoneNo: "",
+        password: "",
+        registerCode: "",
+      });
+      if (response.ok) {
+        interface farmer {
+          message: "Farmer created";
+          Farmer: {
+            id: string;
+            firstname: string;
+            lastname: string;
+            country: string;
+            district: string;
+            phoneNo: string;
+          };
+        }
+        interface buyer {
+          message: "buyer created";
+          buyer: {
+            id: string;
+            firstname: string;
+            lastname: string;
+            phoneNo: string;
+          };
+        }
+        const result: Promise<farmer | buyer> = await response.json();
+
+        navigate("/login");
+      }
+    }
   };
 
   return (
@@ -147,9 +206,9 @@ const Signup: React.FC = () => {
             </label>
             <input
               type="text"
-              name="uniqueID"
-              id="uniqueID"
-              value={formData.uniqueID}
+              name="registerCode"
+              id="registerCode"
+              value={formData.registerCode}
               onChange={handleChange}
               required
               pattern="[A-Za-z0-9]{6}"
@@ -157,13 +216,14 @@ const Signup: React.FC = () => {
               className="mt-1 p-[6px] border max-sm:text-[13px] border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
               style={{ borderColor: "#FF9933" }}
             />
+            <p className="text-red-500 text-sm" id="RegisterCodeError"></p>
           </div>
+
           <div>
             <select
-              value={registerChoice}
-              onChange={(e) => {
-                setRegisterChoice(e.target.value);
-              }}
+              name="role"
+              value={formData.role}
+              onChange={handleChange}
               required
               title="select"
               className=" p-[6px] mt-[10px] border text-sm max-sm:text-[13px] text-gray-700 border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
