@@ -86,13 +86,13 @@ const Dashboard = () => {
           <div className="accountsettings w-full flex flex-col space-y-[13px] items-start">
             <h2 className="text-[#ff9933] text-[10px]">Account settings</h2>
             <div className="flex flex-col w-full text-[13px]  text-white space-y-[15px]  items-start">
-              <a
-                href="#"
+              <Link
+                to="profile"
                 className="flex flex-row  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full space-x-[10px] items-center"
               >
                 <BsPerson className="text-[#ff9933] hover:text-white text-[17px]" />{" "}
                 <p text-shadow>Edit Profile</p>
-              </a>
+              </Link>
               <a
                 href="#"
                 className="flex flex-row  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full space-x-[10px] items-center"
@@ -186,7 +186,7 @@ const Dashboard = () => {
           <h2 className="font-bold text-white text-[20px] max-md:text-[13px]">
             Farmer Dashboard
           </h2>
-          <div className="flex flex-row items-center space-x-[10px] max-md:space-x-[5px]">
+          <div className="flex cursor-pointer flex-row items-center space-x-[10px] max-md:space-x-[5px]">
             <img
               src={profileImage}
               alt="profile"
