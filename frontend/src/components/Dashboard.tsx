@@ -16,7 +16,22 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { IoMdArrowDropright } from "react-icons/io";
 const Dashboard = () => {
   const [categoryShow, setCategoryShow] = useState(false);
-  console.log(document.cookie);
+  interface user {
+    id: string;
+    firstname: string;
+    lastname: string;
+    country: string;
+    district: string;
+    phoneNo: string;
+  }
+  let user: user = {
+    id: "",
+    firstname: "",
+    lastname: "",
+    country: "",
+    district: "",
+    phoneNo: "",
+  };
   useEffect(() => {
     const handleClickOutside = (event: any) => {
       if (!event.target.closest(".dropdown-category")) {
@@ -28,6 +43,22 @@ const Dashboard = () => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
+  interface userint {
+    message: string;
+    user: {
+      id: string;
+      firstname: string;
+      lastname: string;
+      country: string;
+      district: string;
+      phoneNo: string;
+    };
+  }
+  const userLocalStorage = localStorage.getItem("user");
+  if (userLocalStorage) {
+    let { result }: { result: userint } = JSON.parse(userLocalStorage);
+    user = result.user;
+  }
   return (
     <div className="flex w-full flex-row border-t-[1px] border-gray-400">
       <menu className="flex max-md:hidden py-[30px] flex-col space-y-[70px] border-gray-400 border-r-[1px] mt-[6px] w-[200px] pl-[17px]">
@@ -187,16 +218,19 @@ const Dashboard = () => {
           <h2 className="font-bold text-white text-[20px] max-md:text-[13px]">
             Farmer Dashboard
           </h2>
-          <div className="flex cursor-pointer flex-row items-center space-x-[10px] max-md:space-x-[5px]">
+          <Link
+            to="profile"
+            className="flex hover:text-green-300 cursor-pointer flex-row items-center space-x-[10px] max-md:space-x-[5px]"
+          >
             <img
               src={profileImage}
               alt="profile"
               className="w-[30px] h-[30px] max-md:w-[20px] max-md:h-[20px]"
             />
             <p className="font-bold text-white text-[12px] max-md:text-[9px]">
-              John doe
+              {user.firstname} {user.lastname}
             </p>
-          </div>
+          </Link>
         </header>
         <div className="relative bg-white flex-1 px-[20px] py-[17px] max-md:px-[3px] max-md:py-[10px]">
           <Outlet />

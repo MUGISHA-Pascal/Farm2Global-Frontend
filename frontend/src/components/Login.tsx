@@ -35,7 +35,7 @@ const Login: React.FC = () => {
     if (response.ok) {
       interface farmer {
         message: "Farmer found";
-        Farmer: {
+        user: {
           id: string;
           firstname: string;
           lastname: string;
@@ -46,7 +46,7 @@ const Login: React.FC = () => {
       }
       interface buyer {
         message: "buyer found";
-        buyer: {
+        user: {
           id: string;
           firstname: string;
           lastname: string;
@@ -63,6 +63,7 @@ const Login: React.FC = () => {
       }
       const token = Cookies.get("jwt");
       if (token) {
+        localStorage.setItem("user", JSON.stringify({ result }));
         navigate("/dashboard");
       }
       console.log(document.cookie);

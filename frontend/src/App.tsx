@@ -28,11 +28,9 @@ function App() {
 
   const { jwt, setJwt } = useAppContext();
   const token = Cookies.get("jwt");
-  // useEffect(() => {
   if (token) {
     setJwt(token);
   }
-  // });
   return (
     <div className="App overflow-hidden bg-[#25883F]">
       <BrowserRouter>

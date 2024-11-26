@@ -58,7 +58,7 @@ const Signup: React.FC = () => {
       if (response.ok) {
         interface farmer {
           message: "Farmer created";
-          Farmer: {
+          user: {
             id: string;
             firstname: string;
             lastname: string;
@@ -69,7 +69,7 @@ const Signup: React.FC = () => {
         }
         interface buyer {
           message: "buyer created";
-          buyer: {
+          user: {
             id: string;
             firstname: string;
             lastname: string;

@@ -25,14 +25,13 @@ const Navbar = () => {
   const logout = () => {
     Cookies.remove("jwt");
     setJwt("");
+    localStorage.removeItem("user");
     navigate("/signup");
   };
   const token = Cookies.get("jwt");
-  // useEffect(() => {
   if (token) {
     setJwt(token);
   }
-  // });
   useEffect(() => {
     const handleClickOutside = (event: any) => {
       if (!event.target.closest(".dropdown-category")) {
@@ -327,11 +326,13 @@ const Navbar = () => {
                 Sign up
               </RouterLink>
             </li>
-            <li onClick={logout}>
-              <p className="hover:text-green-300 hover:cursor-pointer">
-                logout
-              </p>
-            </li>
+            {jwt && (
+              <li onClick={logout}>
+                <p className="hover:text-green-300 hover:cursor-pointer">
+                  logout
+                </p>
+              </li>
+            )}
           </ul>
         </div>
       </nav>

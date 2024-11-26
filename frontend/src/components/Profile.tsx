@@ -1,8 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import profileImage from "../assets/demoProfile.png";
 
 const Profile = () => {
-  const user = {
+  interface user {
+    id: string;
+    firstname: string;
+    lastname: string;
+    country: string;
+    district: string;
+    phoneNo: string;
+  }
+  let userRetrieve: user = {
+    id: "",
+    firstname: "",
+    lastname: "",
+    country: "",
+    district: "",
+    phoneNo: "",
+  };
+  interface userint {
+    message: string;
+    user: {
+      id: string;
+      firstname: string;
+      lastname: string;
+      country: string;
+      district: string;
+      phoneNo: string;
+    };
+  }
+  const userLocalStorage = localStorage.getItem("user");
+  if (userLocalStorage) {
+    let { result }: { result: userint } = JSON.parse(userLocalStorage);
+    userRetrieve = result.user;
+  }
+  const [user, setuser] = useState({
+    id: userRetrieve.id,
+    firstname: userRetrieve.firstname,
+    lastname: userRetrieve.lastname,
+    country: userRetrieve.country,
+    district: userRetrieve.district,
+    phoneNo: userRetrieve.phoneNo,
+  });
+
+  const userCurrently = {
     username: "pascal",
     email: "mugisha@gmail.com",
     phone_number: "0786493844",
@@ -16,22 +57,37 @@ const Profile = () => {
             Edit Profile
           </h2>
           <img
-            src={user.image}
+            src={profileImage}
             alt="profile image"
             className="w-[100px] h-[100px] rounded-full"
           />
           <div className="grid gap-[20px] grid-cols-2">
             <div className="flex flex-col items-start space-y-[10px]">
               <label
-                htmlFor="username"
+                htmlFor="firstname"
                 className="text-sm font-medium text-gray-700"
               >
-                UserName
+                FirstName
               </label>
               <input
-                id="username"
+                id="firstname"
+                value={user.firstname}
                 type="text"
-                className="w-[250px] text-[13px] text-gray-700 focus:outline-none border-[1px] border-gray-300 p-[5px] rounded-[10px]"
+                className="w-[250px] text-[13px] text-gray-500 focus:outline-none border-[1px] border-gray-300 p-[5px] rounded-[10px]"
+              />
+            </div>
+            <div className="flex flex-col items-start space-y-[10px]">
+              <label
+                htmlFor="lastname"
+                className="text-sm font-medium text-gray-700"
+              >
+                LastName
+              </label>
+              <input
+                id="lastname"
+                value={user.lastname}
+                type="text"
+                className="w-[250px] text-[13px] text-gray-500 focus:outline-none border-[1px] border-gray-300 p-[5px] rounded-[10px]"
               />
             </div>
             <div className="flex flex-col items-start space-y-[10px]">
@@ -43,21 +99,37 @@ const Profile = () => {
               </label>
               <input
                 id="phone_number"
+                value={user.phoneNo}
                 type="text"
-                className="w-[250px] text-[13px] text-gray-700 focus:outline-none border-[1px] border-gray-300 p-[5px] rounded-[10px]"
+                className="w-[250px] text-[13px] text-gray-500 focus:outline-none border-[1px] border-gray-300 p-[5px] rounded-[10px]"
               />
             </div>
             <div className="flex flex-col items-start space-y-[10px]">
               <label
-                htmlFor="email"
+                htmlFor="country"
                 className="text-sm font-medium text-gray-700"
               >
-                Email
+                Country
               </label>
               <input
-                id="email"
-                type="email"
-                className="w-[250px] text-[13px] text-gray-700 focus:outline-none border-[1px] border-gray-300 p-[5px] rounded-[10px]"
+                value={user.country}
+                id="country"
+                type="text"
+                className="w-[250px] text-[13px] text-gray-500 focus:outline-none border-[1px] border-gray-300 p-[5px] rounded-[10px]"
+              />
+            </div>
+            <div className="flex flex-col items-start space-y-[10px]">
+              <label
+                htmlFor="district"
+                className="text-sm font-medium text-gray-700"
+              >
+                District
+              </label>
+              <input
+                id="district"
+                value={user.district}
+                type="text"
+                className="w-[250px] text-[13px] text-gray-500 focus:outline-none border-[1px] border-gray-300 p-[5px] rounded-[10px]"
               />
             </div>
             <div className="flex flex-col items-start space-y-[10px]">
