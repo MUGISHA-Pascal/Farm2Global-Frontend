@@ -9,6 +9,7 @@ const Profile = () => {
     country: string;
     district: string;
     phoneNo: string;
+    role: string;
   }
   let userRetrieve: user = {
     id: "",
@@ -17,6 +18,7 @@ const Profile = () => {
     country: "",
     district: "",
     phoneNo: "",
+    role: "",
   };
   interface userint {
     message: string;
@@ -27,6 +29,7 @@ const Profile = () => {
       country: string;
       district: string;
       phoneNo: string;
+      role: string;
     };
   }
   const userLocalStorage = localStorage.getItem("user");
@@ -42,13 +45,10 @@ const Profile = () => {
     district: userRetrieve.district,
     phoneNo: userRetrieve.phoneNo,
   });
-
-  const userCurrently = {
-    username: "pascal",
-    email: "mugisha@gmail.com",
-    phone_number: "0786493844",
-    image: profileImage,
-  };
+  let districtHide = true;
+  if (userRetrieve.role === "buyer") {
+    districtHide = false;
+  }
   return (
     <div className="flex flex-col ">
       <main className="w-full flex flex-col items-center justify-center">
@@ -118,20 +118,23 @@ const Profile = () => {
                 className="w-[250px] text-[13px] text-gray-500 focus:outline-none border-[1px] border-gray-300 p-[5px] rounded-[10px]"
               />
             </div>
-            <div className="flex flex-col items-start space-y-[10px]">
-              <label
-                htmlFor="district"
-                className="text-sm font-medium text-gray-700"
-              >
-                District
-              </label>
-              <input
-                id="district"
-                value={user.district}
-                type="text"
-                className="w-[250px] text-[13px] text-gray-500 focus:outline-none border-[1px] border-gray-300 p-[5px] rounded-[10px]"
-              />
-            </div>
+
+            {districtHide && (
+              <div className="flex flex-col items-start space-y-[10px]">
+                <label
+                  htmlFor="district"
+                  className="text-sm font-medium text-gray-700"
+                >
+                  District
+                </label>
+                <input
+                  id="district"
+                  value={user.district}
+                  type="text"
+                  className="w-[250px] text-[13px] text-gray-500 focus:outline-none border-[1px] border-gray-300 p-[5px] rounded-[10px]"
+                />
+              </div>
+            )}
             <div className="flex flex-col items-start space-y-[10px]">
               <label
                 htmlFor="fileInput"

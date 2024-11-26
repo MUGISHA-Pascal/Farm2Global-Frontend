@@ -45,16 +45,7 @@ const Signup: React.FC = () => {
           role: formData.role,
         }),
       });
-      setFormData({
-        firstName: "",
-        lastName: "",
-        country: "",
-        district: "",
-        role: "",
-        phoneNo: "",
-        password: "",
-        registerCode: "",
-      });
+
       if (response.ok) {
         interface farmer {
           message: "Farmer created";
@@ -77,8 +68,28 @@ const Signup: React.FC = () => {
           };
         }
         const result: Promise<farmer | buyer> = await response.json();
-
+        setFormData({
+          firstName: "",
+          lastName: "",
+          country: "",
+          district: "",
+          role: "",
+          phoneNo: "",
+          password: "",
+          registerCode: "",
+        });
         navigate("/login");
+      } else {
+        let PhoneError = document.getElementById("PhoneCodeError");
+        interface ErrorResponse {
+          error: string;
+        }
+        const error: ErrorResponse = await response.json();
+        if (error.error.includes("phone")) {
+          if (PhoneError) {
+            PhoneError.innerHTML = error.error;
+          }
+        }
       }
     }
   };
@@ -164,6 +175,7 @@ const Signup: React.FC = () => {
               className="mt-1 p-[6px] border max-sm:text-[17px] border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
               style={{ borderColor: "#FF9933" }}
             />
+            <p className="text-red-500 text-sm" id="DistrictCodeError"></p>
           </div>
           <div>
             <label
@@ -182,6 +194,7 @@ const Signup: React.FC = () => {
               className="mt-1 p-[6px] border max-sm:text-[13px] border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
               style={{ borderColor: "#FF9933" }}
             />
+            <p className="text-red-500 text-sm" id="PhoneCodeError"></p>
           </div>
           <div>
             <label
@@ -217,7 +230,6 @@ const Signup: React.FC = () => {
               className="mt-1 p-[6px] border max-sm:text-[13px] border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
               style={{ borderColor: "#FF9933" }}
             />
-            <p className="text-red-500 text-sm" id="RegisterCodeError"></p>
           </div>
 
           <div>
