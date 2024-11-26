@@ -1,15 +1,38 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-scroll";
 import logo from "../assets/logo.png";
 import { CiMenuBurger } from "react-icons/ci";
 import { VscChromeClose } from "react-icons/vsc";
 import { useState } from "react";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoMdArrowDropright } from "react-icons/io";
+import Cookies from "js-cookie";
+import { AppContext } from "./AppContext";
 const Navbar = () => {
+  function useAppContext() {
+    const context = useContext(AppContext);
+    if (!context) {
+      throw new Error("useAppContext must be used within an AppProvider");
+    }
+    return context;
+  }
+
+  const { jwt, setJwt } = useAppContext();
   const [navShow, setNavShow] = useState(false);
   const [categoryShow, setCategoryShow] = useState(false);
+  const navigate = useNavigate();
+  const logout = () => {
+    Cookies.remove("jwt");
+    setJwt("");
+    navigate("/signup");
+  };
+  const token = Cookies.get("jwt");
+  // useEffect(() => {
+  if (token) {
+    setJwt(token);
+  }
+  // });
   useEffect(() => {
     const handleClickOutside = (event: any) => {
       if (!event.target.closest(".dropdown-category")) {
@@ -206,17 +229,19 @@ const Navbar = () => {
                 Partners
               </Link>
             </li>
-            <li>
-              <RouterLink
-                to="/dashboard"
-                onClick={() => {
-                  setNavShow(false);
-                }}
-                className="hover:text-green-300 hover:cursor-pointer"
-              >
-                Dashboard
-              </RouterLink>
-            </li>
+            {jwt && (
+              <li>
+                <RouterLink
+                  to="/dashboard"
+                  onClick={() => {
+                    setNavShow(false);
+                  }}
+                  className="hover:text-green-300 hover:cursor-pointer"
+                >
+                  Dashboard
+                </RouterLink>
+              </li>
+            )}
 
             <li
               onClick={(e) => {
@@ -301,6 +326,11 @@ const Navbar = () => {
               >
                 Sign up
               </RouterLink>
+            </li>
+            <li onClick={logout}>
+              <p className="hover:text-green-300 hover:cursor-pointer">
+                logout
+              </p>
             </li>
           </ul>
         </div>

@@ -31,6 +31,7 @@ const Signup: React.FC = () => {
     } else {
       const response = await fetch(`${baseUrl}/auth/signup`, {
         method: "POST",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
         },

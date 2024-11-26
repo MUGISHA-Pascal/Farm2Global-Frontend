@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
-
+import Cookies from "js-cookie";
 const Login: React.FC = () => {
   const baseUrl = "http://localhost:4000";
   const navigate = useNavigate();
@@ -24,6 +24,7 @@ const Login: React.FC = () => {
     console.log("Form submitted:", formData);
     const response = await fetch(`${baseUrl}/auth/login`, {
       method: "POST",
+      credentials: "include",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         phoneNo: formData.phoneNo,
@@ -60,7 +61,11 @@ const Login: React.FC = () => {
       if (phoneError) {
         phoneError.innerHTML = "";
       }
-      navigate("/dashboard");
+      const token = Cookies.get("jwt");
+      if (token) {
+        navigate("/dashboard");
+      }
+      console.log(document.cookie);
     } else {
       interface ErrorResponse {
         password?: string;

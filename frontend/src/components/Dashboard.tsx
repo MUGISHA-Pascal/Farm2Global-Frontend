@@ -16,6 +16,7 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { IoMdArrowDropright } from "react-icons/io";
 const Dashboard = () => {
   const [categoryShow, setCategoryShow] = useState(false);
+  console.log(document.cookie);
   useEffect(() => {
     const handleClickOutside = (event: any) => {
       if (!event.target.closest(".dropdown-category")) {
