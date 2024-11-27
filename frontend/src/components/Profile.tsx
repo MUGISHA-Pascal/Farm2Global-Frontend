@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import profileImage from "../assets/demoProfile.png";
-import axios from "axios";
 import ImageUploader from "./ImageUploader";
 
 const Profile = () => {
@@ -11,6 +9,7 @@ const Profile = () => {
     country: "",
     district: "",
     phoneNo: "",
+    profilePhoto: "",
     role: "",
   };
   interface userint {
@@ -23,6 +22,7 @@ const Profile = () => {
       district: string;
       phoneNo: string;
       role: string;
+      profilePhoto: string;
     };
   }
   const userLocalStorage = localStorage.getItem("user");
@@ -49,12 +49,14 @@ const Profile = () => {
     district: string;
     phoneNo: string;
     role: string;
+    profilePhoto: string;
   }
 
   let districtHide = true;
   if (userRetrieve.role === "buyer") {
     districtHide = false;
   }
+  let profileImage = `http://localhost:4000/user/image/${userRetrieve.profilePhoto}`;
   return (
     <div className="flex flex-col ">
       <main className="w-full flex flex-col items-center justify-center">
@@ -156,7 +158,7 @@ const Profile = () => {
               </button>
             </div>
             <div className="w-[400px] h-[400px] overflow-y-auto">
-              <ImageUploader />
+              <ImageUploader user={userRetrieve} />
             </div>
           </main>
         </main>

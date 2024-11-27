@@ -33,7 +33,7 @@ import ScrollTrigger from "react-scroll-trigger";
 import { Outlet } from "react-router-dom";
 const Homepage = () => {
   return (
-    <div className="bg-[#25883F]">
+    <div className="bg-[#25883F] mt-[94px]">
       <Outlet />
     </div>
   );

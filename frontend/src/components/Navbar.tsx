@@ -44,7 +44,7 @@ const Navbar = () => {
     };
   }, []);
   return (
-    <div className="bg-[#25883F]">
+    <div className="bg-[#25883F] fixed z-30 top-0 right-0 left-0">
       {" "}
       <nav className="bg-[#25883F] max-md:mx-[20px]  md:mx-[50px] text-white py-2">
         <div className="container max-md:px-[5px] mx-auto   pt-[0px] flex justify-between items-center">
@@ -88,7 +88,7 @@ const Navbar = () => {
                     onClick={() => {
                       setNavShow(false);
                     }}
-                    offset={0}
+                    offset={-95}
                     duration={500}
                     className="hover:text-green-300 hover:cursor-pointer"
                   >
@@ -100,7 +100,7 @@ const Navbar = () => {
                     to="services"
                     spy={true}
                     smooth={true}
-                    offset={0}
+                    offset={-95}
                     onClick={() => {
                       setNavShow(false);
                     }}
@@ -115,7 +115,7 @@ const Navbar = () => {
                     to="features"
                     spy={true}
                     smooth={true}
-                    offset={0}
+                    offset={-95}
                     onClick={() => {
                       setNavShow(false);
                     }}
@@ -130,7 +130,7 @@ const Navbar = () => {
                     to="partners"
                     spy={true}
                     smooth={true}
-                    offset={0}
+                    offset={-95}
                     onClick={() => {
                       setNavShow(false);
                     }}
@@ -185,7 +185,7 @@ const Navbar = () => {
                 to="aboutUs"
                 spy={true}
                 smooth={true}
-                offset={0}
+                offset={-95}
                 duration={500}
                 className="hover:text-green-300 hover:cursor-pointer"
               >
@@ -197,7 +197,7 @@ const Navbar = () => {
                 to="services"
                 spy={true}
                 smooth={true}
-                offset={0}
+                offset={-95}
                 duration={500}
                 className="hover:text-green-300 hover:cursor-pointer"
               >
@@ -209,7 +209,7 @@ const Navbar = () => {
                 to="features"
                 spy={true}
                 smooth={true}
-                offset={0}
+                offset={-95}
                 duration={500}
                 className="hover:text-green-300 hover:cursor-pointer"
               >
@@ -221,7 +221,7 @@ const Navbar = () => {
                 to="partners"
                 spy={true}
                 smooth={true}
-                offset={0}
+                offset={-95}
                 duration={500}
                 className="hover:text-green-300 hover:cursor-pointer"
               >

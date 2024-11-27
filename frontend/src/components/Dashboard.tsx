@@ -16,6 +16,7 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { IoMdArrowDropright } from "react-icons/io";
 const Dashboard = () => {
   const [categoryShow, setCategoryShow] = useState(false);
+  const [profileImage, setProfile] = useState("");
   interface user {
     id: string;
     firstname: string;
@@ -23,6 +24,7 @@ const Dashboard = () => {
     country: string;
     district: string;
     phoneNo: string;
+    profilePhoto: string;
   }
   let user: user = {
     id: "",
@@ -31,7 +33,9 @@ const Dashboard = () => {
     country: "",
     district: "",
     phoneNo: "",
+    profilePhoto: "",
   };
+
   useEffect(() => {
     const handleClickOutside = (event: any) => {
       if (!event.target.closest(".dropdown-category")) {
@@ -52,15 +56,22 @@ const Dashboard = () => {
       country: string;
       district: string;
       phoneNo: string;
+      profilePhoto: string;
     };
   }
+
   const userLocalStorage = localStorage.getItem("user");
   if (userLocalStorage) {
     let { result }: { result: userint } = JSON.parse(userLocalStorage);
     user = result.user;
   }
+  console.log(user.profilePhoto);
+  useEffect(() => {
+    let ImageName = user.profilePhoto;
+    setProfile(`http://localhost:4000/user/image/${ImageName}`);
+  }, [profileImage]);
   return (
-    <div className="flex w-full flex-row border-t-[1px] border-gray-400">
+    <div className="flex w-full mt-[94px]  flex-row border-t-[1px] border-gray-400">
       <menu className="flex max-md:hidden py-[30px] flex-col space-y-[70px] border-gray-400 border-r-[1px] mt-[6px] w-[200px] pl-[17px]">
         <div className="flex w-full flex-col space-y-[30px] items-start">
           <div className="mainmenu w-full flex flex-col space-y-[13px] items-start">
@@ -225,7 +236,7 @@ const Dashboard = () => {
             <img
               src={profileImage}
               alt="profile"
-              className="w-[30px] h-[30px] max-md:w-[20px] max-md:h-[20px]"
+              className="w-[30px] h-[30px] max-md:w-[20px] max-md:h-[20px] rounded-full"
             />
             <p className="font-bold text-white text-[12px] max-md:text-[9px]">
               {user.firstname} {user.lastname}

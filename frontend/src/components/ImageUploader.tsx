@@ -1,7 +1,18 @@
 import axios from "axios";
 import React, { useState } from "react";
 
-const ImageUploader: React.FC = () => {
+interface userProp {
+  user: {
+    id: string;
+    firstname: string;
+    lastname: string;
+    country: string;
+    district: string;
+    phoneNo: string;
+    role: string;
+  };
+}
+const ImageUploader: React.FC<userProp> = ({ user }) => {
   const [image, setImage] = useState<File | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
   const [message, setMessage] = useState<string>("");
@@ -20,9 +31,11 @@ const ImageUploader: React.FC = () => {
     }
     const formData = new FormData();
     formData.append("file", image);
+    console.log(user);
+    formData.append("user", JSON.stringify(user));
     try {
       const response = await axios.post(
-        "http://localhost:4000/user/upload",
+        `http://localhost:4000/user/upload`,
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },
