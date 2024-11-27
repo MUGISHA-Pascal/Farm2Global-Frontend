@@ -209,7 +209,7 @@ const ExplorePage = () => {
               className="flex flex-col items-center h-[390px] max-md:h-[290px] max-sm:w-[160px] w-[260px] bg-[#1B7633]   p-[6px] rounded-[7px] space-y-[10px]"
             >
               <img
-                src={farmerImage}
+                src={`http://localhost:4000/user/image/${farmer.profilePhoto}`}
                 alt="farmer image"
                 className="rounded-[7px] h-[200px] w-full max-md:h-[100px] object-cover bg-cover "
               />

@@ -66,6 +66,18 @@ const ViewCrops = () => {
     let { result }: { result: userint } = JSON.parse(userLocalStorage);
     userRetrieve = result.user;
   }
+  const DeleteCrop = async (cropId: string) => {
+    const response = await fetch(
+      `http://localhost:4000/crops/delete_crop/${cropId}`,
+      {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+    if (response.ok) {
+      console.log("working");
+    }
+  };
   useEffect(() => {
     const fetchData = async () => {
       let farmerId = userRetrieve.id;
@@ -192,9 +204,15 @@ const ViewCrops = () => {
       </header>
       <main className="w-full p-[7px] m-[7px] shadow rounded-[10px] border-[1px] border-[#25883F]">
         <main className="farmersMain w-full   h-[500px] rounded-[10px] grid grid-cols-4 gap-[30px] place-items-center overflow-y-auto">
-          {showModal && <UpdateCropModal setModalShow={setModalShow} />}
           {filteredCrops.map((crop: CropInterface) => (
             <div className="w-[220px] hover:cursor-pointer border-gray-300 rounded border-[1px] h-auto pb-[10px] p-[5px] flex flex-col space-y-[15px] items-start shadow">
+              {showModal && (
+                <UpdateCropModal
+                  cropId={crop.id ? crop.id : ""}
+                  setModalShow={setModalShow}
+                />
+              )}
+
               <img
                 src={CropImage}
                 alt="lesson image"
@@ -229,6 +247,11 @@ const ViewCrops = () => {
                   <MdDeleteForever
                     title="delete"
                     className="text-[20px] text-[#25883F]"
+                    onClick={() => {
+                      if (crop.id) {
+                        DeleteCrop(crop.id);
+                      }
+                    }}
                   />
                 </div>
               </div>
