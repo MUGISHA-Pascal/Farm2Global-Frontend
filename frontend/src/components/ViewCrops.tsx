@@ -86,6 +86,54 @@ const ViewCrops = () => {
     };
     fetchData();
   });
+  let filteredCrops;
+  switch (searchBy) {
+    case "CropName":
+      filteredCrops =
+        search === ""
+          ? result
+          : result.filter((item: CropInterface) =>
+              item.cropName.toLowerCase().includes(search.toLowerCase())
+            );
+      break;
+    case "harvestSeason":
+      filteredCrops =
+        search === ""
+          ? result
+          : result.filter((item: CropInterface) =>
+              item.harvestSeason.toString().includes(search.toLowerCase())
+            );
+      break;
+    case "qtyPerSeason":
+      filteredCrops =
+        search === ""
+          ? result
+          : result.filter((item: CropInterface) =>
+              item.qtyPerSeason.toString().includes(search.toLowerCase())
+            );
+      break;
+    case "pricePerKg":
+      filteredCrops =
+        search === ""
+          ? result
+          : result.filter((item: CropInterface) =>
+              item.pricePerKg.toString().includes(search.toLowerCase())
+            );
+      break;
+
+    case "Quality/season":
+      filteredCrops =
+        search === ""
+          ? result
+          : result.filter((item: CropInterface) =>
+              item.qtyPerSeason.toString().includes(search.toLowerCase())
+            );
+      break;
+
+    default:
+      filteredCrops = result;
+      break;
+  }
   return (
     <div className="h-screen  border-[1px]  border-[#25883F] p-[10px] bg-white shadow rounded-[10px] flex flex-col items-center  w-full ">
       <header className="w-full flex h-[70px] items-center justify-center">
@@ -122,12 +170,6 @@ const ViewCrops = () => {
             >
               Price Per Kg
             </option>
-            <option
-              value="Quality/season"
-              className="text-[12px] max-md:text-[7px]"
-            >
-              Qty/season
-            </option>
           </select>
           <input
             type="text"
@@ -151,7 +193,7 @@ const ViewCrops = () => {
       <main className="w-full p-[7px] m-[7px] shadow rounded-[10px] border-[1px] border-[#25883F]">
         <main className="farmersMain w-full   h-[500px] rounded-[10px] grid grid-cols-4 gap-[30px] place-items-center overflow-y-auto">
           {showModal && <UpdateCropModal setModalShow={setModalShow} />}
-          {result.map((crop: CropInterface) => (
+          {filteredCrops.map((crop: CropInterface) => (
             <div className="w-[220px] hover:cursor-pointer border-gray-300 rounded border-[1px] h-auto pb-[10px] p-[5px] flex flex-col space-y-[15px] items-start shadow">
               <img
                 src={CropImage}
