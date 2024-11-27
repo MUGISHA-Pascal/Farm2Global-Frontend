@@ -12,42 +12,25 @@ const ExplorePage = () => {
   const [searchBy, setSearchBy] = useState("");
   const [search, setSearch] = useState("");
   const [CurrentPage, setCurrent] = useState(1);
+  const [farmers, setFarmers] = useState([
+    {
+      country: "",
+      createdAt: "",
+      district: "",
+      firstname: "",
+      id: 0,
+      lastname: "",
+      password: "",
+      phoneNo: "",
+      profilePhoto: "",
+      ratingAverage: 0,
+      ratingCount: 0,
+      subscriptionEndDate: null,
+      subscriptionStartDate: null,
+      updatedAt: "",
+    },
+  ]);
 
-  const farmers = [
-    {
-      Id: 1,
-      FarmerName: "MUGISHA Pascal",
-      District: "Burundi",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-    {
-      Id: 2,
-      FarmerName: "MUGISHA yves",
-      District: "Rwanda",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-    {
-      Id: 3,
-      FarmerName: " Pascal",
-      District: "Burundi",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-  ];
   interface farmerInterface {
     Id: number;
     FarmerName: string;
@@ -59,12 +42,20 @@ const ExplorePage = () => {
   }
   let filteredFarmers;
   switch (searchBy) {
-    case "Name":
+    case "FirstName":
       filteredFarmers =
         search === ""
           ? farmers
           : farmers.filter((item) =>
-              item.FarmerName.toLowerCase().includes(search.toLowerCase())
+              item.firstname.toLowerCase().includes(search.toLowerCase())
+            );
+      break;
+    case "LastName":
+      filteredFarmers =
+        search === ""
+          ? farmers
+          : farmers.filter((item) =>
+              item.lastname.toLowerCase().includes(search.toLowerCase())
             );
       break;
     case "Country":
@@ -72,7 +63,7 @@ const ExplorePage = () => {
         search === ""
           ? farmers
           : farmers.filter((item) =>
-              item.Country.toLowerCase().includes(search.toLowerCase())
+              item.country.toLowerCase().includes(search.toLowerCase())
             );
       break;
     case "District":
@@ -80,39 +71,15 @@ const ExplorePage = () => {
         search === ""
           ? farmers
           : farmers.filter((item) =>
-              item.District.toLowerCase().includes(search.toLowerCase())
+              item.district.toLowerCase().includes(search.toLowerCase())
             );
       break;
-    case "Season":
+    case "PhoneNo":
       filteredFarmers =
         search === ""
           ? farmers
           : farmers.filter((item) =>
-              item.HarvestSeason.toLowerCase().includes(search.toLowerCase())
-            );
-      break;
-    case "Price":
-      filteredFarmers =
-        search === ""
-          ? farmers
-          : farmers.filter((item) =>
-              item.price.toLowerCase().includes(search.toLowerCase())
-            );
-      break;
-    case "Quality/season":
-      filteredFarmers =
-        search === ""
-          ? farmers
-          : farmers.filter((item) =>
-              item.QualityPerSeason.toLowerCase().includes(search.toLowerCase())
-            );
-      break;
-    case "Contact":
-      filteredFarmers =
-        search === ""
-          ? farmers
-          : farmers.filter((item) =>
-              item.Contact.toLowerCase().includes(search.toLowerCase())
+              item.phoneNo.toLowerCase().includes(search.toLowerCase())
             );
       break;
     default:
@@ -150,7 +117,7 @@ const ExplorePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        `http://localhost:4000/users/farmers/${category}`,
+        `http://localhost:4000/user/farmers/${category}`,
         {
           method: "GET",
           headers: { "Content-Type": "application/json" },
@@ -158,6 +125,7 @@ const ExplorePage = () => {
       );
       if (response.ok) {
         let resultAvailable = await response.json();
+        setFarmers(resultAvailable);
       } else {
         const err = await response.json();
         console.log(err);
@@ -198,8 +166,11 @@ const ExplorePage = () => {
             <option value="" className="text-[12px] max-md:text-[7px] ">
               search by
             </option>
-            <option value="Name" className="text-[12px] max-md:text-[7px]">
-              Name
+            <option value="FirstName" className="text-[12px] max-md:text-[7px]">
+              firstname
+            </option>
+            <option value="LastName" className="text-[12px] max-md:text-[7px]">
+              lastname
             </option>
             <option value="Country" className="text-[12px] max-md:text-[7px]">
               Country
@@ -207,20 +178,8 @@ const ExplorePage = () => {
             <option value="District" className="text-[12px] max-md:text-[7px]">
               District
             </option>
-            <option value="Season" className="text-[12px] max-md:text-[7px]">
-              Season
-            </option>
-            <option
-              value="Quality/season"
-              className="text-[12px] max-md:text-[7px]"
-            >
-              Qty/season
-            </option>
-            <option value="Contact" className="text-[12px] max-md:text-[7px]">
-              Contact
-            </option>
-            <option value="Price" className="text-[12px] max-md:text-[7px]">
-              Price
+            <option value="PhoneNo" className="text-[12px] max-md:text-[7px]">
+              Phone No
             </option>
           </select>
           <input
@@ -243,67 +202,36 @@ const ExplorePage = () => {
         </div>
       </header>
       <main className="w-[1220px] max-sm:w-full mb-[10px] p-[5px] bg-[#ffffff] rounded-[20px] ">
-        {/* bg-[#4E9A61] */}
         <main className="farmersMain overflow-y-auto h-screen bg-white md:m-[10px] rounded-[20px] max-md:w-full w-[1200px] place-items-center grid md:grid-cols-4 max-sm:gap-[10px] max-md:grid-cols-2 max-md:p-[1px] gap-[20px] p-[30px]">
           {paginatedfilteredusers.map((farmer) => (
             <div
-              key={farmer.Id}
-              className="flex flex-col items-center h-[400px] max-md:h-[290px] max-sm:w-[160px] w-[260px] bg-[#1B7633]   p-[6px] rounded-[7px] space-y-[10px]"
+              key={farmer.id}
+              className="flex flex-col items-center h-[390px] max-md:h-[290px] max-sm:w-[160px] w-[260px] bg-[#1B7633]   p-[6px] rounded-[7px] space-y-[10px]"
             >
               <img
-                src={farmer.image}
+                src={farmerImage}
                 alt="farmer image"
-                className="rounded-[7px] h-[150px] w-full max-md:h-[100px] object-cover bg-cover "
+                className="rounded-[7px] h-[200px] w-full max-md:h-[100px] object-cover bg-cover "
               />
 
-              {/* <div className="flex flex-row w-full text-[11px] max-sm:text-[7px] text-white px-[14px] max-sm:space-x-[14px] md:justify-between">
-                <div className="flex flex-col space-y-[4px] max-sm:space-y-[4px] items-start">
-                  <b>Name :</b>
-                  <b>Country :</b>
-                  <b>District :</b>
-                  <b>Harv.Season :</b>
-                  <b>Qty/Season :</b>
-                  <b>Price :</b>
-                  <b>Contact :</b>
-                </div>
-                <div className="flex flex-col space-y-[4px] items-start">
-                  <p>{farmer.FarmerName}</p>
-                  <p>{farmer.Country}</p>
-                  <p>{farmer.District}</p>
-                  <p>{farmer.HarvestSeason}</p>
-                  <p>{farmer.QualityPerSeason}</p>
-                  <p>{farmer.price}</p>
-                  <p>{farmer.Contact}</p>
-                </div>
-              </div> */}
               <div className="flex flex-col space-y-[4px] items-start text-[11px] max-sm:text-[7px] text-white">
                 <div className="flex flex-row items-center space-x-2 justify-center">
                   <b>Name :</b>
-                  <p>{farmer.FarmerName}</p>
+                  <p>
+                    {farmer.firstname} {farmer.lastname}
+                  </p>
                 </div>
                 <div className="flex flex-row items-center space-x-2  justify-center">
                   <b>Country :</b>
-                  <p>{farmer.Country}</p>
+                  <p>{farmer.country}</p>
                 </div>
                 <div className="flex flex-row items-center space-x-2  justify-center">
                   <b>District :</b>
-                  <p>{farmer.District}</p>
-                </div>
-                <div className="flex flex-row items-center space-x-2  justify-center">
-                  <b>Harv.Season :</b>
-                  <p>{farmer.HarvestSeason}</p>
-                </div>
-                <div className="flex flex-row items-center space-x-2  justify-center">
-                  <b>Qty/Season :</b>
-                  <p>{farmer.QualityPerSeason}</p>
-                </div>
-                <div className="flex flex-row items-center space-x-2  justify-center">
-                  <b>Price :</b>
-                  <p>{farmer.price}</p>
+                  <p>{farmer.district}</p>
                 </div>
                 <div className="flex flex-row items-center space-x-2  justify-center">
                   <b>Contact :</b>
-                  <p>{farmer.Contact}</p>
+                  <p>{farmer.phoneNo}</p>
                 </div>
               </div>
               <div className="w-[140px] rounded-[10px] max-md:rounded-[7px] p-[5px] max-md:p-[3px] max-md:w-[110px] flex flex-col items-center bg-[#25883F] justify-center">
