@@ -1,8 +1,10 @@
+import axios from "axios";
 import React, { useState } from "react";
 
 const ImageUploader: React.FC = () => {
   const [image, setImage] = useState<File | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
+  const [message, setMessage] = useState<string>("");
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -11,14 +13,40 @@ const ImageUploader: React.FC = () => {
       setPreview(URL.createObjectURL(file));
     }
   };
+  const handleUpload = async () => {
+    if (!image) {
+      setMessage("No file selected");
+      return;
+    }
+    const formData = new FormData();
+    formData.append("file", image);
+    try {
+      const response = await axios.post(
+        "http://localhost:4000/user/upload",
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
 
+      setMessage("File upload successfully");
+      if (response) {
+        setImage(null);
+        setPreview(null);
+        setMessage("");
+      }
+    } catch (error) {
+      console.log(error);
+      setMessage("File upload failed");
+    }
+  };
   const handleRemoveImage = () => {
     setImage(null);
     setPreview(null);
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+    <div className=" mx-auto mt-10 p-6 w-[300px] bg-white rounded-lg shadow-md">
       <h2 className="text-xl font-bold text-gray-800 text-center mb-4">
         Upload an Image
       </h2>
@@ -54,6 +82,13 @@ const ImageUploader: React.FC = () => {
           Selected File: <span className="font-medium">{image.name}</span>
         </p>
       )}
+      {message && <p className="p-[10px] text-gray-700 text-sm">{message}</p>}
+      <button
+        onClick={handleUpload}
+        className="w-[150px] bg-[#FF9933] md:mt-[10px] max-sm:w-[100px] max-sm:p-[4px] max-sm:text-[13px] font-bold text-white p-[6px] rounded-md hover:bg-[#CBE86A] transition duration-300"
+      >
+        Update Image
+      </button>
     </div>
   );
 };
