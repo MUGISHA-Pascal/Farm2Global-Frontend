@@ -37,12 +37,12 @@ const HomeContent = () => {
   const [currentState, setCurrentState] = useState(0);
   const [counter, setCounter] = useState(false);
   const slides = [
-    { image: coffee, name: "Coffee farmers" },
-    { image: cotton, name: "Cotton farmers" },
-    { image: fruits, name: "Fruits farmers" },
-    { image: maize, name: "Maize farmers" },
-    { image: rice, name: "Rice farmers" },
-    { image: wheat, name: "Wheat farmers" },
+    { image: coffee, name: "Coffee farmers", category: "Coffee" },
+    { image: cotton, name: "Cotton farmers", category: "Cotton" },
+    { image: fruits, name: "Fruits farmers", category: "Fruits" },
+    { image: maize, name: "Maize farmers", category: "Maize" },
+    { image: rice, name: "Rice farmers", category: "Rice" },
+    { image: wheat, name: "Wheat farmers", category: "wheat" },
   ];
   const testimonials = [
     { image: "", description: "", name: "", farmingField: "", location: "" },
@@ -97,7 +97,7 @@ const HomeContent = () => {
               </h2>
             </div>
             <RouterLink
-              to="/explore"
+              to={`/explore/${slides[currentState].category}`}
               className="border-[1px] border-[#CBE86A] font-bold flex flex-row justify-center items-center hover:bg-[#CBE86A] hover:bg-opacity-20 space-x-[3px] max-md:text-[12px] max-md:w-[75px] text-[#CBE86A] w-[100px] p-[4px] max-md:p-[3px] rounded-full"
             >
               <p>Explore</p>

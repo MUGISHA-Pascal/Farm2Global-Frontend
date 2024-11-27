@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { IoSearchSharp } from "react-icons/io5";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useParams } from "react-router-dom";
 import farmerImage from "../assets/farmer.png";
 import StarRating from "./StarRating";
 import { MdOutlineNavigateNext } from "react-icons/md";
@@ -40,204 +40,6 @@ const ExplorePage = () => {
       Id: 3,
       FarmerName: " Pascal",
       District: "Burundi",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-    {
-      Id: 4,
-      FarmerName: " yves",
-      District: "Kenya",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-    {
-      Id: 5,
-      FarmerName: "MUGISHA Pascal",
-      District: "Burundi",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-    {
-      Id: 6,
-      FarmerName: "MUGISHA yves",
-      District: "Rwanda",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-    {
-      Id: 7,
-      FarmerName: " Pascal",
-      District: "Burundi",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-    {
-      Id: 8,
-      FarmerName: " yves",
-      District: "Kenya",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-    {
-      Id: 9,
-      FarmerName: "MUGISHA yves",
-      District: "Rwanda",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-    {
-      Id: 10,
-      FarmerName: " Pascal",
-      District: "Burundi",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-    {
-      Id: 11,
-      FarmerName: " yves",
-      District: "Kenya",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-    {
-      Id: 12,
-      FarmerName: "MUGISHA Pascal",
-      District: "Burundi",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-    {
-      Id: 13,
-      FarmerName: "MUGISHA yves",
-      District: "Rwanda",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-    {
-      Id: 14,
-      FarmerName: " Pascal",
-      District: "Burundi",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-    {
-      Id: 15,
-      FarmerName: " yves",
-      District: "Kenya",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-    {
-      Id: 16,
-      FarmerName: " Pascal",
-      District: "Burundi",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-    {
-      Id: 17,
-      FarmerName: " yves",
-      District: "Kenya",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-    {
-      Id: 18,
-      FarmerName: "MUGISHA Pascal",
-      District: "Burundi",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-    {
-      Id: 19,
-      FarmerName: "MUGISHA yves",
-      District: "Rwanda",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-    {
-      Id: 20,
-      FarmerName: " Pascal",
-      District: "Burundi",
-      HarvestSeason: "spring",
-      Country: "Rwanda",
-      QualityPerSeason: "2300kg",
-      Contact: "0782256077",
-      image: farmerImage,
-      price: "0.5USD/Kg",
-    },
-    {
-      Id: 21,
-      FarmerName: " yves",
-      District: "Kenya",
       HarvestSeason: "spring",
       Country: "Rwanda",
       QualityPerSeason: "2300kg",
@@ -344,6 +146,25 @@ const ExplorePage = () => {
       smooth: "easeInOutQuad",
     });
   };
+  const { category } = useParams<{ category: string }>();
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        `http://localhost:4000/users/farmers/${category}`,
+        {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+      if (response.ok) {
+        let resultAvailable = await response.json();
+      } else {
+        const err = await response.json();
+        console.log(err);
+      }
+    };
+    fetchData();
+  });
   return (
     <div className="bg-[#25883F] flex flex-col items-center justify-center w-full border-t-[1px] border-gray-400">
       <div
