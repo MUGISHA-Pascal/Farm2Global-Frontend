@@ -9,16 +9,83 @@ const AddCrops = () => {
     PricePerKg: "",
     CropVariety: "",
   });
-  const [registerChoice, setRegisterChoice] = useState("");
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+  interface user {
+    id: string;
+    firstname: string;
+    lastname: string;
+    country: string;
+    district: string;
+    phoneNo: string;
+    role: string;
+    profilePhoto: string;
+  }
+  let userRetrieve: user = {
+    id: "",
+    firstname: "",
+    lastname: "",
+    country: "",
+    district: "",
+    phoneNo: "",
+    profilePhoto: "",
+    role: "",
+  };
+  interface userint {
+    message: string;
+    user: {
+      id: string;
+      firstname: string;
+      lastname: string;
+      country: string;
+      district: string;
+      phoneNo: string;
+      role: string;
+      profilePhoto: string;
+    };
+  }
+  const userLocalStorage = localStorage.getItem("user");
+  if (userLocalStorage) {
+    let { result }: { result: userint } = JSON.parse(userLocalStorage);
+    userRetrieve = result.user;
+  }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+
+    try {
+      const response = await fetch("http://localhost:4000/crops/add_crop", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          cropName: formData.CropName,
+          harvestSeason: formData.HarvestSeason,
+          qtyPerSeason: formData.QtyPerSeason,
+          pricePerKg: formData.PricePerKg,
+          farmerId: userRetrieve.id,
+        }),
+      });
+      if (response.ok) {
+        const result = await response.json();
+        if (result) {
+          setFormData({
+            CropName: "",
+            HarvestSeason: "",
+            QtyPerSeason: "",
+            PricePerKg: "",
+            CropVariety: "",
+          });
+        }
+      } else {
+        const errRes = await response.json();
+        console.log(errRes);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className="flex flex-col items-center justify-center align-middle w-full">
@@ -33,11 +100,10 @@ const AddCrops = () => {
         <div className="sm:grid sm:grid-cols-2 max-sm:flex max-sm:flex-col max-sm:space-y-[7px] sm:gap-4 mb-4">
           <div>
             <select
-              value={registerChoice}
-              onChange={(e) => {
-                setRegisterChoice(e.target.value);
-              }}
+              value={formData.CropName}
+              onChange={handleChange}
               required
+              name="CropName"
               title="select"
               className=" p-[6px] mt-[10px]  border text-sm max-sm:text-[13px] text-gray-700 border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
               style={{ borderColor: "#FF9933" }}
@@ -79,10 +145,9 @@ const AddCrops = () => {
           </div>
           <div>
             <select
-              value={registerChoice}
-              onChange={(e) => {
-                setRegisterChoice(e.target.value);
-              }}
+              value={formData.HarvestSeason}
+              onChange={handleChange}
+              name="HarvestSeason"
               required
               title="select"
               className=" p-[6px] mt-[10px] border text-sm max-sm:text-[13px] text-gray-700 border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
