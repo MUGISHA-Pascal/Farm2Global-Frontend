@@ -1,16 +1,9 @@
 import React, { useState } from "react";
 import profileImage from "../assets/demoProfile.png";
+import axios from "axios";
+import ImageUploader from "./ImageUploader";
 
 const Profile = () => {
-  interface user {
-    id: string;
-    firstname: string;
-    lastname: string;
-    country: string;
-    district: string;
-    phoneNo: string;
-    role: string;
-  }
   let userRetrieve: user = {
     id: "",
     firstname: "",
@@ -19,6 +12,34 @@ const Profile = () => {
     district: "",
     phoneNo: "",
     role: "",
+  };
+  const [file, setFile] = useState<File | null>(null);
+  const [message, setMessage] = useState<string>("");
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files.length > 0) {
+      setFile(event.target.files[0]);
+    }
+  };
+  const handleUpload = async () => {
+    if (!file) {
+      setMessage("No file selected");
+      return;
+    }
+    const formData = new FormData();
+    formData.append("file", file);
+    try {
+      const response = await axios.post(
+        "http://localhost:4000/user/upload",
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
+      setMessage("File upload successfully");
+    } catch (error) {
+      console.log(error);
+      setMessage("File upload failed");
+    }
   };
   interface userint {
     message: string;
@@ -38,13 +59,26 @@ const Profile = () => {
     userRetrieve = result.user;
   }
   const [user, setuser] = useState({
-    id: userRetrieve.id,
     firstname: userRetrieve.firstname,
     lastname: userRetrieve.lastname,
     country: userRetrieve.country,
-    district: userRetrieve.district,
     phoneNo: userRetrieve.phoneNo,
   });
+  const [district, setDistrict] = useState(userRetrieve.district);
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+    setuser({ ...user, [name]: value });
+  };
+  interface user {
+    id: string;
+    firstname: string;
+    lastname: string;
+    country: string;
+    district: string;
+    phoneNo: string;
+    role: string;
+  }
+
   let districtHide = true;
   if (userRetrieve.role === "buyer") {
     districtHide = false;
@@ -71,7 +105,8 @@ const Profile = () => {
               </label>
               <input
                 id="firstname"
-                value={user.firstname}
+                placeholder={user.firstname}
+                onChange={handleChange}
                 type="text"
                 className="w-[250px] text-[13px] text-gray-500 focus:outline-none border-[1px] border-gray-300 p-[5px] rounded-[10px]"
               />
@@ -85,7 +120,8 @@ const Profile = () => {
               </label>
               <input
                 id="lastname"
-                value={user.lastname}
+                placeholder={user.lastname}
+                onChange={handleChange}
                 type="text"
                 className="w-[250px] text-[13px] text-gray-500 focus:outline-none border-[1px] border-gray-300 p-[5px] rounded-[10px]"
               />
@@ -99,7 +135,8 @@ const Profile = () => {
               </label>
               <input
                 id="phone_number"
-                value={user.phoneNo}
+                placeholder={user.phoneNo}
+                onChange={handleChange}
                 type="text"
                 className="w-[250px] text-[13px] text-gray-500 focus:outline-none border-[1px] border-gray-300 p-[5px] rounded-[10px]"
               />
@@ -112,8 +149,9 @@ const Profile = () => {
                 Country
               </label>
               <input
-                value={user.country}
+                placeholder={user.country}
                 id="country"
+                onChange={handleChange}
                 type="text"
                 className="w-[250px] text-[13px] text-gray-500 focus:outline-none border-[1px] border-gray-300 p-[5px] rounded-[10px]"
               />
@@ -129,35 +167,12 @@ const Profile = () => {
                 </label>
                 <input
                   id="district"
-                  value={user.district}
+                  placeholder={district}
                   type="text"
                   className="w-[250px] text-[13px] text-gray-500 focus:outline-none border-[1px] border-gray-300 p-[5px] rounded-[10px]"
                 />
               </div>
             )}
-            <div className="flex flex-col items-start space-y-[10px]">
-              <label
-                htmlFor="fileInput"
-                className="text-sm font-medium text-gray-700"
-              >
-                Upload an image:
-              </label>
-              <div className="relative">
-                <input
-                  type="file"
-                  id="fileInput"
-                  name="file"
-                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                />
-
-                <button
-                  type="button"
-                  className="w-[200px] bg-[#FF9933] md:mt-[10px] max-sm:w-[100px] max-sm:p-[4px] max-sm:text-[13px] font-bold text-white p-[6px] rounded-md hover:bg-[#CBE86A] transition duration-300"
-                >
-                  Choose File
-                </button>
-              </div>
-            </div>
           </div>
           <button
             type="submit"
