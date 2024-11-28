@@ -56,21 +56,18 @@ const Profile = () => {
   if (userRetrieve.role === "buyer") {
     districtHide = false;
   }
-  if (userRetrieve.profilePhoto == null) {
-    userRetrieve.profilePhoto = "default.png";
-  }
   let profileImage = `http://localhost:4000/user/image/${userRetrieve.profilePhoto}`;
   return (
     <div className="flex flex-col ">
       <main className="w-full flex flex-col items-center justify-center">
         <main className="flex rounded-[20px] border-[1px] border-[#25883F] w-[1000px] py-[30px] shadow  mt-[20px] items-center space-y-[30px] flex-col ">
-          <h2 className="text-2xl max-sm:text-[17px] font-bold mb-[7px] text-center text-[#ff9933]">
+          <h2 className="text-2xl max-sm:text-[17px] font-bold mb-[7px] text-center text-[#25883F]">
             Edit Profile
           </h2>
           <img
             src={profileImage}
             alt="profile image"
-            className="w-[100px] h-[100px] rounded-full object-cover"
+            className="w-[100px] h-[100px] rounded-full"
           />
           <main className="flex flex-row">
             <div className="flex flex-col space-y-[70px] items-center">

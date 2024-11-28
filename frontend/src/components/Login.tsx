@@ -53,8 +53,8 @@ const Login: React.FC = () => {
           phoneNo: string;
         };
       }
-      const result: Promise<farmer | buyer> = await response.json();
-      console.log(result);
+      let result: Promise<farmer | buyer> = await response.json();
+
       if (passwordError) {
         passwordError.innerHTML = "";
       }
