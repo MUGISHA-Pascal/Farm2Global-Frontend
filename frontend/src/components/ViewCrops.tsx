@@ -4,19 +4,21 @@ import { MdSystemUpdateAlt } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
 import CropImage from "../assets/crop.jpeg";
 import UpdateCropModal from "./UpdateCropModal";
+import NotFoundImage from "../assets/notFound.png";
+
 const ViewCrops = () => {
   const [searchBy, setSearchBy] = useState("");
   const [search, setSearch] = useState("");
   const [showModal, setModalShow] = useState(false);
   const [result, setResult] = useState([
-    {
-      id: "",
-      cropName: "",
-      harvestSeason: "",
-      qtyPerSeason: 0,
-      pricePerKg: 0,
-      cropOwner: 0,
-    },
+    // {
+    //   id: "",
+    //   cropName: "",
+    //   harvestSeason: "",
+    //   qtyPerSeason: 0,
+    //   pricePerKg: 0,
+    //   cropOwner: 0,
+    // },
   ]);
   interface CropInterface {
     id?: string;
@@ -147,7 +149,7 @@ const ViewCrops = () => {
       break;
   }
   return (
-    <div className="h-screen  border-[1px]  border-[#25883F] p-[10px] bg-white shadow rounded-[10px] flex flex-col items-center  w-full ">
+    <div className="h-screen   p-[10px] bg-white shadow rounded-[10px] flex flex-col items-center  w-full ">
       <header className="w-full flex h-[70px] items-center justify-center">
         <div className="bg-gray-200 pl-[8px]  items-center  relative w-[466px] max-md:w-[350px] h-[42px] rounded-full flex flex-row p-0">
           <select
@@ -202,8 +204,20 @@ const ViewCrops = () => {
           </button>
         </div>
       </header>
-      <main className="w-full p-[7px] m-[7px] shadow rounded-[10px] border-[1px] border-[#25883F]">
-        <main className="farmersMain w-full   h-[500px] rounded-[10px] grid grid-cols-4 gap-[30px] place-items-center overflow-y-auto">
+      <main className="w-full p-[7px] flex flex-col items-center m-[7px] h-[514px] shadow rounded-[10px] border-[1px] border-[#25883F]">
+        {filteredCrops.length == 0 && (
+          <div className="flex flex-col w-[300px] space-y-[30px] mt-[90px]">
+            <h2 className="text-gray-700 text-[30px] font-semibold">
+              No Crops Found
+            </h2>
+            <img
+              src={NotFoundImage}
+              className="w-[300px] "
+              alt="not found image"
+            />
+          </div>
+        )}
+        <main className="farmersMain w-full h-[500px] rounded-[10px] grid grid-cols-4 gap-[30px] place-items-center overflow-y-auto">
           {filteredCrops.map((crop: CropInterface) => (
             <div className="w-[220px] hover:cursor-pointer border-gray-300 rounded border-[1px] h-auto pb-[10px] p-[5px] flex flex-col space-y-[15px] items-start shadow">
               {showModal && (

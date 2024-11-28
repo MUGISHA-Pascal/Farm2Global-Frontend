@@ -8,6 +8,7 @@ import { MdOutlineNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
 import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
 import { animateScroll as scroll } from "react-scroll";
+import NotFoundImage from "../assets/notFound.png";
 const ExplorePage = () => {
   const [searchBy, setSearchBy] = useState("");
   const [search, setSearch] = useState("");
@@ -93,7 +94,6 @@ const ExplorePage = () => {
   const totalNumberPages = Math.ceil(
     filteredFarmers.length / totalNumberElements
   );
-
   const handleNext = () => {
     if (CurrentPage < totalNumberPages) {
       setCurrent(CurrentPage + 1);
@@ -201,7 +201,19 @@ const ExplorePage = () => {
           </button>
         </div>
       </header>
-      <main className="w-[1220px] max-sm:w-full mb-[10px] p-[5px] bg-[#ffffff] rounded-[20px] ">
+      <main className="w-[1220px] max-sm:w-full mb-[10px]  p-[5px] flex flex-col items-center bg-[#ffffff] rounded-[20px] ">
+        {paginatedfilteredusers.length == 0 && (
+          <div className="flex flex-col space-y-[30px] mt-[140px]">
+            <h2 className="text-gray-700 text-[30px] font-semibold">
+              No Farmers Found
+            </h2>
+            <img
+              src={NotFoundImage}
+              className="w-[300px] "
+              alt="not found image"
+            />
+          </div>
+        )}
         <main className="farmersMain overflow-y-auto h-screen bg-white md:m-[10px] rounded-[20px] max-md:w-full w-[1200px] place-items-center grid md:grid-cols-4 max-sm:gap-[10px] max-md:grid-cols-2 max-md:p-[1px] gap-[20px] p-[30px]">
           {paginatedfilteredusers.map((farmer) => (
             <div

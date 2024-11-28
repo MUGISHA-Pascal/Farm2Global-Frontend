@@ -154,7 +154,7 @@ const Login: React.FC = () => {
               style={{ borderColor: "#FF9933" }}
             >
               <option value="" className="max-sm:text-[7px] p-0">
-                Register as
+                Login as
               </option>
               <option value="farmer" className="max-sm:text-[7px] p-0">
                 Farmer

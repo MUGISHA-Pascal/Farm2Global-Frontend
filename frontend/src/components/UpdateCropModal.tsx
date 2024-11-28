@@ -108,7 +108,7 @@ const UpdateCropModal: React.FC<childProps> = ({ setModalShow, cropId }) => {
           onSubmit={handleSubmit}
           className="w-[700px] md:mt-[50px] max-sm:w-[350px] space-y-[14px]  bg-white p-6 rounded-lg "
         >
-          <h2 className="text-2xl max-sm:text-[17px] font-bold mb-6 text-center text-[#25883F]">
+          <h2 className="text-2xl max-sm:text-[17px] font-bold mb-6 text-center text-[#ff9933]">
             Update Crop
           </h2>
           <div className="sm:grid sm:grid-cols-2 max-sm:flex max-sm:flex-col max-sm:space-y-[7px] sm:gap-4 mb-4">

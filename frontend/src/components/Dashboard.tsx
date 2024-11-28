@@ -65,9 +65,11 @@ const Dashboard = () => {
     let { result }: { result: userint } = JSON.parse(userLocalStorage);
     user = result.user;
   }
-  console.log(user.profilePhoto);
   useEffect(() => {
     let ImageName = user.profilePhoto;
+    if (ImageName == null) {
+      ImageName = "default.png";
+    }
     setProfile(`http://localhost:4000/user/image/${ImageName}`);
   }, [profileImage]);
   return (
@@ -236,7 +238,7 @@ const Dashboard = () => {
             <img
               src={profileImage}
               alt="profile"
-              className="w-[30px] h-[30px] max-md:w-[20px] max-md:h-[20px] rounded-full"
+              className="w-[40px] h-[40px] max-md:w-[20px] max-md:h-[20px] object-cover rounded-full"
             />
             <p className="font-bold text-white text-[12px] max-md:text-[9px]">
               {user.firstname} {user.lastname}
