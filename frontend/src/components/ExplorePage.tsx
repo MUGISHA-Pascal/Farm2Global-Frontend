@@ -206,7 +206,7 @@ const ExplorePage = () => {
           {paginatedfilteredusers.map((farmer) => (
             <div
               key={farmer.id}
-              className="flex flex-col items-center h-[390px] max-md:h-[290px] max-sm:w-[160px] w-[260px] bg-[#1B7633]   p-[6px] rounded-[7px] space-y-[10px]"
+              className="flex flex-col items-center h-[424px] max-md:h-[290px] max-sm:w-[160px] w-[260px] bg-[#1B7633]   p-[6px] rounded-[7px] space-y-[10px]"
             >
               <img
                 src={`http://localhost:4000/user/image/${farmer.profilePhoto}`}
@@ -235,7 +235,10 @@ const ExplorePage = () => {
                 </div>
               </div>
               <div className="w-[140px] rounded-[10px] max-md:rounded-[7px] p-[5px] max-md:p-[3px] max-md:w-[110px] flex flex-col items-center bg-[#25883F] justify-center">
-                <StarRating />
+                <StarRating
+                  farmerId={farmer.id}
+                  ratingAv={farmer.ratingAverage}
+                />
               </div>
               <a
                 href="#"

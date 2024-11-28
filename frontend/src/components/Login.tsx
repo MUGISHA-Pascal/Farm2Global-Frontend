@@ -96,7 +96,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="w-full h-full p-[20px] bg-[#25883F] flex flex-col items-center">
+    <div className="w-full mt-[97px] h-full p-[20px] bg-[#25883F] flex flex-col items-center">
       <form
         onSubmit={handleSubmit}
         className="w-[400px] max-sm:w-[350px] items-center  flex flex-col space-y-[10px] bg-white p-6 rounded-lg shadow-lg"

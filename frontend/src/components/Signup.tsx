@@ -95,7 +95,7 @@ const Signup: React.FC = () => {
   };
 
   return (
-    <div className="w-full h-full p-[20px] bg-[#25883F] flex flex-col items-center">
+    <div className="w-full h-full mt-[97px] p-[20px] bg-[#25883F] flex flex-col items-center">
       <form
         onSubmit={handleSubmit}
         className="w-[700px] max-sm:w-[350px]  bg-white p-6 rounded-lg shadow-lg"
