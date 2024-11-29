@@ -254,67 +254,67 @@ const Navbar = () => {
                 <IoMdArrowDropdown />
               </div>
               {categoryShow && (
-                <div className="absolute font-normal  z-40 p-[30px] items-start top-[70px]  text-[#CCD2E3] rounded-[10px] border-[1px]  border-gray-400  bg-[#25883F] flex flex-col space-y-[10px]">
-                  <a
-                    href=""
+                <div className="absolute font-normal  z-40 p-[30px] items-start top-[70px]  text-white rounded-[10px] border-[1px]  border-gray-400  bg-[#25883F] flex flex-col space-y-[10px]">
+                  <RouterLink
+                    to={`/explore/Maize`}
                     className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
                   >
                     <IoMdArrowDropright /> <p>Maize</p>
-                  </a>
-                  <a
-                    href=""
+                  </RouterLink>
+                  <RouterLink
+                    to={`/explore/Sunflower`}
                     className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
                   >
                     <IoMdArrowDropright /> <p>Sunflower</p>
-                  </a>
-                  <a
-                    href=""
+                  </RouterLink>
+                  <RouterLink
+                    to={`/explore/Groundnuts`}
                     className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
                   >
                     <IoMdArrowDropright /> <p>Groundnuts</p>
-                  </a>
-                  <a
-                    href=""
+                  </RouterLink>
+                  <RouterLink
+                    to={`/explore/Soybeans`}
                     className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
                   >
                     <IoMdArrowDropright /> <p>Soybeans</p>
-                  </a>
-                  <a
-                    href=""
+                  </RouterLink>
+                  <RouterLink
+                    to={`/explore/Rice`}
                     className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
                   >
                     <IoMdArrowDropright /> <p>Rice</p>
-                  </a>
-                  <a
-                    href=""
+                  </RouterLink>
+                  <RouterLink
+                    to={`/explore/Wheat`}
                     className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
                   >
                     <IoMdArrowDropright /> <p> Wheat</p>
-                  </a>
-                  <a
-                    href=""
+                  </RouterLink>
+                  <RouterLink
+                    to={`/explore/Cotton`}
                     className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
                   >
                     <IoMdArrowDropright /> <p> Cotton</p>
-                  </a>
-                  <a
-                    href=""
+                  </RouterLink>
+                  <RouterLink
+                    to={`/explore/Coffee`}
                     className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
                   >
                     <IoMdArrowDropright /> <p> Coffee</p>
-                  </a>
-                  <a
-                    href=""
+                  </RouterLink>
+                  <RouterLink
+                    to={`/explore/Tea`}
                     className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
                   >
                     <IoMdArrowDropright /> <p> Tea</p>
-                  </a>
-                  <a
-                    href=""
+                  </RouterLink>
+                  <RouterLink
+                    to={`/explore/Fruits`}
                     className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
                   >
                     <IoMdArrowDropright /> <p> Fruits</p>
-                  </a>
+                  </RouterLink>
                 </div>
               )}
             </li>

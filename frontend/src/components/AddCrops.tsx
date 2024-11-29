@@ -114,8 +114,8 @@ const AddCrops = () => {
               <option value="Maize" className="max-sm:text-[7px] p-0">
                 Maize (Corn)
               </option>
-              <option value="Oilseeds" className="max-sm:text-[7px] p-0">
-                Oilseeds (Sunflower)
+              <option value="Sunflower" className="max-sm:text-[7px] p-0">
+                Sunflower
               </option>
               <option value="Peanuts" className="max-sm:text-[7px] p-0">
                 Peanuts (Groundnuts)
@@ -126,8 +126,8 @@ const AddCrops = () => {
               <option value="Rice" className="max-sm:text-[7px] p-0">
                 Rice
               </option>
-              <option value="wheat" className="max-sm:text-[7px] p-0">
-                wheat
+              <option value="Wheat" className="max-sm:text-[7px] p-0">
+                Wheat
               </option>
               <option value="Cotton" className="max-sm:text-[7px] p-0">
                 Cotton

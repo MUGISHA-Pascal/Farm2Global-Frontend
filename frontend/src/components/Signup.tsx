@@ -239,7 +239,7 @@ const Signup: React.FC = () => {
               onChange={handleChange}
               required
               title="select"
-              className=" p-[6px] mt-[10px] border text-sm max-sm:text-[13px] text-gray-700 border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
+              className=" p-[6px] mt-[25px] border text-sm max-sm:text-[13px] text-gray-700 border-gray-300 rounded-md w-full bg-white focus:outline-none focus:ring-2 focus:ring-[#FF9933] focus:border-transparent"
               style={{ borderColor: "#FF9933" }}
             >
               <option value="" className="max-sm:text-[7px] p-0">
