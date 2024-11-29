@@ -61,7 +61,7 @@ const Profile = () => {
     <div className="flex flex-col ">
       <main className="w-full flex flex-col items-center justify-center">
         <main className="flex rounded-[20px] border-[1px] border-[#25883F] w-[1000px] py-[30px] shadow  mt-[20px] items-center space-y-[30px] flex-col ">
-          <h2 className="text-2xl max-sm:text-[17px] font-bold mb-[7px] text-center text-[#25883F]">
+          <h2 className="text-2xl max-sm:text-[17px] font-bold mb-[7px] text-center text-[#ff9933]">
             Edit Profile
           </h2>
           <img

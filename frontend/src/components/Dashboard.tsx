@@ -74,7 +74,7 @@ const Dashboard = () => {
   }, [profileImage]);
   return (
     <div className="flex w-full mt-[94px]  flex-row border-t-[1px] border-gray-400">
-      <menu className="flex max-md:hidden py-[30px] flex-col space-y-[70px] border-gray-400 border-r-[1px] mt-[6px] w-[200px] pl-[17px]">
+      <menu className="flex max-md:hidden py-[30px] flex-col space-y-[70px] border-gray-400 border-r-[1px] mt-[6px] w-[250px] pl-[17px]">
         <div className="flex w-full flex-col space-y-[30px] items-start">
           <div className="mainmenu w-full flex flex-col space-y-[13px] items-start">
             <h2 className="text-[#ff9933] font-100 text-[10px]">MAIN MENU</h2>

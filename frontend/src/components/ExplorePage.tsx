@@ -9,11 +9,27 @@ import { GrFormPrevious } from "react-icons/gr";
 import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
 import { animateScroll as scroll } from "react-scroll";
 import NotFoundImage from "../assets/notFound.png";
+interface farmer {
+  country: string;
+  createdAt: string;
+  district: string;
+  firstname: string;
+  id: number;
+  lastname: string;
+  password: string;
+  phoneNo: string;
+  profilePhoto: string;
+  ratingAverage: number;
+  ratingCount: number;
+  subscriptionEndDate: string;
+  subscriptionStartDate: string;
+  updatedAt: string;
+}
 const ExplorePage = () => {
   const [searchBy, setSearchBy] = useState("");
   const [search, setSearch] = useState("");
   const [CurrentPage, setCurrent] = useState(1);
-  const [farmers, setFarmers] = useState([
+  const [farmers, setFarmers] = useState<farmer[]>([
     {
       country: "",
       createdAt: "",
@@ -26,9 +42,30 @@ const ExplorePage = () => {
       profilePhoto: "",
       ratingAverage: 0,
       ratingCount: 0,
-      subscriptionEndDate: null,
-      subscriptionStartDate: null,
+      subscriptionEndDate: "",
+      subscriptionStartDate: "",
       updatedAt: "",
+    },
+  ]);
+  const [newFarmers, setNewFarmers] = useState([
+    {
+      country: "",
+      createdAt: "",
+      district: "",
+      firstname: "",
+      id: 0,
+      lastname: "",
+      password: "",
+      phoneNo: "",
+      profilePhoto: "",
+      ratingAverage: 0,
+      ratingCount: 0,
+      subscriptionEndDate: "",
+      subscriptionStartDate: "",
+      updatedAt: "",
+      harvestSeason: "",
+      QtyPerSeason: 0,
+      PricePerKg: 0,
     },
   ]);
 
@@ -46,45 +83,45 @@ const ExplorePage = () => {
     case "FirstName":
       filteredFarmers =
         search === ""
-          ? farmers
-          : farmers.filter((item) =>
+          ? newFarmers
+          : newFarmers.filter((item) =>
               item.firstname.toLowerCase().includes(search.toLowerCase())
             );
       break;
     case "LastName":
       filteredFarmers =
         search === ""
-          ? farmers
-          : farmers.filter((item) =>
+          ? newFarmers
+          : newFarmers.filter((item) =>
               item.lastname.toLowerCase().includes(search.toLowerCase())
             );
       break;
     case "Country":
       filteredFarmers =
         search === ""
-          ? farmers
-          : farmers.filter((item) =>
+          ? newFarmers
+          : newFarmers.filter((item) =>
               item.country.toLowerCase().includes(search.toLowerCase())
             );
       break;
     case "District":
       filteredFarmers =
         search === ""
-          ? farmers
-          : farmers.filter((item) =>
+          ? newFarmers
+          : newFarmers.filter((item) =>
               item.district.toLowerCase().includes(search.toLowerCase())
             );
       break;
     case "PhoneNo":
       filteredFarmers =
         search === ""
-          ? farmers
-          : farmers.filter((item) =>
+          ? newFarmers
+          : newFarmers.filter((item) =>
               item.phoneNo.toLowerCase().includes(search.toLowerCase())
             );
       break;
     default:
-      filteredFarmers = farmers;
+      filteredFarmers = newFarmers;
       break;
   }
   const totalNumberElements = 20;
@@ -124,15 +161,73 @@ const ExplorePage = () => {
         }
       );
       if (response.ok) {
-        let resultAvailable = await response.json();
+        let resultAvailable: farmer[] = await response.json();
         setFarmers(resultAvailable);
+        // setNewFarmers(resultAvailable);
+        // console.log(newFarmers);
+
+        resultAvailable.map(async (farmer: any) => {
+          const {
+            country,
+            createdAt,
+            district,
+            firstname,
+            id,
+            lastname,
+            password,
+            phoneNo,
+            profilePhoto,
+            ratingAverage,
+            ratingCount,
+            subscriptionEndDate,
+            subscriptionStartDate,
+            updatedAt,
+          } = farmer;
+          try {
+            const response = await fetch(
+              `http://localhost:4000/crops/get_crop/${farmer.id}/${category}`,
+              {
+                method: "GET",
+                headers: { "Content-Type": "application/json" },
+              }
+            );
+            if (response.ok) {
+              const result: any = await response.json();
+              const { harvestSeason, pricePerKg, qtyPerSeason } = result;
+              setNewFarmers([
+                {
+                  country,
+                  createdAt,
+                  district,
+                  firstname,
+                  id,
+                  lastname,
+                  password,
+                  phoneNo,
+                  profilePhoto,
+                  ratingAverage,
+                  ratingCount,
+                  subscriptionEndDate,
+                  subscriptionStartDate,
+                  updatedAt,
+                  harvestSeason,
+                  PricePerKg: pricePerKg,
+                  QtyPerSeason: qtyPerSeason,
+                },
+              ]);
+            }
+          } catch (error) {
+            console.log(error);
+          }
+        });
       } else {
         const err = await response.json();
         console.log(err);
       }
     };
     fetchData();
-  });
+  }, []);
+  console.log(newFarmers.length);
   return (
     <div className="bg-[#25883F] flex flex-col items-center justify-center w-full border-t-[1px] border-gray-400">
       <div
@@ -218,7 +313,7 @@ const ExplorePage = () => {
           {paginatedfilteredusers.map((farmer) => (
             <div
               key={farmer.id}
-              className="flex flex-col items-center h-[424px] max-md:h-[290px] max-sm:w-[160px] w-[260px] bg-[#1B7633]   p-[6px] rounded-[7px] space-y-[10px]"
+              className="flex flex-col items-center h-[437px] max-md:h-[300px] max-sm:w-[160px] w-[260px] bg-[#1B7633]   p-[6px] rounded-[7px] shadow space-y-[10px]"
             >
               <img
                 src={`http://localhost:4000/user/image/${farmer.profilePhoto}`}
@@ -233,6 +328,18 @@ const ExplorePage = () => {
                     {farmer.firstname} {farmer.lastname}
                   </p>
                 </div>
+                <div className="flex flex-row items-center space-x-2 justify-center">
+                  <b>Harv.season :</b>
+                  <p>{farmer.harvestSeason}</p>
+                </div>
+                <div className="flex flex-row items-center space-x-2 justify-center">
+                  <b>Qty/Season :</b>
+                  <p>{farmer.QtyPerSeason} Kg</p>
+                </div>
+                <div className="flex flex-row items-center space-x-2 justify-center">
+                  <b>Price/Kg :</b>
+                  <p>{farmer.PricePerKg} USD</p>
+                </div>
                 <div className="flex flex-row items-center space-x-2  justify-center">
                   <b>Country :</b>
                   <p>{farmer.country}</p>
@@ -246,7 +353,7 @@ const ExplorePage = () => {
                   <p>{farmer.phoneNo}</p>
                 </div>
               </div>
-              <div className="w-[140px] rounded-[10px] max-md:rounded-[7px] p-[5px] max-md:p-[3px] max-md:w-[110px] flex flex-col items-center bg-[#25883F] justify-center">
+              <div className="">
                 <StarRating
                   farmerId={farmer.id}
                   ratingAv={farmer.ratingAverage}
@@ -254,7 +361,7 @@ const ExplorePage = () => {
               </div>
               <a
                 href="#"
-                className="bg-[#FF9933] text-white font-normal max-md:rounded-[7px] max-md:text-[10px] text-[15px]  max-md:w-[110px]  w-[140px] hover:opacity-50 rounded-[10px] p-[5px]"
+                className="bg-[#FF9933]  text-white font-semibold max-md:rounded-[7px] max-md:text-[10px] text-[13px]  max-md:w-[110px]  w-[140px] hover:opacity-70 rounded-[10px] p-[5px]"
               >
                 BUY PRODUCT
               </a>

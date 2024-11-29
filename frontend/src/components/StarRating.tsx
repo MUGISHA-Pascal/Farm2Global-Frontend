@@ -35,8 +35,8 @@ const StarRating: React.FC<childProps> = ({ farmerId, ratingAv }) => {
   };
 
   return (
-    <div className="space-y-2">
-      <div className="flex space-x-2">
+    <div className="flex flex-row space-x-[7px] items-center justify-center">
+      <div className="flex space-x-2 bg-[#25883F]  w-[120px] rounded-[10px] max-md:rounded-[7px] p-[5px] max-md:p-[3px] max-md:w-[110px]  ">
         {[...Array(5)].map((_, index) => {
           const starValue = index + 1;
 
@@ -55,10 +55,9 @@ const StarRating: React.FC<childProps> = ({ farmerId, ratingAv }) => {
           );
         })}
       </div>
-      <p className="text-[12px] text-white">
-        Average Rating:{" "}
-        {averageRating ? averageRating.toFixed(2) : "Not rated yet"}%
-      </p>
+      <div className="text-[12px] text-white bg-yellow-600 font-bold w-[60px] rounded-full p-[3px]">
+        {averageRating ? averageRating.toFixed(2) : "0"}%
+      </div>
     </div>
   );
 };

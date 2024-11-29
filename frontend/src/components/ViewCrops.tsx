@@ -242,8 +242,8 @@ const ViewCrops = () => {
                 <div className="flex flex-col space-y-[5px]">
                   <p>{crop.cropName}</p>
                   <p>{crop.harvestSeason}</p>
-                  <p>{crop.qtyPerSeason}kg</p>
-                  <p>{crop.pricePerKg}frw</p>
+                  <p>{crop.qtyPerSeason} Kg</p>
+                  <p>{crop.pricePerKg} USD</p>
                 </div>
               </div>
               <div className="w-[160px] flex flex-row justify-between ">
