@@ -24,50 +24,15 @@ interface farmer {
   subscriptionEndDate: string;
   subscriptionStartDate: string;
   updatedAt: string;
+  harvestSeason?: string;
+  PricePerKg?: number;
+  QtyPerSeason?: number;
 }
 const ExplorePage = () => {
   const [searchBy, setSearchBy] = useState("");
   const [search, setSearch] = useState("");
   const [CurrentPage, setCurrent] = useState(1);
-  const [farmers, setFarmers] = useState<farmer[]>([
-    {
-      country: "",
-      createdAt: "",
-      district: "",
-      firstname: "",
-      id: 0,
-      lastname: "",
-      password: "",
-      phoneNo: "",
-      profilePhoto: "",
-      ratingAverage: 0,
-      ratingCount: 0,
-      subscriptionEndDate: "",
-      subscriptionStartDate: "",
-      updatedAt: "",
-    },
-  ]);
-  const [newFarmers, setNewFarmers] = useState([
-    {
-      country: "",
-      createdAt: "",
-      district: "",
-      firstname: "",
-      id: 0,
-      lastname: "",
-      password: "",
-      phoneNo: "",
-      profilePhoto: "",
-      ratingAverage: 0,
-      ratingCount: 0,
-      subscriptionEndDate: "",
-      subscriptionStartDate: "",
-      updatedAt: "",
-      harvestSeason: "",
-      QtyPerSeason: 0,
-      PricePerKg: 0,
-    },
-  ]);
+  const [newFarmers, setNewFarmers] = useState<farmer[]>([]);
 
   interface farmerInterface {
     Id: number;
@@ -162,27 +127,8 @@ const ExplorePage = () => {
       );
       if (response.ok) {
         let resultAvailable: farmer[] = await response.json();
-        setFarmers(resultAvailable);
-        // setNewFarmers(resultAvailable);
-        // console.log(newFarmers);
 
         resultAvailable.map(async (farmer: any) => {
-          const {
-            country,
-            createdAt,
-            district,
-            firstname,
-            id,
-            lastname,
-            password,
-            phoneNo,
-            profilePhoto,
-            ratingAverage,
-            ratingCount,
-            subscriptionEndDate,
-            subscriptionStartDate,
-            updatedAt,
-          } = farmer;
           try {
             const response = await fetch(
               `http://localhost:4000/crops/get_crop/${farmer.id}/${category}`,
@@ -194,27 +140,24 @@ const ExplorePage = () => {
             if (response.ok) {
               const result: any = await response.json();
               const { harvestSeason, pricePerKg, qtyPerSeason } = result;
-              setNewFarmers([
-                {
-                  country,
-                  createdAt,
-                  district,
-                  firstname,
-                  id,
-                  lastname,
-                  password,
-                  phoneNo,
-                  profilePhoto,
-                  ratingAverage,
-                  ratingCount,
-                  subscriptionEndDate,
-                  subscriptionStartDate,
-                  updatedAt,
-                  harvestSeason,
-                  PricePerKg: pricePerKg,
-                  QtyPerSeason: qtyPerSeason,
-                },
-              ]);
+              setNewFarmers((prevFarmers) => {
+                if (
+                  !prevFarmers.some(
+                    (existingFarmer) => existingFarmer.id === farmer.id
+                  )
+                ) {
+                  return [
+                    ...prevFarmers,
+                    {
+                      ...farmer,
+                      harvestSeason: harvestSeason,
+                      PricePerKg: pricePerKg,
+                      QtyPerSeason: qtyPerSeason,
+                    },
+                  ];
+                }
+                return prevFarmers;
+              });
             }
           } catch (error) {
             console.log(error);
@@ -227,7 +170,7 @@ const ExplorePage = () => {
     };
     fetchData();
   }, []);
-  console.log(newFarmers.length);
+  console.log(newFarmers);
   return (
     <div className="bg-[#25883F] flex flex-col items-center justify-center w-full border-t-[1px] border-gray-400">
       <div
