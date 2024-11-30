@@ -239,9 +239,9 @@ const ExplorePage = () => {
           </button>
         </div>
       </header>
-      <main className="w-[1220px] max-sm:w-full mb-[10px]  p-[5px] flex flex-col items-center bg-[#ffffff] rounded-[20px] ">
+      <main className="w-[1220px] max-sm:w-full mb-[10px] max-md:h-[500px]  p-[5px] flex flex-col items-center bg-[#ffffff] rounded-[10px]  ">
         {paginatedfilteredusers.length == 0 && (
-          <div className="flex flex-col space-y-[30px] mt-[140px]">
+          <div className="flex flex-col space-y-[30px] max-md:mt-[70px] mt-[140px]">
             <h2 className="text-gray-700 text-[30px] font-semibold">
               No Farmers Found
             </h2>
@@ -311,7 +311,7 @@ const ExplorePage = () => {
             </div>
           ))}
         </main>
-        <div className="flex flex-row ml-[530px] space-x-[10px] font-bold text-white max-sm:ml-[130px] items-center text-[10px]">
+        <div className="flex flex-row ml-[30px]  space-x-[10px] font-bold text-white max-md:ml-[70px] items-center text-[10px]">
           <GrFormPrevious
             onClick={handlePrevious}
             className="font-bold text-[35px] text-[#1B7633]"

@@ -140,22 +140,95 @@ const Navbar = () => {
                     Partners
                   </Link>
                 </li>
-                <li>
-                  <RouterLink
-                    to="/dashboard"
-                    onClick={() => {
-                      setNavShow(false);
-                    }}
-                    className="hover:text-green-300 hover:cursor-pointer"
-                  >
-                    Dashboard
-                  </RouterLink>
-                </li>
+                {jwt && (
+                  <li>
+                    <RouterLink
+                      to="/dashboard"
+                      onClick={() => {
+                        setNavShow(false);
+                      }}
+                      className="hover:text-green-300 hover:cursor-pointer"
+                    >
+                      Dashboard
+                    </RouterLink>
+                  </li>
+                )}
 
-                <li>
-                  <a href="#" className="hover:text-green-300">
-                    Crops Categories
-                  </a>
+                <li
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setCategoryShow(!categoryShow);
+                  }}
+                  className="dropdown-category relative"
+                >
+                  <div className="flex flex-row hover:cursor-pointer text-[11px] space-x-[2px]  items-center justify-center hover:text-green-300">
+                    <p>Crops Categories</p>
+                    <IoMdArrowDropdown />
+                  </div>
+                  {categoryShow && (
+                    <div className="absolute font-normal  z-40 p-[30px] items-start top-[19px] right-[0px]  text-white rounded-[10px] border-[1px]  border-gray-400  bg-[#25883F] flex flex-col space-y-[10px]">
+                      <RouterLink
+                        to={`/explore/Maize`}
+                        className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
+                      >
+                        <IoMdArrowDropright /> <p>Maize</p>
+                      </RouterLink>
+                      <RouterLink
+                        to={`/explore/Sunflower`}
+                        className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
+                      >
+                        <IoMdArrowDropright /> <p>Sunflower</p>
+                      </RouterLink>
+                      <RouterLink
+                        to={`/explore/Groundnuts`}
+                        className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
+                      >
+                        <IoMdArrowDropright /> <p>Groundnuts</p>
+                      </RouterLink>
+                      <RouterLink
+                        to={`/explore/Soybeans`}
+                        className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
+                      >
+                        <IoMdArrowDropright /> <p>Soybeans</p>
+                      </RouterLink>
+                      <RouterLink
+                        to={`/explore/Rice`}
+                        className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
+                      >
+                        <IoMdArrowDropright /> <p>Rice</p>
+                      </RouterLink>
+                      <RouterLink
+                        to={`/explore/Wheat`}
+                        className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
+                      >
+                        <IoMdArrowDropright /> <p> Wheat</p>
+                      </RouterLink>
+                      <RouterLink
+                        to={`/explore/Cotton`}
+                        className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
+                      >
+                        <IoMdArrowDropright /> <p> Cotton</p>
+                      </RouterLink>
+                      <RouterLink
+                        to={`/explore/Coffee`}
+                        className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
+                      >
+                        <IoMdArrowDropright /> <p> Coffee</p>
+                      </RouterLink>
+                      <RouterLink
+                        to={`/explore/Tea`}
+                        className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
+                      >
+                        <IoMdArrowDropright /> <p> Tea</p>
+                      </RouterLink>
+                      <RouterLink
+                        to={`/explore/Fruits`}
+                        className="hover:text-green-300 flex flex-row space-x-[10px] items-center"
+                      >
+                        <IoMdArrowDropright /> <p> Fruits</p>
+                      </RouterLink>
+                    </div>
+                  )}
                 </li>
                 <li>
                   <RouterLink

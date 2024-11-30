@@ -198,11 +198,11 @@ const LineChart = () => {
 
   return (
     <div className="flex-1 bg-[#ffffff] max-md:p-0">
-      <div className="bg-[#1B7633] p-[10px] max-md:p-[0px] h-[320px] max-md:h-[250px] max-md:w-[350px] rounded-[10px] w-full relative">
+      <div className="bg-[#1B7633] p-[10px] max-md:p-[0px] h-[320px] max-md:h-[250px] max-md:w-[377px] rounded-[10px] w-full relative">
         <canvas id="LineChart"></canvas>
       </div>
       <div className="flex flex-row max-md:space-y-[10px] md:space-x-[20px] mt-[20px] w-full max-md:flex-col ">
-        <div className="bg-[#1B7633] w-[600px] max-md:h-[440px] h-[260px] max-md:w-[350px] rounded-[10px] flex flex-col">
+        <div className="bg-[#1B7633] w-[600px] max-md:h-[440px] h-[260px] max-md:w-[377px] rounded-[10px] flex flex-col">
           <div className="flex flex-row  border-b-[1px] border-gray-400 space-x-[10px] items-center justify-start p-[10px]">
             <div className="bg-[#FF9933] p-[4px] rounded-full ">
               <IoPieChartOutline className="text-white" />
@@ -212,11 +212,11 @@ const LineChart = () => {
             </h2>
           </div>
           <div className=" p-[4px]  max-md:pt-[20px] px-[20px] w-full flex flex-row max-md:flex-col md:space-x-[90px] max-md:space-y-[10px] items-center justify-center">
-            <div className="w-[195px] h-[195px] max-md:w-[150px] max-md:h-[150px]">
+            <div className="w-[195px] h-[195px] max-md:w-[140px] max-md:h-[140px]">
               <canvas id="DonutChart"></canvas>
-              <p className="absolute top-[680px] max-md:text-[12px] max-md:top-[600px] max-md:left-[145px] left-[297px] text-white font-bold">
+              {/* <p className="absolute top-[680px] max-md:text-[12px] max-md:top-[200px] max-md:left-[145px] left-[297px] text-white font-bold">
                 Countries
-              </p>
+              </p> */}
             </div>
 
             <div className="ml-10 max-md:ml-[5px] px-[20px] py-[5px] text-[10px] rounded-[10px] flex flex-col space-y-[7px] bg-[#25883F] max-md:w-[350px] w-[400px] text-white">
@@ -288,7 +288,7 @@ const LineChart = () => {
             </div>
           </div>
         </div>
-        <div className="bg-[#1B7633] w-[372px] h-[260px] rounded-[10px] flex flex-col space-y-[10px] p-[10px]">
+        <div className="bg-[#1B7633] max-md:w-[377px] w-[372px] h-[260px] rounded-[10px] flex flex-col space-y-[10px] p-[10px]">
           <div className="flex flex-row border-b-[1px] border-gray-400 space-x-[10px] items-center justify-start p-[10px]">
             <div className="bg-[#FF9933] p-[4px] rounded-full ">
               <MdOutlineCrisisAlert className="text-white" />

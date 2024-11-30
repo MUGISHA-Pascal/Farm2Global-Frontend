@@ -183,13 +183,13 @@ const Dashboard = () => {
                   <BiSolidDashboard className="text-[17px] hover:text-white text-[#ff9933]" />{" "}
                   <p>Dashboard</p>
                 </Link>
-                <a
-                  href="#"
+                <Link
+                  to="view-crop"
                   className="flex  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full flex-row space-x-[10px]  items-center"
                 >
                   <IoSearchSharp className="text-[#ff9933] hover:text-white text-[17px]" />{" "}
-                  <p>View Crops</p>
-                </a>
+                  <p>Manage Crops</p>
+                </Link>
                 <Link
                   to="add-crop"
                   className="flex flex-row  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full space-x-[10px]  items-center"
@@ -197,13 +197,7 @@ const Dashboard = () => {
                   <IoMdAddCircleOutline className="text-[#ff9933] hover:text-white text-[17px]" />{" "}
                   <p>Add Crops</p>
                 </Link>
-                <a
-                  href="#"
-                  className="flex  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full flex-row space-x-[10px]  items-center"
-                >
-                  <RiDeleteBin6Line className="text-[#ff9933] text-[17px] hover:text-white" />{" "}
-                  <p>Delete Crops</p>
-                </a>
+
                 <a
                   href="#"
                   className="flex flex-row  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full space-x-[10px]  items-center"
@@ -211,13 +205,13 @@ const Dashboard = () => {
                   <MdOutlineAnalytics className="text-[#ff9933] hover:text-white text-[17px]" />{" "}
                   <p>Analytics</p>
                 </a>
-                <a
-                  href="#"
+                <Link
+                  to="profile"
                   className="flex flex-row  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full space-x-[10px] items-center"
                 >
                   <BsPerson className="text-[#ff9933] hover:text-white text-[17px]" />{" "}
                   <p text-shadow>Edit Profile</p>
-                </a>
+                </Link>
                 <a
                   href="#"
                   className="flex flex-row  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full space-x-[10px] items-center"
