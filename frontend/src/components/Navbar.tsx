@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-scroll";
 import logo from "../assets/logo.png";
-import { CiMenuBurger } from "react-icons/ci";
+import { LuMenu } from "react-icons/lu";
 import { VscChromeClose } from "react-icons/vsc";
 import { useState } from "react";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
@@ -54,7 +54,7 @@ const Navbar = () => {
               Farm2Global
             </p>
           </div>
-          <CiMenuBurger
+          <LuMenu
             className="max-md:flex hidden"
             onClick={() => {
               setNavShow(true);

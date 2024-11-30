@@ -232,7 +232,7 @@ const Dashboard = () => {
             <img
               src={profileImage}
               alt="profile"
-              className="w-[40px] h-[40px] max-md:w-[20px] max-md:h-[20px] object-cover rounded-full"
+              className="w-[40px] h-[40px] max-md:w-[22px] max-md:h-[22px] object-cover rounded-full"
             />
             <p className="font-bold text-white text-[12px] max-md:text-[9px]">
               {user.firstname} {user.lastname}

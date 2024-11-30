@@ -60,18 +60,18 @@ const Profile = () => {
   return (
     <div className="flex flex-col ">
       <main className="w-full flex flex-col items-center justify-center">
-        <main className="flex rounded-[20px] border-[1px] border-[#25883F] w-[1000px] py-[30px] shadow  mt-[20px] items-center space-y-[30px] flex-col ">
+        <main className="flex rounded-[20px] border-[1px] border-[#25883F] max-md:w-[377px] w-[1000px] py-[30px] shadow  mt-[20px] items-center space-y-[30px] flex-col ">
           <h2 className="text-2xl max-sm:text-[17px] font-bold mb-[7px] text-center text-[#ff9933]">
             Edit Profile
           </h2>
           <img
             src={profileImage}
             alt="profile image"
-            className="w-[100px] h-[100px] rounded-full"
+            className="w-[100px] h-[100px] rounded-full object-cover"
           />
-          <main className="flex flex-row">
-            <div className="flex flex-col space-y-[70px] items-center">
-              <div className="grid gap-[20px] grid-cols-2">
+          <main className="flex flex-row max-md:flex-col">
+            <div className="flex flex-col space-y-[70px] max-md:space-y-[30px] items-center">
+              <div className="grid gap-[20px] grid-cols-2 max-md:grid-cols-1">
                 <div className="flex flex-col items-start space-y-[10px]">
                   <label
                     htmlFor="firstname"

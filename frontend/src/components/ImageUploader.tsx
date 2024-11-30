@@ -98,7 +98,7 @@ const ImageUploader: React.FC<userProp> = ({ user }) => {
       {message && <p className="p-[10px] text-gray-700 text-sm">{message}</p>}
       <button
         onClick={handleUpload}
-        className="w-[150px] bg-[#FF9933] md:mt-[10px] max-sm:w-[100px] max-sm:p-[4px] max-sm:text-[13px] font-bold text-white p-[6px] rounded-md hover:bg-[#CBE86A] transition duration-300"
+        className="md:w-[150px] bg-[#FF9933] max-md:w-[160px] md:mt-[10px] max-md:mt-[10px]  max-sm:p-[4px] max-sm:text-[13px] font-bold text-white p-[6px] rounded-md hover:bg-[#CBE86A] transition duration-300"
       >
         Update Image
       </button>

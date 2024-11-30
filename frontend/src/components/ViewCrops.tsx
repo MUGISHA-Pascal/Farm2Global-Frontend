@@ -217,7 +217,7 @@ const ViewCrops = () => {
             />
           </div>
         )}
-        <main className="farmersMain w-full h-[500px] rounded-[10px] grid grid-cols-4 gap-[30px] place-items-center overflow-y-auto">
+        <main className="farmersMain w-full h-[500px] max-md:h-[600px] px-[10px]  rounded-[10px] grid max-md:grid-cols-1 grid-cols-4 gap-[30px] place-items-center overflow-y-auto">
           {filteredCrops.map((crop: CropInterface) => (
             <div className="w-[220px] hover:cursor-pointer border-gray-300 rounded border-[1px] h-auto pb-[10px] p-[5px] flex flex-col space-y-[15px] items-start shadow">
               {showModal && (
