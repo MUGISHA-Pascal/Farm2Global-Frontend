@@ -86,13 +86,13 @@ const Dashboard = () => {
                 <BiSolidDashboard className="text-[17px] hover:text-white text-[#ff9933]" />{" "}
                 <p>Dashboard</p>
               </Link>
-              <a
-                href="#"
+              <Link
+                to="inbox"
                 className="flex hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full flex-row space-x-[10px] items-center"
               >
                 <BiMessageRoundedDots className="text-[17px] hover:text-white text-[#ff9933]" />{" "}
                 <p>Inbox</p>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="workspace flex w-full flex-col space-y-[13px] items-start">

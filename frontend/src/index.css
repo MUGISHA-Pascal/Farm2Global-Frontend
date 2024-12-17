@@ -41,6 +41,17 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-track {
   background-color: #25883f;
 }
+.inboxDiv::-webkit-scrollbar {
+  width: 6px;
+  margin-right: 10px;
+}
+.inboxDiv::-webkit-scrollbar-thumb {
+  background-color: #d3d3d3;
+  border-radius: 10px;
+}
+.inboxDiv::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

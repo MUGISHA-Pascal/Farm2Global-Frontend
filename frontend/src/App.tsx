@@ -16,8 +16,57 @@ import ViewCrops from "./components/ViewCrops";
 import Profile from "./components/Profile";
 import Cookies from "js-cookie";
 import { AppContext } from "./components/AppContext";
+import Inbox from "./components/Inbox";
+import myImage from "../assets/demoProfile.png";
+import profileImage from "../assets/farmer.png";
+import friendImage from "../assets/logo.png";
 
 function App() {
+  const users = [
+    {
+      id: 1,
+      name: "mugisha",
+      message: "hello brother how are you doing",
+      image: myImage,
+    },
+    {
+      id: 2,
+      name: "pascal",
+      message: "the business was greatw tho",
+      image: profileImage,
+    },
+    {
+      id: 3,
+      name: "anastase",
+      message: "hahah find me i will give you more money tho",
+      image: friendImage,
+    },
+    {
+      id: 4,
+      name: "john doe",
+      message: "never give up brother",
+      image: profileImage,
+    },
+    {
+      id: 5,
+      name: "john max",
+      message: "never give up brother",
+      image: profileImage,
+    },
+    {
+      id: 6,
+      name: "anastase",
+      message: "never give up brother",
+      image: profileImage,
+    },
+    { id: 7, name: "john doe", message: "right dude", image: profileImage },
+    {
+      id: 8,
+      name: "john max",
+      message: "never give up brother",
+      image: profileImage,
+    },
+  ];
   function useAppContext() {
     const context = useContext(AppContext);
     if (!context) {
@@ -47,6 +96,7 @@ function App() {
               <Route element={<Charts />} path="" />
               <Route element={<AddCrops />} path="add-crop" />
               <Route element={<ViewCrops />} path="view-crop" />
+              <Route element={<Inbox users={users} />} path="inbox" />
               <Route element={<Profile />} path="profile" />
             </Route>
           )}
