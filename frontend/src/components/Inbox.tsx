@@ -28,7 +28,7 @@ const Inbox: React.FC<childProps> = ({ users }) => {
               {users.map((user) => (
                 <Link
                   key={user.id}
-                  to={`/inbox/conversation/${user.id}`}
+                  to={`/dashboard/inbox/conversation/${user.id}`}
                   className="shadow w-[390px] border-gray-300 border-[1px] h-[80px] rounded-[10px] flex flex-row space-x-[20px] items-center justify-start pl-[10px]"
                 >
                   <div className="h-[50px] flex flex-col justify-start space-y-[10px]">

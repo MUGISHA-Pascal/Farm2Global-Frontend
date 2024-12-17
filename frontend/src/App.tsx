@@ -17,9 +17,11 @@ import Profile from "./components/Profile";
 import Cookies from "js-cookie";
 import { AppContext } from "./components/AppContext";
 import Inbox from "./components/Inbox";
-import myImage from "../assets/demoProfile.png";
-import profileImage from "../assets/farmer.png";
-import friendImage from "../assets/logo.png";
+import myImage from "./assets/demoProfile.png";
+import profileImage from "./assets/farmer.png";
+import friendImage from "./assets/logo.png";
+import Conversation from "./components/Conversation";
+import Waiting from "./components/Waiting";
 
 function App() {
   const users = [
@@ -96,7 +98,13 @@ function App() {
               <Route element={<Charts />} path="" />
               <Route element={<AddCrops />} path="add-crop" />
               <Route element={<ViewCrops />} path="view-crop" />
-              <Route element={<Inbox users={users} />} path="inbox" />
+              <Route path="inbox" element={<Inbox users={users} />}>
+                <Route path="" element={<Waiting />} />
+                <Route
+                  path="conversation/:id"
+                  element={<Conversation users={users} />}
+                />
+              </Route>{" "}
               <Route element={<Profile />} path="profile" />
             </Route>
           )}
