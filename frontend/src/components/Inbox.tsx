@@ -9,7 +9,9 @@ const Inbox: React.FC<childProps> = ({ users }) => {
   return (
     <main className="flex flex-col">
       <header className="flex items-center h-[60px] pl-[20px] border-b-[1px] border-gray-300">
-        <h2 className="text-gray-700 ">Inbox</h2>
+        <h2 className="text-2xl max-sm:text-[17px] font-bold mb-[7px] text-center text-[#ff9933]">
+          Inbox
+        </h2>
       </header>
       <main className="flex-row flex w-full">
         <div className="flex flex-col w-[440px] border-r-[1px] border-gray-300">

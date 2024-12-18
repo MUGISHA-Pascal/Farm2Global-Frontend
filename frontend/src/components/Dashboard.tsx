@@ -119,13 +119,13 @@ const Dashboard = () => {
                 <RiDeleteBin6Line className="text-[#ff9933] text-[17px] hover:text-white" />{" "}
                 <p>Delete Crops</p>
               </a> */}
-              <a
-                href="#"
+              <Link
+                to="analytics"
                 className="flex flex-row  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full space-x-[10px]  items-center"
               >
                 <MdOutlineAnalytics className="text-[#ff9933] hover:text-white text-[17px]" />{" "}
                 <p>Analytics</p>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="accountsettings w-full flex flex-col space-y-[13px] items-start">
@@ -198,13 +198,13 @@ const Dashboard = () => {
                   <p>Add Crops</p>
                 </Link>
 
-                <a
-                  href="#"
+                <Link
+                  to="analytics"
                   className="flex flex-row  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full space-x-[10px]  items-center"
                 >
                   <MdOutlineAnalytics className="text-[#ff9933] hover:text-white text-[17px]" />{" "}
                   <p>Analytics</p>
-                </a>
+                </Link>
                 <Link
                   to="profile"
                   className="flex flex-row  hover:bg-[#2FA24D] hover:text-white justify-start px-[4px] py-[6px] w-full space-x-[10px] items-center"

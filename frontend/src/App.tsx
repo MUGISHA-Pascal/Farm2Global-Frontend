@@ -22,6 +22,7 @@ import profileImage from "./assets/farmer.png";
 import friendImage from "./assets/logo.png";
 import Conversation from "./components/Conversation";
 import Waiting from "./components/Waiting";
+import Analytics from "./components/Analytics";
 
 function App() {
   const users = [
@@ -98,6 +99,7 @@ function App() {
               <Route element={<Charts />} path="" />
               <Route element={<AddCrops />} path="add-crop" />
               <Route element={<ViewCrops />} path="view-crop" />
+              <Route element={<Analytics />} path="analytics" />
               <Route path="inbox" element={<Inbox users={users} />}>
                 <Route path="" element={<Waiting />} />
                 <Route

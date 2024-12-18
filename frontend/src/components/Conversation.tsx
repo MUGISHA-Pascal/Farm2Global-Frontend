@@ -24,7 +24,7 @@ const Conversation: React.FC<childProps> = ({ users }) => {
       </head>
       <main className="messageDiv flex-1 mt-[50px] p-[10px] overflow-y-auto">
         <div className="float-left flex flex-col items-start space-y-[10px] space-x-[10px]">
-          <div className=" flex items-start flex-col bg-blue-500 p-[10px] rounded-tr-[10px] rounded-bl-[10px] text-white">
+          <div className=" flex items-start flex-col bg-[#25883F] p-[10px] rounded-tr-[10px] rounded-bl-[10px] text-white">
             <p className="text-[12px]">{users[numberId].message}</p>
           </div>
           <p className="text-[7px] text-gray-500">/02/03/2023</p>
@@ -36,7 +36,7 @@ const Conversation: React.FC<childProps> = ({ users }) => {
           className="focus:outline-none h-[40px] w-[500px] border-[1px] placeholder:text-[13px] text-gray-700 text-[14px] p-[7px] rounded-md border-gray-300"
         ></textarea>
         <IoMdSend
-          className="text-blue-500 hover:opacity-50 text-[20px] hover:cursor-pointer"
+          className="text-[#25883F] hover:opacity-50 text-[20px] hover:cursor-pointer"
           type="submit"
         />
       </div>
